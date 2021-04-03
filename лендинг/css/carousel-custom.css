@@ -1,0 +1,19 @@
+
+.carousel-cell{
+    background: none;
+    width: 50%;
+    
+}
+.flickity-page-dots{
+    bottom: -15px;
+}
+@media (min-width:320px) and (max-width: 635px){
+.flickity-prev-next-button{
+    display: none;
+}
+    .carousel-cell{
+    background: none;
+    width: 100%;
+    
+} 
+}
