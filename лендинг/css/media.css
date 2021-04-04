@@ -18,7 +18,17 @@
     text-align: center;
   }
   .nav {
-    margin-bottom: calc(17%*4);
+    margin-bottom: 0px;
+  }
+  .nav .nav-menu-drop {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 100%;
+  }
+  .nav .nav-menu-drop h2 {
+    display: block;
+    color: black;
   }
   .callback-tel-wrap {
     left: 50%;
