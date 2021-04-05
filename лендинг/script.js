@@ -41,6 +41,7 @@ Vue.component('order', {
             changeIsNumOk() {
                 this.$emit('change', this.inputValue);
             },
+
         }
 
 
@@ -52,12 +53,15 @@ Vue.component('order', {
 
             <from action="#" class="contact-info">
                 <div class="close" @click="closeForm"><i class="far fa-times-circle"></i></div>
-                <div  class="warning"><span class="err" v-if="!isNumberCorrect()">Номер должен состоять из 11 цифр</span>
-<span class="ok" v-if="isNumberCorrect()">Ура! Все верно.</span></div>
-                <input type="tel" id="your-tel" class="callback-input" placeholder="Ваш сотовый" v-on:input="handleInput">
+                <div  class="warning">
+<span class="ok" v-if="correctInput">Ура! Все верно.</span></div>
+<input id="your-tel" class="callback-input" placeholder="Ваш сотовый"
+data-mask="+7 (000) 000-00-00"
+         pattern="\\+7 ([0-9]{3}\) [0-9]{3}[\-][0-9]{2}[\-][0-9]{2}"
+         type="tel" required title="(000) 000-00-00" v-on:input="maskInput">
                 <button  
-v-bind:class="['sendit-btn', { disabled: !isNumberCorrect()}]"
-:disabled="!isNumberCorrect()"
+v-bind:class="['sendit-btn', { disabled: !correctInput}]"
+:disabled="!correctInput"
 v-on:click="" type="submit"
 >отправить</button>
 
@@ -65,31 +69,57 @@ v-on:click="" type="submit"
         </div>`,
         data() {
             return {
-                inputValue: '',
+                correctInput: false,
             };
         },
         methods: {
-            handleInput(e) {
-                this.inputValue = e.target.value;
-                console.log(this.inputValue);
-                this.isNumberCorrect();
-
-            },
-            isNumberCorrect() {
-                console.log(this.regexpTel);
-                if (this.regexpTel.test(this.inputValue)) {
-                    console.log("все верно");
-                    return true;
-                } else {
-                    console.log("не верно");
-
-                    return false
-                };
-            },
+           
             closeForm() {
                 this.$emit('close-form', this.isFormActive);
             },
+            maskInput(e) {
+                var input = e.srcElement;
+                var mask = input.dataset.mask;
+                var value = input.value;
+                var literalPattern = /[0\*]/;
+                var numberPattern = /[0-9]/;
+                var newValue = "";
+                try {
+                    var maskLength = mask.length;
+                    var valueIndex = 0;
+                    var maskIndex = 0;
 
+                    for (; maskIndex < maskLength;) {
+                        if (maskIndex >= value.length) break;
+
+                        if (mask[maskIndex] === "0" && value[valueIndex].match(numberPattern) === null) break;
+
+                        // Found a literal
+                        while (mask[maskIndex].match(literalPattern) === null) {
+                            if (value[valueIndex] === mask[maskIndex]) break;
+                            newValue += mask[maskIndex++];
+                        }
+                        newValue += value[valueIndex++];
+
+
+
+                        maskIndex++;
+                    }
+
+                    input.value = newValue;
+                    if(newValue.length===maskLength){
+                        const regexp = /\d/g;
+                        console.log(newValue.match(regexp).join('')); 
+                        this.correctInput=true;
+                        
+                    }
+
+
+
+                } catch (e) {
+                    console.log(e);
+                }
+            }
         }
 
 
