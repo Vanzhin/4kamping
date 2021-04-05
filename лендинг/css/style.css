@@ -55,6 +55,9 @@ p {
 .hidden {
   opacity: 0;
 }
+.disabled {
+  opacity: 0.3;
+}
 .sendit-btn {
   display: flex;
   align-items: center;
@@ -108,8 +111,18 @@ p {
   min-height: 100%;
   justify-content: space-evenly;
 }
-.callback-tel-wrap .contact-info .err-warning {
+.callback-tel-wrap .contact-info .warning {
+  position: relative;
+  height: 40px;
+  width: 100%;
+}
+.callback-tel-wrap .contact-info .warning span {
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  transform: translate(50%, -50%);
   text-align: center;
+  width: 100%;
 }
 .callback-tel-wrap .close {
   color: white;

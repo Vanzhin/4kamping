@@ -32,8 +32,8 @@
     <div id="app">
         <div class="callback-tel" v-if="isFormActive" v-on:click="formVisibilityChange">
         </div>
-        <search @search="valueFromChild" v-on:search='isValidTel' v-if="isFormActive" v-bind:is-tel-num-ok="isTelNumOk" v-on:close-form="formVisibilityChange"></search>
-
+<!--        <order @search="valueFromChild" v-on:search='isValidTel' v-if="isFormActive" v-bind:is-tel-num-ok="isTelNumOk" v-on:close-form="formVisibilityChange"></order>-->
+<new-order v-if="isFormActive" v-on:close-form="formVisibilityChange" v-bind:regexp-tel="regexpTel"></new-order>
         <header class="header">
             <div class="header-wrap wrap">
                 <nav class="nav">
@@ -60,7 +60,7 @@
                                 <li class="drop-down-li"><a href="#" class="drop-down-link">FAQ</a></li>
                             </ul> 
                             </div>
-                         <div class="column-menu">
+                                                        <div class="column-menu">
 
                             <p>ОСТАЛИСЬ ВОПРОСЫ?</p>
                             <form class="nav-menu-form">
@@ -76,8 +76,7 @@
                             </div>
 
                         </div>
-                        
-
+</div>
                     </section>
                 </nav>
                 <div class="header-h1-wrap">
@@ -528,7 +527,7 @@
                             <p>ОСТАЛИСЬ ВОПРОСЫ?</p>
                             <form class="nav-menu-form">
                                 <input id="nav-menu-tel-footer" type="tel" placeholder="Ваш телефон">
-                                <button id="nav-menu-callback" class="sendit-btn">заказать звонок</button>
+                                <button id="nav-menu-callback-footer" class="sendit-btn">заказать звонок</button>
                                 <label for="nav-menu-personal-data-footer"><input id="nav-menu-personal-data-footer" type="checkbox">Я согласен на обработку персональных данных</label>
                             </form>
                             <div class="social-media">
