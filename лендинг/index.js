@@ -3,6 +3,7 @@ const app = express();
 const fs = require('fs');
 const cors = require('cors');
 const log = require('./logger');
+const nodemailer = require('nodemailer');
 
 
 app.use(express.static('./static'));
@@ -25,7 +26,7 @@ app.get('/order', (request, response) => {
 
 app.post('/order', (request, response) => {
 	fs.readFile('./order.json', 'utf-8', (err, data) => {
-		console.log(data);
+		// console.log(data);
 		if (err) {
 			console.log("read order.json error", err);
 			response.send("read order.json error");
@@ -40,6 +41,28 @@ app.post('/order', (request, response) => {
 
 		order.push(item);
 		// log(item.id);
+
+		async function main() {
+			let transporter = nodemailer.createTransport({
+				host: 'smtp.mail.ru',
+				port: 465,
+				secure: true,
+				auth: {
+					user: `4kamping@mail.ru`,
+					pass: `W3llm4N1605`,
+				},
+			})
+			console.log(order);
+			let result = await transporter.sendMail({
+				from: '"4kamping" <4kamping@mail.ru>',
+				to: 'nikolay.vanzhin@yandex.ru',
+				subject: 'Новая заявка 4Kamping.ru',
+				text: `Заявка с сайта. телефон: +${item.tel}, время: ${item.date}`,
+			})
+
+			console.log(result);
+		};
+		main().catch(console.error);
 
 		fs.writeFile('order.json', JSON.stringify(order), (err) => {
 			if (err) {
