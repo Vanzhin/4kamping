@@ -1,3 +1,4 @@
+"use strict"
 const API_ROOT = 'http://localhost:3000';
 const request = (path = '', method = 'GET', body) => {
     return new Promise((resolve, reject) => {
@@ -88,14 +89,16 @@ Vue.component('order', {
         v-if="orderErrMessage">Упс, что-то пошло не так. 
         Пожалуйста, попробуйте позднее или свяжитесь с нами по телефону <br>8-999-777-22-22</div></div>
 
-            <from action="#" class="contact-info"
+            <form action="#" class="contact-info"
             v-if="!orderFormClose">
                 <div  class="warning">
-<span class="ok" v-if="correctInput">Ура! Все верно.</span></div>
-<input id="your-tel" class="callback-input" placeholder="Ваш сотовый"
+<span class="ok" v-if="correctInput">Ура! Все верно.</span>
+<span class="ok" v-if="!correctInput">Ваш телефон</span></div>
+
+<div class="callback-input-wrap"><input id="your-tel" class="callback-input" placeholder="+7 (___) ___-__-__"
 data-mask="+7 (000) 000-00-00"
          pattern="\\+7 ([0-9]{3}\) [0-9]{3}[\-][0-9]{2}[\-][0-9]{2}"
-         type="tel" required title="(000) 000-00-00" v-on:input="maskInput">
+         type="tel" required title="(000) 000-00-00" v-on:input="maskInput"></div>
                 <button  
 v-bind:class="['sendit-btn', { disabled: !correctInput}]"
 :disabled="!correctInput"
@@ -185,6 +188,14 @@ v-on:click="dataTransfer" type="submit"
 
         },
         methods: {
+            checkedChange() {
+                const burger = document.querySelector("#burger");
+                console.log(burger);
+                if (burger.checked == !true)
+                    burger.checked = true;
+                else
+                    burger.checked = false;
+            },
 
             formVisibilityChange() {
                 this.isFormActive = !this.isFormActive;
@@ -258,3 +269,20 @@ v-on:click="dataTransfer" type="submit"
         }
 
     })
+// smoth transition href
+$(function () {
+    $('a[href*=#]').click(function () {
+        if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') &&
+            location.hostname == this.hostname) {
+            var $target = $(this.hash);
+            $target = $target.length && $target || $('[name=' + this.hash.slice(1) + ']');
+            if ($target.length) {
+                var targetOffset = $target.offset().top;
+                $('html,body').animate({
+                    scrollTop: targetOffset
+                }, 500); //скорость прокрутки
+                return false;
+            }
+        }
+    });
+});

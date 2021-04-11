@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTFa-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- описание странницы-->
+    <meta name="description" content="Аренда кемпера">
+    <!-- ключевые слова-->
+    <meta name="keywords" content="кемпер, дом на колесах, прицеп">
+    <title>4Kamping - аренда кемперов</title>
+    <link rel="stylesheet" href="css/style.css">
+        <link rel="stylesheet" href="css/carousel-custom.css">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link rel="stylesheet" href="fontawesome-free-5.15.1-web/css/all.min.css">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
+    <script src="script.js" defer></script>
+
+    <script src="carousel.js"></script>
+
+
+
+
+
+
+
+</head>
+
+<body>
+    <div id="app">
+        <div class="callback-tel" v-if="isFormActive" v-on:click="formVisibilityChange">
+        </div>
+<!--        <order @search="valueFromChild" v-on:search='isValidTel' v-if="isFormActive" v-bind:is-tel-num-ok="isTelNumOk" v-on:close-form="formVisibilityChange"></order>-->
+<new-order 
+v-if="isFormActive" 
+v-on:close-form="formVisibilityChange" 
+v-bind:regexp-tel="regexpTel"
+v-bind:order-ok-message="orderOkMessage"
+v-bind:order-err-message="orderErrMessage"
+v-bind:order-form-close="orderFormClose"
+
+
+    v-on:phone-number="userPhoneNum"    
+    
+
+    
+    
+    
+   
+></new-order>
+        <header class="header">
+            <div class="header-wrap wrap">
+                <nav class="nav">
+                    <a href="#" class="logo">
+                        <h2>4Kamping</h2>
+                    </a>
+                    <section class="nav-menu">
+                        <input type="checkbox" id="burger">
+                        <label for="burger" class="burger-label">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </label>
+                        <div class="nav-menu-drop">
+                        <h2>4Kamping</h2>
+                            <div class="column-menu">
+                               <ul class="drop_down">
+                                <li class="drop-down-li"><a href="#" class="drop-down-link">Главная</a></li>
+                                <li class="drop-down-li"><a href="#" class="drop-down-link">О нас</a></li>
+                                <li class="drop-down-li"><a href="#" class="drop-down-link">Преимущества</a></li>
+                                <li class="drop-down-li"><a href="#" class="drop-down-link">Отзывы</a></li>
+                                <li class="drop-down-li"><a href="#" class="drop-down-link">Партнёры</a></li>
+                                <li class="drop-down-li"><a href="galery.html" class="drop-down-link">Я там был</a></li>
+                                <li class="drop-down-li"><a href="#" class="drop-down-link">FAQ</a></li>
+                            </ul> 
+                            </div>
+                                                        <div class="column-menu">
+
+                            <p>ОСТАЛИСЬ ВОПРОСЫ?</p>
+                            <form class="nav-menu-form">
+                                <input id="nav-menu-tel" type="tel" placeholder="Ваш телефон">
+                                <button id="nav-menu-callback" class="sendit-btn">заказать звонок</button>
+                                <label for="nav-menu-personal-data"><input id="nav-menu-personal-data" type="checkbox">Я согласен на обработку персональных данных</label>
+                            </form>
+                            <div class="social-media">
+                                <a href="#"><i class="fab fa-vk"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                            </div>
+
+                        </div>
+</div>
+                    </section>
+                </nav>
+                <div class="header-h1-wrap">
+                    <h1 class="header-h1">Слоган 1</h1>
+                    <h2 class="header-h2">Слоган 2</h2>
+                    <button class="sendit-btn header-sendit-btn" v-on:click="formVisibilityChange">арендовать</button>
+                </div>
+            </div>
+        </header>
+        <section class="whoweare">
+            <div class="whoweare-wrap wrap">
+                <picture class="whoweare-picture">
+                    <source media="(min-width:640px) and (max-width:1199px)" srcset="img/Group%202-768.png">
+                    <source media="(min-width:1200px)" srcset="img/Group%202-1440.png">
+                    <img src="img/Group%202.png" alt="agregator">
+                </picture>
+                <h2 class="whoweare-h2">Мы – агрегатор служб доставки</h2>
+                <p class="whoweare-p">С нами удобно вам, вашим клиентам и курьерским службам. Для вас наши услуги бесплатны, так как мы получаем бонусы от служб доставок за предоставленный объем заказов, а вы получаете надежный сервис в подарок!</p>
+                <button class="sendit-btn header-sendit-btn" v-on:click="formVisibilityChange">арендовать</button>
+            </div>
+        </section>
+        <section class="steps">
+            <div class="steps-wrap wrap">
+                <div class="steps-item step1">
+                    <picture class="whoweare-picture">
+                        <source media="(min-width:640px) and (max-width:1199px)" srcset="img/Asset%203@4x-768.png">
+                        <source media="(min-width:1200px)" srcset="img/Asset%203@4x-1440.png">
+                        <img src="img/Asset%203@4x.png" alt="think">
+                    </picture>
+
+                    <h2 class="step1-h2">Шаг 1</h2>
+                    <p class="step1-p">Придумайте, что и кому отправить</p>
+                </div>
+                <div class="steps-item step2">
+                    <picture class="whoweare-picture">
+                        <source media="(min-width:640px) and (max-width:1199px)" srcset="img/Asset%204@4x%202-768.png">
+                        <source media="(min-width:1200px)" srcset="img/Asset%204@4x%202-1440.png">
+                        <img src="img/Asset%204@4x%202.png" alt="create">
+                    </picture>
+                    <h2 class="step2-h2">Шаг 2</h2>
+                    <p class="step2-p">Создайте заявку на сайте SendIt - Ваш персональный менеджер позвонит и подтвердит запрос, уточнит все необходимые данные</p>
+                </div>
+                <div class="steps-item step3">
+                    <picture class="whoweare-picture">
+                        <source media="(min-width:640px) and (max-width:1199px)" srcset="img/Asset%205@4x-768.png">
+                        <source media="(min-width:1200px)" srcset="img/Asset%205@4x-1440.png">
+                        <img src="img/Asset%205@4x.png" alt="meet">
+                    </picture>
+                    <h2 class="step3-h2">Шаг 3</h2>
+                    <p class="step3-p">К Вам приезжает курьер, забирает посылку, Вы подписываете один документ</p>
+                </div>
+                <div class="steps-item step4">
+                    <picture class="whoweare-picture">
+                        <source media="(min-width:640px) and (max-width:1199px)" srcset="img/Asset%206@4x-768.png">
+                        <source media="(min-width:1200px)" srcset="img/Asset%206@4x-1440.png">
+                        <img src="img/Asset%206@4x.png" alt="deliver">
+                    </picture>
+
+                    <h2 class="step4-h2">Шаг 4</h2>
+                    <p class="step4-p">Вы ждёте подтверждения доставки, слова радости и благодарности от адресата :)</p>
+                </div>
+            </div>
+        </section>
+        <section class="order">
+            <div class="order-wrap wrap">
+                <h2 class="order-h2">
+                    Мы берём все заботы по доставке на&nbsp;себя!
+                </h2>
+                <button class="sendit-btn header-sendit-btn" v-on:click="formVisibilityChange">арендовать</button>
+            </div>
+        </section>
+        <section class="callback">
+            <div class="callback-wrap wrap">
+                <div class="callback-wrap-h2-wrap">
+                    <h2 class="callback-h1">
+                        хотите мы вам перезвоним?
+                    </h2>
+                    <p class="callback-p">
+                        Закажите звонок, и менеджер вам всё расскажет и объяснит
+                    </p>
+                </div>
+                <form class="callback-form">
+                    <input type="tel" placeholder="Ваш телефон" class="callback-input">
+                    <button class="submit-btn callback-submit-btn">заказать звонок</button>
+                    <label for="personal-data"><input type="checkbox" name="personal-data" id="personal-data" required><span>Я согласен на обработку персональных данных</span></label>
+
+                </form>
+            </div>
+        </section>
+        <section class="feedback">
+            <div class="feedback-wrap wrap">
+                <h2 class="feedback-h1">ОТЗЫВЫ</h2>
+
+
+
+                <!-- Flickity HTML init -->
+<div class="carousel" data-flickity='{ "wrapAround": false }'>
+  <div class="carousel-cell">
+      <article class="feedback-slider-content-column content-column-item">
+                    <picture class="feedback-picture">
+                        <source media="(min-width:1200px)" srcset="img/image-1440.png">
+                        <img src="img/image.png" alt="customer_photo">
+                    </picture>
+                    <div class="customer-info">
+                        <h2 class="customer-info-h2">Дарья</h2>
+                        <p class="customer-info-p">La Intuicion</p>
+                        <span class="service">Посылка: товары</span>
+                        <span class="from">Откуда: Москва</span>
+                        <span class="where">Куда: Нижневартовск</span>
+                    </div>
+                    <p class="feedback-text">Отличный и&nbsp;качественный сервис.
+                        Долго искали курьерскую службу для доставки наших товаров. Решили попробовать и&nbsp;были приятно удивлены, что помимо удобного сайта, компания предоставляет доступ в&nbsp;личный кабинет, где реализованы многие наши потребности (ведение адресной базы, выбор и&nbsp;вызов курьера в&nbsp;пару кликов).</p>
+                </article>
+  </div>
+  <div class="carousel-cell">
+      <article class="feedback-slider-content-column content-column-item">
+                    <picture class="feedback-picture">
+                        <source media="(min-width:1200px)" srcset="img/image-1-1440.png">
+                        <img src="img/image-2.png" alt="customer_photo">
+                    </picture>
+
+                    <div class="customer-info">
+                        <h2 class="customer-info-h2">Елена</h2>
+                        <p class="customer-info-p">Global Logic</p>
+                        <span class="service">Посылка: товары</span>
+                        <span class="from">Откуда: Москва</span>
+                        <span class="where">Куда: Калининград</span>
+                    </div>
+                    <p class="feedback-text">Мне нравится работать с&nbsp;SendIt, потому что это удобно: моментальный расчет стоимости доставки, удобный сайт, выборка среди основных надёжных логистических компаний и&nbsp;самый значимый фактор&nbsp;&mdash; всё это можно оперативно организовать и&nbsp;не&nbsp;волноваться. И&nbsp;ещё хочу сказать отдельное спасибо менеджеру за&nbsp;отзывчивость.</p>
+                </article>
+  </div>
+  <div class="carousel-cell">
+      <article class="feedback-slider-content-column content-column-item">
+                    <picture class="feedback-picture">
+                        <source media="(min-width:1200px)" srcset="img/image-1440.png">
+                        <img src="img/image.png" alt="customer_photo">
+                    </picture>
+                    <div class="customer-info">
+                        <h2 class="customer-info-h2">Дарья</h2>
+                        <p class="customer-info-p">La Intuicion</p>
+                        <span class="service">Посылка: товары</span>
+                        <span class="from">Откуда: Москва</span>
+                        <span class="where">Куда: Нижневартовск</span>
+                    </div>
+                    <p class="feedback-text">Отличный и&nbsp;качественный сервис.
+                        Долго искали курьерскую службу для доставки наших товаров. Решили попробовать и&nbsp;были приятно удивлены, что помимо удобного сайта, компания предоставляет доступ в&nbsp;личный кабинет, где реализованы многие наши потребности (ведение адресной базы, выбор и&nbsp;вызов курьера в&nbsp;пару кликов).</p>
+                </article>
+  </div>
+  <div class="carousel-cell">
+      <article class="feedback-slider-content-column content-column-item">
+                    <picture class="feedback-picture">
+                        <source media="(min-width:1200px)" srcset="img/image-1-1440.png">
+                        <img src="img/image-2.png" alt="customer_photo">
+                    </picture>
+
+                    <div class="customer-info">
+                        <h2 class="customer-info-h2">Елена</h2>
+                        <p class="customer-info-p">Global Logic</p>
+                        <span class="service">Посылка: товары</span>
+                        <span class="from">Откуда: Москва</span>
+                        <span class="where">Куда: Калининград</span>
+                    </div>
+                    <p class="feedback-text">Мне нравится работать с&nbsp;SendIt, потому что это удобно: моментальный расчет стоимости доставки, удобный сайт, выборка среди основных надёжных логистических компаний и&nbsp;самый значимый фактор&nbsp;&mdash; всё это можно оперативно организовать и&nbsp;не&nbsp;волноваться. И&nbsp;ещё хочу сказать отдельное спасибо менеджеру за&nbsp;отзывчивость.</p>
+                </article>
+  </div>
+</div>
+
+
+
+            </div>
+        </section>
+        <section class="our-advantage">
+            <div class="our-advantage-wrap wrap">
+                <h2 class="our-advantage-h2">
+                    НАШИ ПРЕИМУЩЕСТВА
+                </h2>
+                <div class="our-advantage-content">
+                    <div class="our-advantage-item-wrap">
+                        <div class="our-advantage-item">
+                            <picture class="advantage-picture">
+                                <source media="(min-width:640px) and (max-width:1199px)" srcset="img/Layer%203-768.png">
+                                <source media="(min-width:1200px)" srcset="img/Layer%203-1440.png">
+                                <img src="img/Layer%203.png" alt="free-sevice">
+                            </picture>
+                        </div>
+                        <p class="our-advantage-item-p">Бесплатный сервис</p>
+                    </div>
+                    <div class="our-advantage-item-wrap">
+                        <div class="our-advantage-item">
+                            <picture class="advantage-picture">
+                                <source media="(min-width:640px) and (max-width:1199px)" srcset="img/Layer%201-768.png">
+                                <source media="(min-width:1200px)" srcset="img/Layer%201-1440.png">
+                                <img src="img/Layer%201.png" alt="select">
+                            </picture>
+                        </div>
+                        <p class="our-advantage-item-p">Огромный выбор вариантов доставки</p>
+                    </div>
+                    <div class="our-advantage-item-wrap">
+                        <div class="our-advantage-item">
+                            <picture class="advantage-picture">
+                                <source media="(min-width:640px) and (max-width:1199px)" srcset="img/Layer%206-768.png">
+                                <source media="(min-width:1200px)" srcset="img/Layer%206-1440.png">
+                                <img src="img/Layer%206.png" alt="parameter">
+                            </picture>
+                        </div>
+                        <p class="our-advantage-item-p">4 параметра лучшего предложения</p>
+                    </div>
+                    <div class="our-advantage-item-wrap">
+                        <div class="our-advantage-item">
+                            <picture class="advantage-picture">
+                                <source media="(min-width:640px) and (max-width:1199px)" srcset="img/Layer%205-768.png">
+                                <source media="(min-width:1200px)" srcset="img/Layer%205-1440.png">
+                                <img src="img/Layer%205.png" alt="comfort">
+                            </picture>
+                        </div>
+                        <p class="our-advantage-item-p">Удобство заказа</p>
+                    </div>
+                    <div class="our-advantage-item-wrap">
+                        <div class="our-advantage-item">
+                            <picture class="advantage-picture">
+                                <source media="(min-width:640px) and (max-width:1199px)" srcset="img/Layer%202-768.png">
+                                <source media="(min-width:1200px)" srcset="img/Layer%202-1440.png">
+                                <img src="img/Layer%202.png" alt="comfort">
+                            </picture>
+                        </div>
+                        <p class="our-advantage-item-p">Online-поддержка</p>
+                    </div>
+                    <div class="our-advantage-item-wrap">
+                        <div class="our-advantage-item">
+                            <picture class="advantage-picture">
+                                <source media="(min-width:640px) and (max-width:1199px)" srcset="img/Layer%204-768.png">
+                                <source media="(min-width:1200px)" srcset="img/Layer%204-1440.png">
+                                <img src="img/Layer%204.png" alt="one-number">
+                            </picture>
+                        </div>
+                        <p class="our-advantage-item-p">Единый номер отслеживания</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="gallery">
+            <div class="gallery-wrap wrap">
+                              <h2 class="gallery-h1">Я ТАМ БЫЛ</h2>
+                              <div class="carousel"
+   data-flickity='{ "lazyLoad": 2, "adaptiveHeight": true, "wrapAround": true, "autoPlay":2000}'>
+  <div class="carousel-cell">
+    <img class="carousel-cell-image" alt="walrus"
+      data-flickity-lazyload-src="https://picsum.photos/360/270/?image=1084"
+      data-flickity-lazyload-srcset="
+        https://picsum.photos/720/540/?image=1084 720w,
+        https://picsum.photos/360/270/?image=1084 360w"
+      sizes="(min-width: 1024px) 720px, 360px"
+      />
+  </div>
+  <div class="carousel-cell">
+    <img class="carousel-cell-image" alt="bokeh"
+      data-flickity-lazyload-src="https://picsum.photos/360/270/?image=56"
+      data-flickity-lazyload-srcset="
+        https://picsum.photos/720/540/?image=56 720w,
+        https://picsum.photos/360/270/?image=56 360w"
+      sizes="(min-width: 1024px) 720px, 360px"
+      />
+  </div>
+  <div class="carousel-cell">
+    <img class="carousel-cell-image" alt="strawberries"
+      data-flickity-lazyload-src="https://picsum.photos/360/270/?image=1080"
+      data-flickity-lazyload-srcset="
+        https://picsum.photos/720/540/?image=1080 720w,
+        https://picsum.photos/360/270/?image=1080 360w"
+      sizes="(min-width: 1024px) 720px, 360px"
+      />
+  </div>
+  <div class="carousel-cell">
+    <img class="carousel-cell-image" alt="wolf"
+      data-flickity-lazyload-src="https://picsum.photos/360/270/?image=718"
+      data-flickity-lazyload-srcset="
+        https://picsum.photos/720/540/?image=718 720w,
+        https://picsum.photos/360/270/?image=718 360w"
+      sizes="(min-width: 1024px) 720px, 360px"
+      />
+  </div>
+  <div class="carousel-cell">
+    <img class="carousel-cell-image" alt="orange tree"
+      data-flickity-lazyload-src="https://picsum.photos/360/270/?image=517"
+      data-flickity-lazyload-srcset="
+        https://picsum.photos/720/540/?image=517 720w,
+        https://picsum.photos/360/270/?image=517 360w"
+      sizes="(min-width: 1024px) 720px, 360px"
+      />
+  </div>
+  <div class="carousel-cell">
+    <img class="carousel-cell-image" alt="tulip"
+      data-flickity-lazyload-src="https://picsum.photos/360/270/?image=696"
+      data-flickity-lazyload-srcset="
+        https://picsum.photos/720/540/?image=696 720w,
+        https://picsum.photos/360/270/?image=696 360w"
+      sizes="(min-width: 1024px) 720px, 360px"
+      />
+  </div>
+</div>
+
+
+  
+            </div>
+        </section>
+        <section class="doubt">
+            <div class="doubt-wrap wrap">
+                <h2 class="doubt-h1">ОСТАЛИСЬ СОМНЕНИЯ?</h2>
+                <details class="doubt-details">
+                    <summary class="doubt-summary">
+                        <span class="doubt-summary-p">
+                            На&nbsp;бумажную волокиту уйдёт много времени, а&nbsp;мне нужно доставить срочно!
+                        </span>
+                    </summary>
+                    <p class="doubt-details-p">Это не&nbsp;так. Вам нужно заполнить и&nbsp;подписать всего один документ, который распространяется на&nbsp;все службы доставки, которые будут доставлять вашу посылку</p>
+                </details>
+                <details class="doubt-details">
+                    <summary class="doubt-summary">
+                        <span class="doubt-summary-p">
+                            Мне необходимо совершить доставку по&nbsp;нескольким адресам, нужно много чего заполнять
+                        </span>
+                    </summary>
+                    <p class="doubt-details-p">Это не&nbsp;так. Вам нужно заполнить и&nbsp;подписать всего один документ, который распространяется на&nbsp;все службы доставки, которые будут доставлять вашу посылку</p>
+                </details>
+                <details class="doubt-details">
+                    <summary class="doubt-summary">
+                        <span class="doubt-summary-p">
+                            Вы&nbsp;не&nbsp;сможете доставить посылку за&nbsp;границу
+                        </span>
+                    </summary>
+                    <p class="doubt-details-p">Это не&nbsp;так. Вам нужно заполнить и&nbsp;подписать всего один документ, который распространяется на&nbsp;все службы доставки, которые будут доставлять вашу посылку</p>
+                </details>
+                <details class="doubt-details">
+                    <summary class="doubt-summary">
+                        <span class="doubt-summary-p">
+                            Вы&nbsp;не&nbsp;занимаетесь такими простыми грузами, как мебель </span>
+                    </summary>
+                    <p class="doubt-details-p">Это не&nbsp;так. Вам нужно заполнить и&nbsp;подписать всего один документ, который распространяется на&nbsp;все службы доставки, которые будут доставлять вашу посылку</p>
+                </details>
+                <details class="doubt-details">
+                    <summary class="doubt-summary">
+                        <span class="doubt-summary-p">
+                            Я&nbsp;отправляю вместе с&nbsp;коллегами, мы&nbsp;можем легко запутаться где чьё
+                        </span>
+                    </summary>
+                    <p class="doubt-details-p">Это не&nbsp;так. Вам нужно заполнить и&nbsp;подписать всего один документ, который распространяется на&nbsp;все службы доставки, которые будут доставлять вашу посылку</p>
+                </details>
+                <details class="doubt-details">
+                    <summary class="doubt-summary">
+                        <span class="doubt-summary-p">
+                            Нужно заполнять кучу документов
+                        </span>
+                    </summary>
+                    <p class="doubt-details-p">Это не&nbsp;так. Вам нужно заполнить и&nbsp;подписать всего один документ, который распространяется на&nbsp;все службы доставки, которые будут доставлять вашу посылку</p>
+                </details>
+            </div>
+        </section>
+        <section class="partners">
+            <div class="partners-wrap wrap">
+                <div class="feedback-slider-arrow-column partners-arrow-column">
+                    <button class="feedback-slider-arrow-btn partners-arrow-btn"><i class="fas fa-chevron-left"></i></button>
+                </div>
+                <ul class="partners-ul">
+                    <li class="partners-li"><a href="#" class="partners-link">
+                            <picture class="warranty-picture">
+                                <source media="(min-width:1200px)" srcset="img/bringo-1440.png">
+                                <img src="img/bringo.png" alt="bringo">
+                            </picture>
+                        </a></li>
+                    <li class="partners-li"><a href="#" class="partners-link">
+                            <picture class="warranty-picture">
+                                <source media="(min-width:1200px)" srcset="img/cdek-1440.png">
+                                <img src="img/cdek.png" alt="cdek">
+                            </picture>
+                        </a></li>
+                    <li class="partners-li"><a href="#" class="partners-link">
+                            <picture class="warranty-picture">
+                                <source media="(min-width:1200px)" srcset="img/city_express-1440.png">
+                                <img src="img/city_express.png" alt="city-express">
+                            </picture>
+                        </a></li>
+                    <li class="partners-li"><a href="#" class="partners-link">
+                            <picture class="warranty-picture">
+                                <source media="(min-width:1200px)" srcset="img/dpd-1440.png">
+                                <img src="img/dpd.png" alt="dpd">
+                            </picture>
+                        </a></li>
+                    <li class="partners-li"><a href="#" class="partners-link">
+                            <picture class="warranty-picture">
+                                <source media="(min-width:1200px)" srcset="img/pony-1440.png">
+                                <img src="img/pony.png" alt="pony">
+                            </picture>
+                        </a></li>
+                    <li class="partners-li"><a href="#" class="partners-link">
+                            <picture class="warranty-picture">
+                                <source media="(min-width:1200px)" srcset="img/spsr-1440.png">
+                                <img src="img/spsr.png" alt="spsr">
+                            </picture>
+                        </a></li>
+                    <li class="partners-li"><a href="#" class="partners-link">
+                            <picture class="warranty-picture">
+                                <source media="(min-width:1200px)" srcset="img/tnt-1440.png">
+                                <img src="img/tnt.png" alt="tnt">
+                            </picture>
+                        </a></li>
+                    <li class="partners-li"><a href="#" class="partners-link">
+                            <picture class="warranty-picture">
+                                <source media="(min-width:1200px)" srcset="img/ups-1440.png">
+                                <img src="img/ups.png" alt="ups">
+                            </picture>
+                        </a></li>
+                </ul>
+                <div class="feedback-slider-arrow-column partners-arrow-column">
+                    <button class="feedback-slider-arrow-btn partners-arrow-btn"><i class="fas fa-chevron-right"></i></button>
+                </div>
+            </div>
+        </section>
+        <footer class="footer">
+            <div class="faq-wrap wrap">
+                <div class="faq-h2-wrap">
+                    <h2 class="faq-h2">ОСТАЛИСЬ ВОПРОСЫ?</h2>
+                    <form class="faq-form">
+                        <input type="tel" placeholder="Ваш телефон" class="faq-input">
+                        <button class="faq-submit-btn">заказать звонок</button>
+                        <label for="personal-data-footer"><input type="checkbox" name="personal-data" id="personal-data-footer" required><span>Я согласен на обработку персональных данных</span></label>
+                    </form>
+                </div>
+                <nav class="nav nav-footer">
+                    <a href="#" class="logo"><img src="img/8f0193b0ffa4806af3c4c42328c4478a.png" alt="SendIt!"></a>
+                    <section class="nav-menu">
+                        <input type="checkbox" id="burger-footer">
+                        <label for="burger-footer" class="burger-label-footer">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </label>
+                        <div class="nav-menu-drop-footer">
+                            <img src="img/logo.png" alt="Sendit!" class="nav-menu-drop-logo">
+                            <ul class="drop_down">
+                                <li class="drop-down-li"><a href="#" class="drop-down-link">Главная</a></li>
+                                <li class="drop-down-li"><a href="#" class="drop-down-link">Описание</a></li>
+                                <li class="drop-down-li"><a href="#" class="drop-down-link">Преимущества</a></li>
+                                <li class="drop-down-li"><a href="#" class="drop-down-link">Отзывы</a></li>
+                                <li class="drop-down-li"><a href="#" class="drop-down-link">Партнёры</a></li>
+                                <li class="drop-down-li"><a href="galery.html" class="drop-down-link">Я там был</a></li>
+                                <li class="drop-down-li"><a href="#" class="drop-down-link">FAQ</a></li>
+                            </ul>
+                            <p>ОСТАЛИСЬ ВОПРОСЫ?</p>
+                            <form class="nav-menu-form">
+                                <input id="nav-menu-tel-footer" type="tel" placeholder="Ваш телефон">
+                                <button id="nav-menu-callback-footer" class="sendit-btn">заказать звонок</button>
+                                <label for="nav-menu-personal-data-footer"><input id="nav-menu-personal-data-footer" type="checkbox">Я согласен на обработку персональных данных</label>
+                            </form>
+                            <div class="social-media">
+                                <a href="#"><i class="fab fa-vk"></i></a>
+                                <a href="#"><i class="fab fa-instagram"></i></a>
+                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                            </div>
+
+                        </div>
+
+                    </section>
+                </nav>
+                <div class="copy">
+                    <p class="copy-p">&copy; Сами копипастим и вам разрешаем</p>
+                    <div class="social-media">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                    </div>
+                    <p class="design-p"><span>2019</span>Задизайнено мной</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

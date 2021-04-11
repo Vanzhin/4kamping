@@ -17,6 +17,7 @@
     <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12"></script>
     <script src="script.js" defer></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" ></script>
 
     <script src="carousel.js"></script>
 
@@ -30,26 +31,19 @@
 
 <body>
     <div id="app">
-        <div class="callback-tel" v-if="isFormActive" v-on:click="formVisibilityChange">
+        <div class="callback-tel" v-bind:class="[{invisible: !isFormActive}]" v-on:click="formVisibilityChange">
+            
         </div>
+        <new-order 
+        v-bind:class="[{invisible: !isFormActive}]"
+        v-on:close-form="formVisibilityChange"
+            v-bind:regexp-tel="regexpTel"
+            v-bind:order-ok-message="orderOkMessage"
+            v-bind:order-err-message="orderErrMessage"
+            v-on:phone-number="userPhoneNum"     
+            ></new-order>
 <!--        <order @search="valueFromChild" v-on:search='isValidTel' v-if="isFormActive" v-bind:is-tel-num-ok="isTelNumOk" v-on:close-form="formVisibilityChange"></order>-->
-<new-order 
-v-if="isFormActive" 
-v-on:close-form="formVisibilityChange" 
-v-bind:regexp-tel="regexpTel"
-v-bind:order-ok-message="orderOkMessage"
-v-bind:order-err-message="orderErrMessage"
-v-bind:order-form-close="orderFormClose"
 
-
-    v-on:phone-number="userPhoneNum"    
-    
-
-    
-    
-    
-   
-></new-order>
         <header class="header">
             <div class="header-wrap wrap">
                 <nav class="nav">
@@ -67,13 +61,13 @@ v-bind:order-form-close="orderFormClose"
                         <h2>4Kamping</h2>
                             <div class="column-menu">
                                <ul class="drop_down">
-                                <li class="drop-down-li"><a href="#" class="drop-down-link">Главная</a></li>
-                                <li class="drop-down-li"><a href="#" class="drop-down-link">О нас</a></li>
-                                <li class="drop-down-li"><a href="#" class="drop-down-link">Преимущества</a></li>
-                                <li class="drop-down-li"><a href="#" class="drop-down-link">Отзывы</a></li>
-                                <li class="drop-down-li"><a href="#" class="drop-down-link">Партнёры</a></li>
-                                <li class="drop-down-li"><a href="galery.html" class="drop-down-link">Я там был</a></li>
-                                <li class="drop-down-li"><a href="#" class="drop-down-link">FAQ</a></li>
+                                <li class="drop-down-li"><a href="#" class="drop-down-link" v-on:click="checkedChange">Главная</a></li>
+                                <li class="drop-down-li"><a href="#whoweare" class="drop-down-link" v-on:click="checkedChange">О нас</a></li>
+                                <li class="drop-down-li"><a href="#" class="drop-down-link" v-on:click="checkedChange">Преимущества</a></li>
+                                <li class="drop-down-li"><a href="#" class="drop-down-link" v-on:click="checkedChange">Отзывы</a></li>
+                                <li class="drop-down-li"><a href="#" class="drop-down-link" v-on:click="checkedChange">Партнёры</a></li>
+                                <li class="drop-down-li"><a href="galery.html" class="drop-down-link" v-on:click="checkedChange">Я там был</a></li>
+                                <li class="drop-down-li"><a href="#" class="drop-down-link" v-on:click="checkedChange">FAQ</a></li>
                             </ul> 
                             </div>
                                                         <div class="column-menu">
@@ -102,7 +96,7 @@ v-bind:order-form-close="orderFormClose"
                 </div>
             </div>
         </header>
-        <section class="whoweare">
+        <section name="whoweare" class="whoweare">
             <div class="whoweare-wrap wrap">
                 <picture class="whoweare-picture">
                     <source media="(min-width:640px) and (max-width:1199px)" srcset="img/Group%202-768.png">
