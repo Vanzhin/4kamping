@@ -84,16 +84,17 @@ Vue.component('order', {
         template: `<div class="callback-tel-wrap" >
         <div class="close" @click="closeForm"><i class="far fa-times-circle"></i></div>
         <div class="server-warning">
-        <div class="server-warning-ok" v-if="orderOkMessage">Благодарю Вас. Заявка принята</div>
+        <div class="server-warning-ok" v-bind:class= "[{ invisible: !orderOkMessage}]">Благодарю Вас. Заявка принята</div>
         <div class="server-warning-err"
-        v-if="orderErrMessage">Упс, что-то пошло не так. 
+        v-bind:class= "[{ invisible: !orderErrMessage}]">Упс, что-то пошло не так. 
         Пожалуйста, попробуйте позднее или свяжитесь с нами по телефону <br>8-999-777-22-22</div></div>
 
             <form action="#" class="contact-info"
-            v-if="!orderFormClose">
+            v-bind:class="[{ invisible: orderFormClose}]" 
+            >
                 <div  class="warning">
-<span class="ok" v-if="correctInput">Ура! Все верно.</span>
-<span class="ok" v-if="!correctInput">Ваш телефон</span></div>
+<span class="ok" v-bind:class= "[{ invisible: !correctInput}]">Ура! Все верно.</span>
+<span class="ok" v-bind:class= "[{ invisible: correctInput}]">Ваш телефон</span></div>
 
 <div class="callback-input-wrap"><input id="your-tel" class="callback-input" placeholder="+7 (___) ___-__-__"
 data-mask="+7 (000) 000-00-00"
@@ -101,7 +102,7 @@ data-mask="+7 (000) 000-00-00"
          type="tel" required title="(000) 000-00-00" v-on:input="maskInput"></div>
                 <button  
 v-bind:class="['sendit-btn', { disabled: !correctInput}]"
-:disabled="!correctInput"
+:disabled=!correctInput
 v-on:click="dataTransfer" type="submit"
 >отправить</button>
 
@@ -199,10 +200,12 @@ v-on:click="dataTransfer" type="submit"
 
             formVisibilityChange() {
                 this.isFormActive = !this.isFormActive;
+
                 //перевожу в начальное положение, чтобы все было как при первом нажатии на кнопку
-                this.orderFormClose = false;
                 this.orderOkMessage = false;
                 this.orderErrMessage = false;
+                this.orderFormClose = false;
+
             },
             handleInput(e) {
                 this.inputValue = e.target.value;
@@ -249,6 +252,7 @@ v-on:click="dataTransfer" type="submit"
                 });
 
                 let result = await response.json();
+                this.clearInput();
                 this.orderFormClose = !this.orderFormClose;
                 if (result.result === 1) {
                     this.orderOkMessage = !this.orderOkMessage;
@@ -257,6 +261,9 @@ v-on:click="dataTransfer" type="submit"
                 }
 
 
+            },
+            clearInput() {
+                document.getElementById("your-tel").value = "";
             },
             //            
 

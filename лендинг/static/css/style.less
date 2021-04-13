@@ -138,155 +138,8 @@ p {
     }
 }
 
-.sendit-btn-no-action {
-    display: flex;
-    align-items: center;
-    justify-content: flex-end;
-    border-radius: 30px;
-    background: @gray;
-    text-transform: uppercase;
-    color: #FFFFFF;
-    font-family: @font-semibold;
-    padding: 16px 30px 13px 0px;
-    max-width: 280px;
-    width: 100%;
-    font-size: 16px;
-}
 
 
-.callback-tel {
-    font-family: MyriadPro-Light;
-    .center-flex();
-    position: fixed;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 999;
-    background-color: rgba(0, 0, 0, 0.8);
-    opacity: 1;
-}
-
-
-.callback-tel-wrap {
-    display: flex;
-    align-items: center;
-    font-family: 'MyriadPro-Light';
-    color: white;
-    position: fixed;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1000;
-    opacity: 1;
-    min-height: 45%;
-    min-width: fit-content;
-    flex-direction: column;
-
-    .contact-info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        min-height: 100%;
-        justify-content: space-evenly;
-
-        .warning {
-            position: relative;
-            height: 40px;
-            width: 100%;
-
-            span {
-                position: absolute;
-                top: 50%;
-                right: 50%;
-                transform: translate(50%, -50%);
-                text-align: center;
-                width: 100%;
-            }
-        }
-    }
-
-    .close {
-        color: white;
-        font-size: 30px;
-        text-align: center;
-        position: absolute;
-        top: -15%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-
-        .far {
-            &:hover {
-                color: @gray;
-            }
-
-            &:active {
-                color: @orange;
-
-            }
-        }
-
-    }
-
-    .server-warning {
-        width: 50%;
-        display: flex;
-        text-align: center;
-    }
-}
-
-.callback-input-wrap {
-    margin-bottom: 15px;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-
-    // &::before {
-    //     content: "Ваш телефон";
-    //     width: 50%;
-    //     height: 0%;
-    //     color: black;
-    //     z-index: 1;
-    //     position: absolute;
-    // }
-}
-
-.callback-input {
-    border-radius: 30px;
-    background: #FFFFFF;
-    color: gray;
-    font-family: MyriadPro-Light;
-    padding: 10px 30px;
-    border: 1px solid #FFFFFF;
-    width: 100%;
-    font-size: 18px;
-    max-width: 280px;
-
-
-    &:hover {
-        box-shadow: 0px 4px 20px 0px rgba(255, 204, 0, 0.55);
-    }
-
-    &:active {
-        background: rgba(252, 227, 156, 1);
-
-
-    }
-
-
-
-}
-
-
-
-.feedback-slider-arrow-btn {
-    font-size: 20px;
-    color: #C4C4C4;
-    padding-top: 15px;
-    background-color: inherit;
-    cursor: pointer;
-
-}
 
 button {
     transition: 0.4s;
@@ -610,6 +463,152 @@ label {}
 
         &:hover {}
     }
+}
+
+.callback-tel {
+    font-family: MyriadPro-Light;
+    .center-flex();
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 999;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 1;
+}
+
+
+.callback-tel-wrap {
+    display: flex;
+    align-items: center;
+    font-family: 'MyriadPro-Light';
+    color: white;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    opacity: 1;
+    min-height: 45%;
+    min-width: fit-content;
+    flex-direction: column;
+
+    .contact-info {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 100%;
+        justify-content: space-evenly;
+        z-index: 1;
+
+        button {
+            transition: box-shadow 0.4s;
+        }
+
+        .warning {
+            position: relative;
+            height: 40px;
+            width: 100%;
+
+            span {
+                position: absolute;
+                top: 50%;
+                right: 50%;
+                transform: translate(50%, -50%);
+                text-align: center;
+                width: 100%;
+            }
+        }
+    }
+
+    .close {
+        color: white;
+        font-size: 30px;
+        text-align: center;
+        position: absolute;
+        top: -15%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        .far {
+            &:hover {
+                color: @gray;
+            }
+
+            &:active {
+                color: @orange;
+
+            }
+        }
+
+    }
+
+    .server-warning {
+        width: 100%;
+        display: flex;
+        text-align: center;
+        position: absolute;
+        z-index: -100;
+
+        div {
+            position: absolute;
+            display: contents;
+        }
+    }
+}
+
+.callback-input-wrap {
+    margin-bottom: 15px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    // &::before {
+    //     content: "Ваш телефон";
+    //     width: 50%;
+    //     height: 0%;
+    //     color: black;
+    //     z-index: 1;
+    //     position: absolute;
+    // }
+}
+
+.callback-input {
+    border-radius: 30px;
+    background: #FFFFFF;
+    color: gray;
+    font-family: MyriadPro-Light;
+    padding: 10px 30px;
+    border: 1px solid #FFFFFF;
+    width: 100%;
+    font-size: 18px;
+    max-width: 280px;
+
+
+    &:hover {
+        box-shadow: 0px 4px 20px 0px rgba(255, 204, 0, 0.55);
+    }
+
+    &:active {
+        background: rgba(252, 227, 156, 1);
+
+
+    }
+
+
+
+}
+
+
+
+.feedback-slider-arrow-btn {
+    font-size: 20px;
+    color: #C4C4C4;
+    padding-top: 15px;
+    background-color: inherit;
+    cursor: pointer;
+
 }
 
 
