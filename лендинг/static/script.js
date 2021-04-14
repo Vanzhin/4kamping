@@ -79,10 +79,12 @@ Vue.component('order', {
 
     }),
     Vue.component('new-order', {
-        props: ['regexpTel', 'orderOkMessage', 'orderErrMessage', 'orderFormClose'],
+        props: ['regexpTel', 'orderOkMessage', 'orderErrMessage', 'orderFormClose', 'loading', ],
 
         template: `<div class="callback-tel-wrap" >
         <div class="close" @click="closeForm"><i class="far fa-times-circle"></i></div>
+        <div class="loading" v-bind:class="[{ invisible: !loading}]"><i class="fas fa-caravan"></i><span>Загрузка</span></div>
+
         <div class="server-warning">
         <div class="server-warning-ok" v-bind:class= "[{ invisible: !orderOkMessage}]">Благодарю Вас. Заявка принята</div>
         <div class="server-warning-err"
@@ -103,7 +105,7 @@ data-mask="+7 (000) 000-00-00"
                 <button  
 v-bind:class="['sendit-btn', { disabled: !correctInput}]"
 :disabled=!correctInput
-v-on:click="dataTransfer" type="submit"
+v-on:click="dataTransfer" type="button"
 >отправить</button>
 
             </form>
@@ -184,12 +186,13 @@ v-on:click="dataTransfer" type="submit"
             orderFormClose: false,
             orderOkMessage: false,
             orderErrMessage: false,
+            loading: false,
 
 
 
         },
         methods: {
-            checkedChange() {
+            checkedChange() { //при нажатии на ссылку в мобильном меню - оно сворачивается
                 const burger = document.querySelector("#burger");
                 console.log(burger);
                 if (burger.checked == !true)
@@ -228,9 +231,15 @@ v-on:click="dataTransfer" type="submit"
 
 
             },
+            changerLoad() {
+                this.loading = !this.loading;
 
+                this.orderFormClose = !this.orderFormClose;
+            },
 
             async addOrderInfo(item) {
+                await this.changerLoad();
+
 
                 let contactLog = {
                     tel: '',
@@ -252,8 +261,8 @@ v-on:click="dataTransfer" type="submit"
                 });
 
                 let result = await response.json();
+                this.loading = !this.loading;
                 this.clearInput();
-                this.orderFormClose = !this.orderFormClose;
                 if (result.result === 1) {
                     this.orderOkMessage = !this.orderOkMessage;
                 } else {

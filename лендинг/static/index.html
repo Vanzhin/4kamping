@@ -41,7 +41,8 @@
             v-bind:order-ok-message="orderOkMessage"
             v-bind:order-err-message="orderErrMessage"
             v-on:phone-number="userPhoneNum" 
-            v-bind:order-form-close="orderFormClose"   
+            v-bind:order-form-close="orderFormClose"  
+            v-bind:loading="loading" 
             ></new-order>
 <!--        <order @search="valueFromChild" v-on:search='isValidTel' v-if="isFormActive" v-bind:is-tel-num-ok="isTelNumOk" v-on:close-form="formVisibilityChange"></order>-->
 
@@ -516,16 +517,16 @@
                     </form>
                 </div>
                 <nav class="nav nav-footer">
-                    <a href="#" class="logo"><img src="img/8f0193b0ffa4806af3c4c42328c4478a.png" alt="SendIt!"></a>
-                    <section class="nav-menu">
-                        <input type="checkbox" id="burger-footer">
-                        <label for="burger-footer" class="burger-label-footer">
+                    <a href="#" class="logo"><h2>4Kamping</h2></a>
+                        <section class="nav-menu">
+                            <input type="checkbox" id="burger-footer">
+                            <label for="burger-footer" class="burger-label-footer">
                             <span></span>
                             <span></span>
                             <span></span>
-                        </label>
-                        <div class="nav-menu-drop-footer">
-                            <img src="img/logo.png" alt="Sendit!" class="nav-menu-drop-logo">
+                            </label>
+                         <div class="nav-menu-drop-footer nav-menu-drop">
+                            <h2>4Kamping</h2> 
                             <ul class="drop_down">
                                 <li class="drop-down-li"><a href="#" class="drop-down-link">Главная</a></li>
                                 <li class="drop-down-li"><a href="#" class="drop-down-link">Описание</a></li>
