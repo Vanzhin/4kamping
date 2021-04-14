@@ -193,12 +193,12 @@ v-on:click="dataTransfer" type="button"
         },
         methods: {
             checkedChange() { //при нажатии на ссылку в мобильном меню - оно сворачивается
-                const burger = document.querySelector("#burger");
+                const burger = document.querySelectorAll(".burger");
                 console.log(burger);
-                if (burger.checked == !true)
-                    burger.checked = true;
-                else
-                    burger.checked = false;
+                for (let i = 0; i < burger.length; i++) {
+                    burger[i].checked = false;
+                }
+
             },
 
             formVisibilityChange() {

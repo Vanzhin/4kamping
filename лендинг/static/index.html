@@ -53,7 +53,7 @@
                         <h2>4Kamping</h2>
                     </a>
                     <section class="nav-menu">
-                        <input type="checkbox" id="burger">
+                        <input type="checkbox" id="burger" class="burger">
                         <label for="burger" class="burger-label">
                             <span></span>
                             <span></span>
@@ -518,36 +518,41 @@
                 </div>
                 <nav class="nav nav-footer">
                     <a href="#" class="logo"><h2>4Kamping</h2></a>
-                        <section class="nav-menu">
-                            <input type="checkbox" id="burger-footer">
-                            <label for="burger-footer" class="burger-label-footer">
+                    <section class="nav-menu">
+                        <input type="checkbox" id="burger-footer" class="burger">
+                        <label for="burger-footer" class="burger-label-footer">
                             <span></span>
                             <span></span>
                             <span></span>
-                            </label>
-                         <div class="nav-menu-drop-footer nav-menu-drop">
-                            <h2>4Kamping</h2> 
-                            <ul class="drop_down">
-                                <li class="drop-down-li"><a href="#" class="drop-down-link">Главная</a></li>
-                                <li class="drop-down-li"><a href="#" class="drop-down-link">Описание</a></li>
-                                <li class="drop-down-li"><a href="#" class="drop-down-link">Преимущества</a></li>
-                                <li class="drop-down-li"><a href="#" class="drop-down-link">Отзывы</a></li>
-                                <li class="drop-down-li"><a href="#" class="drop-down-link">Партнёры</a></li>
-                                <li class="drop-down-li"><a href="galery.html" class="drop-down-link">Я там был</a></li>
-                                <li class="drop-down-li"><a href="#" class="drop-down-link">FAQ</a></li>
-                            </ul>
-                            <p>ОСТАЛИСЬ ВОПРОСЫ?</p>
-                            <form class="nav-menu-form">
-                                <input id="nav-menu-tel-footer" type="tel" placeholder="Ваш телефон">
-                                <button id="nav-menu-callback-footer" class="sendit-btn">заказать звонок</button>
-                                <label for="nav-menu-personal-data-footer"><input id="nav-menu-personal-data-footer" type="checkbox">Я согласен на обработку персональных данных</label>
-                            </form>
-                            <div class="social-media">
-                                <a href="#"><i class="fab fa-vk"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-
+                        </label>
+                        <div class="nav-menu-drop-footer">
+                            <h2>4Kamping</h2>
+                            <div class="column-menu">
+                                <ul class="drop_down">
+                                    <li class="drop-down-li"><a href="#" class="drop-down-link" v-on:click="checkedChange">Главная</a></li>
+                                    <li class="drop-down-li"><a href="#whoweare" class="drop-down-link" v-on:click="checkedChange">О нас</a></li>
+                                    <li class="drop-down-li"><a href="#" class="drop-down-link" v-on:click="checkedChange">Преимущества</a></li>
+                                    <li class="drop-down-li"><a href="#" class="drop-down-link" v-on:click="checkedChange">Отзывы</a></li>
+                                    <li class="drop-down-li"><a href="#" class="drop-down-link" v-on:click="checkedChange">Партнёры</a></li>
+                                    <li class="drop-down-li"><a href="galery.html" class="drop-down-link" v-on:click="checkedChange">Я там был</a></li>
+                                    <li class="drop-down-li"><a href="#" class="drop-down-link" v-on:click="checkedChange">FAQ</a></li>
+                                </ul>  
                             </div>
+                            <div class="column-menu">
+                                <p>ОСТАЛИСЬ ВОПРОСЫ?</p>
+                                <form class="nav-menu-form">
+                                    <input id="nav-menu-tel-footer" type="tel" placeholder="Ваш телефон">
+                                    <button id="nav-menu-callback-footer" class="sendit-btn">заказать звонок</button>
+                                    <label for="nav-menu-personal-data-footer"><input id="nav-menu-personal-data-footer" type="checkbox">Я согласен на обработку персональных данных</label>
+                                </form>
+                                <div class="social-media">
+                                    <a href="#"><i class="fab fa-vk"></i></a>
+                                    <a href="#"><i class="fab fa-instagram"></i></a>
+                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+    
+                                </div>
+                            </div>
+                            
 
                         </div>
 
