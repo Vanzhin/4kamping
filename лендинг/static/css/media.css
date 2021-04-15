@@ -34,6 +34,9 @@
     top: 65%;
     transform: translate(-50%, -50%);
   }
+  .nav-menu-drop-footer h2 {
+    display: block;
+  }
 }
 @media (max-width: 380px) {
   .nav-menu #burger-footer:checked ~ .burger-label-footer {
