@@ -1046,6 +1046,9 @@ label {}
         margin-bottom: 13px;
         max-width: 160px;
         max-height: 160px;
+        font-size: 50px;
+        color: @orange;
+
 
     }
 
@@ -1069,12 +1072,13 @@ label {}
         padding-bottom: 15px;
         display: flex;
         flex-direction: column;
-        background-color: @light-blue;
+        background-color: @light-grey;
     }
 
     .doubt-h1 {
         font-size: 28px;
         margin-bottom: 20px;
+        color: @gray;
     }
 
     .doubt-details {
@@ -1083,7 +1087,7 @@ label {}
 
 
         &[open] {
-            background-color: @light-grey;
+            background-color: @grey;
             border-radius: 32px;
 
             .doubt-summary {
@@ -1111,9 +1115,8 @@ label {}
                 position: absolute;
                 top: 33px;
                 right: 25px;
-                color: #008DCD;
+                color: @orange;
                 font-weight: 900;
-                color: @blue;
                 font-weight: 900;
 
             }
@@ -1150,38 +1153,15 @@ label {}
         padding-bottom: 20px;
         padding-top: 20px;
         .center-flex();
-        justify-content: space-between;
+        justify-content: space-evenly;
 
-        .partners-arrow-column {}
-
-        .partners-arrow-btn {
-            padding-top: 0px;
+        h2 {
+            color: @orange;
         }
 
-
-        .partners-arrow-column {}
-
-        .partners-arrow-btn {}
-
-
-
-        .partners-ul {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+        img {
+            width: 80px;
         }
-
-        .partners-li {
-            &:nth-child(n+7) {
-                display: none;
-            }
-        }
-
-        .partners-link {
-            &:hover {}
-        }
-
-        img {}
     }
 }
 

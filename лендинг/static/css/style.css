@@ -740,6 +740,8 @@ summary::-webkit-details-marker {
   margin-bottom: 13px;
   max-width: 160px;
   max-height: 160px;
+  font-size: 50px;
+  color: #e95110;
 }
 .our-advantage .our-advantage-item-p {
   font-size: 10px;
@@ -751,18 +753,19 @@ summary::-webkit-details-marker {
   padding-bottom: 15px;
   display: flex;
   flex-direction: column;
-  background-color: #D2ECF7;
+  background-color: #F7F7F7;
 }
 .doubt .doubt-h1 {
   font-size: 28px;
   margin-bottom: 20px;
+  color: gray;
 }
 .doubt .doubt-details {
   width: 100%;
   margin-bottom: 10px;
 }
 .doubt .doubt-details[open] {
-  background-color: #F7F7F7;
+  background-color: #E9E9E9;
   border-radius: 32px;
 }
 .doubt .doubt-details[open] .doubt-summary {
@@ -786,7 +789,7 @@ summary::-webkit-details-marker {
   position: absolute;
   top: 33px;
   right: 25px;
-  color: #008DCD;
+  color: #e95110;
   font-weight: 900;
 }
 .doubt .doubt-details .doubt-summary[open] {
@@ -813,18 +816,13 @@ summary::-webkit-details-marker {
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-evenly;
 }
-.partners .partners-wrap .partners-arrow-btn {
-  padding-top: 0px;
+.partners .partners-wrap h2 {
+  color: #e95110;
 }
-.partners .partners-wrap .partners-ul {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-around;
-}
-.partners .partners-wrap .partners-li:nth-child(n+7) {
-  display: none;
+.partners .partners-wrap img {
+  width: 80px;
 }
 .footer .faq-wrap {
   padding-top: 15px;
@@ -1329,9 +1327,9 @@ summary::-webkit-details-marker {
     font-size: 16px;
   }
   .partners .partners-wrap {
-    padding-bottom: 40px;
-    padding-top: 40px;
-    justify-content: space-between;
+    /* padding-bottom: 40px; */
+    /* padding-top: 40px; */
+    /* justify-content: space-between; */
   }
   .partners .partners-wrap .partners-li:nth-child(n) {
     display: block;
@@ -1570,8 +1568,8 @@ summary::-webkit-details-marker {
     width: 49%;
   }
   .partners .partners-wrap {
-    padding-bottom: 55px;
-    padding-top: 55px;
+    /* padding-bottom: 55px; */
+    /* padding-top: 55px; */
   }
   .footer .faq-h2 {
     font-size: 30px;

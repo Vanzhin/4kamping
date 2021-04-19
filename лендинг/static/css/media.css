@@ -373,11 +373,6 @@
   .doubt .doubt-details .doubt-details-p {
     font-size: 16px;
   }
-  .partners .partners-wrap {
-    padding-bottom: 40px;
-    padding-top: 40px;
-    justify-content: space-between;
-  }
   .partners .partners-wrap .partners-li:nth-child(n) {
     display: block;
   }
@@ -613,10 +608,6 @@
   .doubt .doubt-details {
     margin: 10px 0;
     width: 49%;
-  }
-  .partners .partners-wrap {
-    padding-bottom: 55px;
-    padding-top: 55px;
   }
   .footer .faq-h2 {
     font-size: 30px;
