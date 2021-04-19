@@ -45,12 +45,12 @@
 h1 {
   font-family: MyriadPro-Black;
   font-size: 32px;
-  color: #000000;
+  color: #F7F7F7;
 }
 h2 {
   font-family: MyriadPro-Semibold;
   font-size: 24px;
-  color: #000000;
+  color: #F7F7F7;
 }
 p {
   font-family: MyriadPro-Regular;
@@ -146,9 +146,6 @@ summary::-webkit-details-marker {
   margin-bottom: calc(20%*4);
   align-items: center;
 }
-h2 {
-  color: white;
-}
 .nav-menu {
   display: flex;
 }
@@ -199,6 +196,7 @@ h2 {
   line-height: 22px;
   padding-bottom: 10px;
   padding-top: 10px;
+  max-width: 280px;
 }
 .nav-menu-drop-footer {
   padding: 13px 21px 30px;
@@ -227,14 +225,15 @@ h2 {
   line-height: 22px;
   padding-bottom: 10px;
   padding-top: 10px;
+  max-width: 280px;
 }
 .nav-menu-drop-footer .social-media {
-  margin-top: 0px;
+  margin-top: 24px;
   margin-bottom: 24px;
   display: flex;
   justify-content: space-between;
 }
-.drop_down {
+.drop-down {
   display: block;
 }
 .drop-down-li {
@@ -326,7 +325,7 @@ h2 {
   justify-content: center;
   align-items: center;
   color: #ffffff;
-  background: #008DCD;
+  background: #e95110;
   border-radius: 50%;
   min-width: 38px;
   min-height: 38px;
@@ -357,7 +356,6 @@ h2 {
   transform: translate(-50%, -50%);
   z-index: 1000;
   opacity: 1;
-  min-height: 45%;
   min-width: fit-content;
   flex-direction: column;
 }
@@ -485,6 +483,7 @@ h2 {
   display: block;
   width: 100%;
   line-height: 38px;
+  color: gray;
 }
 .whoweare p {
   font-size: 12px;
@@ -500,6 +499,10 @@ h2 {
   flex-direction: column;
   padding-bottom: 27px;
   padding-top: 27px;
+  color: gray;
+}
+.steps .steps-wrap h2 {
+  color: gray;
 }
 .steps .steps-wrap + p {
   font-size: 14px;
@@ -548,7 +551,7 @@ h2 {
   margin-bottom: 6px;
 }
 .order .order-wrap {
-  background: #F7F7F7;
+  background: #e95110;
   padding-bottom: 23px;
   padding-top: 23px;
   display: flex;
@@ -558,6 +561,7 @@ h2 {
 .order .order-h2 {
   font-size: 24px;
   margin-bottom: 9px;
+  color: #F7F7F7;
 }
 .callback .callback-wrap {
   background: #008DCD;
@@ -917,6 +921,38 @@ h2 {
   visibility: hidden;
   opacity: 0;
 }
+.pictures {
+  /* Create four equal columns that sits next to each other */
+}
+.pictures .row {
+  display: -ms-flexbox;
+  /* IE10 */
+  display: flex;
+  -ms-flex-wrap: wrap;
+  /* IE10 */
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+.pictures .column {
+  -ms-flex: 25%;
+  /* IE10 */
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+.pictures .column picture {
+  margin-top: 8px;
+  vertical-align: middle;
+}
+.pictures .column picture:hover {
+  box-shadow: 0px 4px 15px 0px gray;
+}
+.pictures .column picture img {
+  width: 100%;
+}
+.pictures .column picture img:hover {
+  box-shadow: 0px 4px 15px 0px gray;
+}
 /*variables*/
 @media (max-width: 230px) {
   .nav-menu-drop-logo {
@@ -934,6 +970,9 @@ h2 {
   }
   .header .header-h1 {
     text-align: center;
+  }
+  .header .header-h2 {
+    visibility: hidden;
   }
   .nav {
     margin-bottom: 0px;
@@ -962,6 +1001,20 @@ h2 {
     margin-top: 25px;
     bottom: 80px;
     right: 20px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .pictures .column {
+    -ms-flex: 50%;
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+@media screen and (max-width: 600px) {
+  .pictures .column {
+    -ms-flex: 100%;
+    flex: 100%;
+    max-width: 100%;
   }
 }
 @media (max-width: 320px) {
@@ -1110,7 +1163,7 @@ h2 {
   .nav-menu .nav-menu-drop-logo {
     display: none;
   }
-  .nav-menu .drop_down {
+  .nav-menu .drop-down {
     flex-direction: row;
     justify-content: space-between;
     display: flex;
@@ -1332,7 +1385,7 @@ h2 {
     background-color: inherit;
     padding: 0;
   }
-  .footer .drop_down {
+  .footer .drop-down {
     justify-content: space-between;
   }
   .footer .drop-down-link {

@@ -44,60 +44,11 @@
             v-bind:order-form-close="orderFormClose"  
             v-bind:loading="loading" 
             ></new-order>
-<!--        <order @search="valueFromChild" v-on:search='isValidTel' v-if="isFormActive" v-bind:is-tel-num-ok="isTelNumOk" v-on:close-form="formVisibilityChange"></order>-->
 
-        <header class="header">
-            <div class="header-wrap wrap">
-                <nav class="nav">
-                    <a href="#" class="logo">
-                        <h2>4Kamping</h2>
-                    </a>
-                    <section class="nav-menu">
-                        <input type="checkbox" id="burger" class="burger">
-                        <label for="burger" class="burger-label">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </label>
-                        <div class="nav-menu-drop">
-                        <h2>4Kamping</h2>
-                            <div class="column-menu">
-                               <ul class="drop_down">
-                                <li class="drop-down-li"><a href="#" class="drop-down-link" v-on:click="checkedChange">Главная</a></li>
-                                <li class="drop-down-li"><a href="#whoweare" class="drop-down-link" v-on:click="checkedChange">О нас</a></li>
-                                <li class="drop-down-li"><a href="#" class="drop-down-link" v-on:click="checkedChange">Преимущества</a></li>
-                                <li class="drop-down-li"><a href="#" class="drop-down-link" v-on:click="checkedChange">Отзывы</a></li>
-                                <li class="drop-down-li"><a href="#" class="drop-down-link" v-on:click="checkedChange">Партнёры</a></li>
-                                <li class="drop-down-li"><a href="galery.html" class="drop-down-link" v-on:click="checkedChange">Я там был</a></li>
-                                <li class="drop-down-li"><a href="#" class="drop-down-link" v-on:click="checkedChange">FAQ</a></li>
-                            </ul> 
-                            </div>
-                                                        <div class="column-menu">
-
-                            <p>ОСТАЛИСЬ ВОПРОСЫ?</p>
-                            <form class="nav-menu-form">
-                                <input id="nav-menu-tel" type="tel" placeholder="Ваш телефон">
-                                <button id="nav-menu-callback" class="sendit-btn">заказать звонок</button>
-                                <label for="nav-menu-personal-data"><input id="nav-menu-personal-data" type="checkbox">Я согласен на обработку персональных данных</label>
-                            </form>
-                            <div class="social-media">
-                                <a href="#"><i class="fab fa-vk"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-
-                            </div>
-
-                        </div>
-</div>
-                    </section>
-                </nav>
-                <div class="header-h1-wrap">
-                    <h1 class="header-h1">Слоган 1</h1>
-                    <h2 class="header-h2">Слоган 2</h2>
-                    <button class="sendit-btn header-sendit-btn" v-on:click="formVisibilityChange">арендовать</button>
-                </div>
-            </div>
-        </header>
+        <v-header
+        v-bind:checked-change='checkedChange'
+                v-bind:form-visibility-change="formVisibilityChange"
+                v-bind:menu-links='menuLinks'></v-header>
         <section name="whoweare" class="whoweare">
             <div class="whoweare-wrap wrap">
                 <picture class="whoweare-picture">
@@ -105,8 +56,8 @@
                     <source media="(min-width:1200px)" srcset="img/Group%202-1440.png">
                     <img src="img/Group%202.png" alt="agregator">
                 </picture>
-                <h2 class="whoweare-h2">Мы – агрегатор служб доставки</h2>
-                <p class="whoweare-p">С нами удобно вам, вашим клиентам и курьерским службам. Для вас наши услуги бесплатны, так как мы получаем бонусы от служб доставок за предоставленный объем заказов, а вы получаете надежный сервис в подарок!</p>
+                <h2 class="whoweare-h2">Мы – сервис по аренде кемперов</h2>
+                <p class="whoweare-p">С нами удобно Вам, вашим клиентам и курьерским службам. Для вас наши услуги бесплатны, так как мы получаем бонусы от служб доставок за предоставленный объем заказов, а вы получаете надежный сервис в подарок!</p>
                 <button class="sendit-btn header-sendit-btn" v-on:click="formVisibilityChange">арендовать</button>
             </div>
         </section>
@@ -120,7 +71,7 @@
                     </picture>
 
                     <h2 class="step1-h2">Шаг 1</h2>
-                    <p class="step1-p">Придумайте, что и кому отправить</p>
+                    <p class="step1-p">Придумаете, куда поехать</p>
                 </div>
                 <div class="steps-item step2">
                     <picture class="whoweare-picture">
@@ -129,7 +80,7 @@
                         <img src="img/Asset%204@4x%202.png" alt="create">
                     </picture>
                     <h2 class="step2-h2">Шаг 2</h2>
-                    <p class="step2-p">Создайте заявку на сайте SendIt - Ваш персональный менеджер позвонит и подтвердит запрос, уточнит все необходимые данные</p>
+                    <p class="step2-p">Оставляете заявку на сайте 4Kamping.ru - менеджер позвонит и подтвердит запрос, уточнит все необходимые данные</p>
                 </div>
                 <div class="steps-item step3">
                     <picture class="whoweare-picture">
@@ -138,7 +89,7 @@
                         <img src="img/Asset%205@4x.png" alt="meet">
                     </picture>
                     <h2 class="step3-h2">Шаг 3</h2>
-                    <p class="step3-p">К Вам приезжает курьер, забирает посылку, Вы подписываете один документ</p>
+                    <p class="step3-p">Подписываете договор аренды и забираете кемпер</p>
                 </div>
                 <div class="steps-item step4">
                     <picture class="whoweare-picture">
@@ -148,37 +99,19 @@
                     </picture>
 
                     <h2 class="step4-h2">Шаг 4</h2>
-                    <p class="step4-p">Вы ждёте подтверждения доставки, слова радости и благодарности от адресата :)</p>
+                    <p class="step4-p">Наслаждаетесь комфортом на природе :)</p>
                 </div>
             </div>
         </section>
         <section class="order">
             <div class="order-wrap wrap">
                 <h2 class="order-h2">
-                    Мы берём все заботы по доставке на&nbsp;себя!
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit.!
                 </h2>
                 <button class="sendit-btn header-sendit-btn" v-on:click="formVisibilityChange">арендовать</button>
             </div>
         </section>
-        <section class="callback">
-            <div class="callback-wrap wrap">
-                <div class="callback-wrap-h2-wrap">
-                    <h2 class="callback-h1">
-                        хотите мы вам перезвоним?
-                    </h2>
-                    <p class="callback-p">
-                        Закажите звонок, и менеджер вам всё расскажет и объяснит
-                    </p>
-                </div>
-                <form class="callback-form">
-                    <input type="tel" placeholder="Ваш телефон" class="callback-input">
-                    <button class="submit-btn callback-submit-btn">заказать звонок</button>
-                    <label for="personal-data"><input type="checkbox" name="personal-data" id="personal-data" required><span>Я согласен на обработку персональных данных</span></label>
-
-                </form>
-            </div>
-        </section>
-        <section class="feedback">
+        <section name="feedback" class="feedback">
             <div class="feedback-wrap wrap">
                 <h2 class="feedback-h1">ОТЗЫВЫ</h2>
 
@@ -260,7 +193,7 @@
 
             </div>
         </section>
-        <section class="our-advantage">
+        <section  name="our-advantage" class="our-advantage">
             <div class="our-advantage-wrap wrap">
                 <h2 class="our-advantage-h2">
                     НАШИ ПРЕИМУЩЕСТВА
@@ -274,7 +207,7 @@
                                 <img src="img/Layer%203.png" alt="free-sevice">
                             </picture>
                         </div>
-                        <p class="our-advantage-item-p">Бесплатный сервис</p>
+                        <p class="our-advantage-item-p">Возможноть доставки кемпера</p>
                     </div>
                     <div class="our-advantage-item-wrap">
                         <div class="our-advantage-item">
@@ -284,7 +217,7 @@
                                 <img src="img/Layer%201.png" alt="select">
                             </picture>
                         </div>
-                        <p class="our-advantage-item-p">Огромный выбор вариантов доставки</p>
+                        <p class="our-advantage-item-p">Новые кемперы и оборудование</p>
                     </div>
                     <div class="our-advantage-item-wrap">
                         <div class="our-advantage-item">
@@ -294,7 +227,7 @@
                                 <img src="img/Layer%206.png" alt="parameter">
                             </picture>
                         </div>
-                        <p class="our-advantage-item-p">4 параметра лучшего предложения</p>
+                        <p class="our-advantage-item-p">Стильный дизайн</p>
                     </div>
                     <div class="our-advantage-item-wrap">
                         <div class="our-advantage-item">
@@ -304,7 +237,7 @@
                                 <img src="img/Layer%205.png" alt="comfort">
                             </picture>
                         </div>
-                        <p class="our-advantage-item-p">Удобство заказа</p>
+                        <p class="our-advantage-item-p">В кемпере есть полевая кухня</p>
                     </div>
                     <div class="our-advantage-item-wrap">
                         <div class="our-advantage-item">
@@ -314,7 +247,7 @@
                                 <img src="img/Layer%202.png" alt="comfort">
                             </picture>
                         </div>
-                        <p class="our-advantage-item-p">Online-поддержка</p>
+                        <p class="our-advantage-item-p">Легкость управления и установки</p>
                     </div>
                     <div class="our-advantage-item-wrap">
                         <div class="our-advantage-item">
@@ -324,12 +257,12 @@
                                 <img src="img/Layer%204.png" alt="one-number">
                             </picture>
                         </div>
-                        <p class="our-advantage-item-p">Единый номер отслеживания</p>
+                        <p class="our-advantage-item-p">!!!!!!! !!!!!! !!!!!!!!</p>
                     </div>
                 </div>
             </div>
         </section>
-        <section class="gallery">
+        <section name="gallery" class="gallery">
             <div class="gallery-wrap wrap">
                               <h2 class="gallery-h1">Я ТАМ БЫЛ</h2>
                               <div class="carousel"
@@ -394,7 +327,7 @@
   
             </div>
         </section>
-        <section class="doubt">
+        <section name="doubt" class="doubt">
             <div class="doubt-wrap wrap">
                 <h2 class="doubt-h1">ОСТАЛИСЬ СОМНЕНИЯ?</h2>
                 <details class="doubt-details">
@@ -506,70 +439,10 @@
                 </div>
             </div>
         </section>
-        <footer class="footer">
-            <div class="faq-wrap wrap">
-                <div class="faq-h2-wrap">
-                    <h2 class="faq-h2">ОСТАЛИСЬ ВОПРОСЫ?</h2>
-                    <form class="faq-form">
-                        <input type="tel" placeholder="Ваш телефон" class="faq-input">
-                        <button class="faq-submit-btn">заказать звонок</button>
-                        <label for="personal-data-footer"><input type="checkbox" name="personal-data" id="personal-data-footer" required><span>Я согласен на обработку персональных данных</span></label>
-                    </form>
-                </div>
-                <nav class="nav nav-footer">
-                    <a href="#" class="logo"><h2>4Kamping</h2></a>
-                    <section class="nav-menu">
-                        <input type="checkbox" id="burger-footer" class="burger">
-                        <label for="burger-footer" class="burger-label-footer">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </label>
-                        <div class="nav-menu-drop-footer">
-                            <h2>4Kamping</h2>
-                            <div class="column-menu">
-                                <ul class="drop_down">
-                                    <li class="drop-down-li"><a href="#" class="drop-down-link" v-on:click="checkedChange">Главная</a></li>
-                                    <li class="drop-down-li"><a href="#whoweare" class="drop-down-link" v-on:click="checkedChange">О нас</a></li>
-                                    <li class="drop-down-li"><a href="#" class="drop-down-link" v-on:click="checkedChange">Преимущества</a></li>
-                                    <li class="drop-down-li"><a href="#" class="drop-down-link" v-on:click="checkedChange">Отзывы</a></li>
-                                    <li class="drop-down-li"><a href="#" class="drop-down-link" v-on:click="checkedChange">Партнёры</a></li>
-                                    <li class="drop-down-li"><a href="galery.html" class="drop-down-link" v-on:click="checkedChange">Я там был</a></li>
-                                    <li class="drop-down-li"><a href="#" class="drop-down-link" v-on:click="checkedChange">FAQ</a></li>
-                                </ul>  
-                            </div>
-                            <div class="column-menu">
-                                <p>ОСТАЛИСЬ ВОПРОСЫ?</p>
-                                <form class="nav-menu-form">
-                                    <input id="nav-menu-tel-footer" type="tel" placeholder="Ваш телефон">
-                                    <button id="nav-menu-callback-footer" class="sendit-btn">заказать звонок</button>
-                                    <label for="nav-menu-personal-data-footer"><input id="nav-menu-personal-data-footer" type="checkbox">Я согласен на обработку персональных данных</label>
-                                </form>
-                                <div class="social-media">
-                                    <a href="#"><i class="fab fa-vk"></i></a>
-                                    <a href="#"><i class="fab fa-instagram"></i></a>
-                                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-    
-                                </div>
-                            </div>
-                            
-
-                        </div>
-
-                    </section>
-                </nav>
-                <div class="copy">
-                    <p class="copy-p">&copy; Сами копипастим и вам разрешаем</p>
-                    <div class="social-media">
-                        <a href="#"><i class="fab fa-vk"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-
-                    </div>
-                    <p class="design-p"><span>2019</span>Задизайнено мной</p>
-                </div>
-            </div>
-        </footer>
+        <v-footer
+        v-bind:checked-change='checkedChange'
+                v-bind:form-visibility-change="formVisibilityChange"
+                v-bind:menu-links='menuLinks'></v-footer>
     </div>
 </body>
 

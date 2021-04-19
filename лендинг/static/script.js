@@ -1,36 +1,157 @@
 "use strict"
 const API_ROOT = 'http://localhost:3000';
-const request = (path = '', method = 'GET', body) => {
-    return new Promise((resolve, reject) => {
-        let xhr;
-        if (window.XMLHttpRequest) {
-            xhr = new XMLHttpRequest();
-        } else if (window.ActiveXObject) {
-            xhr = new ActiveXObject("Microsoft.XMLHTTP");
-        }
+Vue.component('v-header', {
+    props: ['checkedChange', 'formVisibilityChange', 'menuLinks'],
 
-        xhr.onreadystatechange = () => {
-            if (xhr.readyState === 4) {
-                if (xhr.status === 200) {
-                    console.log(xhr.responseText);
-                    console.log(JSON.parse(xhr.responseText))
-                    resolve(JSON.parse(xhr.responseText));
-                } else {
-                    reject(xhr.responseText);
-                }
-            }
-        }
+    template: `
+    <header name="header" class="header">
+            <div class="header-wrap wrap">
+                <v-header-menu
+                v-bind:checked-change='checkedChange'
+                v-bind:form-visibility-change="formVisibilityChange"
+                v-bind:menu-links='menuLinks'></v-header-menu>
+                <div class="header-h1-wrap">
+                    <h1 class="header-h1">Отдых как искусство</h1>
+                    <h2 class="header-h2">Слоган 2</h2>
+                    <button class="sendit-btn header-sendit-btn" v-on:click="formVisibilityChange">арендовать</button>
+                </div>
+            </div>
+        </header>`
+})
 
-        xhr.open(method, `${API_ROOT}/${path}`);
-        xhr.setRequestHeader('Content-type', 'application/json');
-        xhr.send(body);
-    });
-}
+Vue.component('v-header-menu', {
+    props: ['checkedChange', 'formVisibilityChange', 'menuLinks'],
 
+    template: `<nav class="nav">
+    <a href="#" class="logo">
+        <h2>4Kamping</h2>
+    </a>
+    <section class="nav-menu">
+        <input type="checkbox" id="burger" class="burger">
+        <label for="burger" class="burger-label">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <div class="nav-menu-drop">
+        <h2>4Kamping</h2>
+            <div class="column-menu">
+               <ul class="drop-down">
+                <li class="drop-down-li" v-for="item in menuLinks"><a :href="item.link" class="drop-down-link" v-on:click="checkedChange">{{item.name}}</a></li>
+            </ul> 
+            </div>
+            <div class="column-menu">
 
+            <p>ОСТАЛИСЬ ВОПРОСЫ?</p>
+            <p>Закажите звонок, и менеджер Вам всё расскажет и объяснит</p>
+            <form class="nav-menu-form">
+            <button class="sendit-btn header-sendit-btn" v-on:click="formVisibilityChange">заказать звонок</button>
 
+            </form>
+            <div class="social-media">
+                <a href="#"><i class="fab fa-vk"></i></a>
+                <a href="https://instagram.com/4kamping"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
 
-Vue.component('order', {
+            </div>
+
+        </div>
+</div>
+    </section>
+</nav>
+    `
+})
+
+Vue.component('v-footer', {
+    props: ['checkedChange', 'formVisibilityChange', 'menuLinks'],
+
+    template: `
+    <footer class="footer">
+            <div class="faq-wrap wrap">
+                <div class="faq-h2-wrap">
+                    <h2 class="faq-h2">ОСТАЛИСЬ ВОПРОСЫ?</h2>
+                    <form class="faq-form">
+                        <input type="tel" placeholder="Ваш телефон" class="faq-input">
+                        <button class="faq-submit-btn">заказать звонок</button>
+                        <label for="personal-data-footer"><input type="checkbox" name="personal-data" id="personal-data-footer" required><span>Я согласен на обработку персональных данных</span></label>
+                    </form>
+                </div>
+                <v-footer-menu
+                v-bind:checked-change='checkedChange'
+                v-bind:form-visibility-change="formVisibilityChange"
+                v-bind:menu-links='menuLinks'></v-footer-menu>
+                <div class="copy">
+                    <p class="copy-p">&copy; Сами копипастим и вам разрешаем</p>
+                    <div class="social-media">
+                        <a href="#"><i class="fab fa-vk"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                    </div>
+                    <p class="design-p"><span>2019</span>Задизайнено мной</p>
+                </div>
+            </div>
+        </footer>`
+})
+
+Vue.component('v-footer-menu', {
+    props: ['checkedChange', 'formVisibilityChange', 'menuLinks'],
+
+    template: `<nav class="nav nav-footer">
+    <a href="#" class="logo"><h2>4Kamping</h2></a>
+    <section class="nav-menu">
+        <input type="checkbox" id="burger-footer" class="burger">
+        <label for="burger-footer" class="burger-label-footer">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+        <div class="nav-menu-drop-footer">
+            <h2>4Kamping</h2>
+            <div class="column-menu">
+                <ul class="drop-down">
+                <li class="drop-down-li" v-for="item in menuLinks"><a :href="item.link" class="drop-down-link" v-on:click="checkedChange">{{item.name}}</a></li>
+
+                </ul>  
+            </div>
+            <div class="column-menu">
+                <p>ОСТАЛИСЬ ВОПРОСЫ?</p>
+                <p>Закажите звонок, и менеджер Вам всё расскажет и объяснит</p>
+
+                <form class="nav-menu-form">
+                <button class="sendit-btn header-sendit-btn" v-on:click="formVisibilityChange">заказать звонок</button>
+
+                </form>
+                <div class="social-media">
+                    <a href="#"><i class="fab fa-vk"></i></a>
+                    <a href="https://instagram.com/4kamping"><i class="fab fa-instagram"></i></a>
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+
+                </div>
+            </div>
+            
+
+        </div>
+
+    </section>
+</nav>
+    `
+})
+
+Vue.component('picture-list', {
+        props: ['pictures'],
+        template: `
+    <div class="column">
+
+    <picture class="pictures-picture" v-for="item in pictures" >
+    <source media="(min-width:640px) and (max-width:1199px)" :srcset="item.srcTablet">
+    <source media="(min-width:1200px)" :srcset="item.src">
+    <img :src="item.srcMobile" alt="picture">
+</picture>
+    </div>`,
+    }),
+
+    Vue.component('order', {
         props: {
             isTelNumOk: {
                 type: Boolean,
@@ -187,10 +308,161 @@ v-on:click="dataTransfer" type="button"
             orderOkMessage: false,
             orderErrMessage: false,
             loading: false,
+            menuLinks: [{
+                name: "О нас",
+                link: "#whoweare"
+            }, {
+                name: "Преимущества",
+                link: "#our-advantage"
+            }, {
+                name: "Отзывы",
+                link: "#feedback"
+            }, {
+                name: "Цены",
+                link: "#prices"
+            }, {
+                name: "Фото",
+                link: "#gallery"
+            }, {
+                name: "Вопросы",
+                link: "#doubt"
+            }, {
+                name: "Контакты",
+                link: "#contact"
+            }],
+
+            pictures: [{
+                    main: false,
+                    src: 'img/IMG_1140.JPG',
+                    srcMobile: 'img/IMG_1140.JPG',
+                    srcTablet: 'img/IMG_1140.JPG'
+                },
+                {
+                    main: false,
+                    src: 'img/IMG_0613.JPG',
+                    srcMobile: 'img/IMG_0613.JPG',
+                    srcTablet: 'img/IMG_0613.JPG'
+                },
+                {
+                    main: false,
+                    src: 'img/IMG_0614.JPG',
+                    srcMobile: 'img/IMG_0614.JPG',
+                    srcTablet: 'img/IMG_0614.JPG'
+                },
+                {
+                    main: false,
+                    src: 'img/IMG_0619.JPG',
+                    srcMobile: 'img/IMG_0619.JPG',
+                    srcTablet: 'img/IMG_0619.JPG'
+                },
+                {
+                    main: false,
+                    src: 'img/IMG_0621.JPG',
+                    srcMobile: 'img/IMG_0621.JPG',
+                    srcTablet: 'img/IMG_0621.JPG'
+                },
+                {
+                    main: false,
+                    src: 'img/IMG_1142.JPG',
+                    srcMobile: 'img/IMG_1142.JPG',
+                    srcTablet: 'img/IMG_1142.JPG'
+                },
+                {
+                    main: false,
+                    src: 'img/IMG_1144.JPG',
+                    srcMobile: 'img/IMG_1144.JPG',
+                    srcTablet: 'img/IMG_1144.JPG'
+                },
+                {
+                    main: false,
+                    src: 'img/IMG_1140.JPG',
+                    srcMobile: 'img/IMG_1140.JPG',
+                    srcTablet: 'img/IMG_1140.JPG'
+                },
+                {
+                    main: false,
+                    src: 'img/IMG_0613.JPG',
+                    srcMobile: 'img/IMG_0613.JPG',
+                    srcTablet: 'img/IMG_0613.JPG'
+                },
+                {
+                    main: false,
+                    src: 'img/IMG_0614.JPG',
+                    srcMobile: 'img/IMG_0614.JPG',
+                    srcTablet: 'img/IMG_0614.JPG'
+                },
+                {
+                    main: false,
+                    src: 'img/IMG_0619.JPG',
+                    srcMobile: 'img/IMG_0619.JPG',
+                    srcTablet: 'img/IMG_0619.JPG'
+                },
+                {
+                    main: false,
+                    src: 'img/IMG_0621.JPG',
+                    srcMobile: 'img/IMG_0621.JPG',
+                    srcTablet: 'img/IMG_0621.JPG'
+                },
+                {
+                    main: false,
+                    src: 'img/IMG_1142.JPG',
+                    srcMobile: 'img/IMG_1142.JPG',
+                    srcTablet: 'img/IMG_1142.JPG'
+                },
+                {
+                    main: false,
+                    src: 'img/IMG_1144.JPG',
+                    srcMobile: 'img/IMG_1144.JPG',
+                    srcTablet: 'img/IMG_1144.JPG'
+                },
+                {
+                    main: false,
+                    src: 'img/IMG_1140.JPG',
+                    srcMobile: 'img/IMG_1140.JPG',
+                    srcTablet: 'img/IMG_1140.JPG'
+                },
+                {
+                    main: false,
+                    src: 'img/IMG_0613.JPG',
+                    srcMobile: 'img/IMG_0613.JPG',
+                    srcTablet: 'img/IMG_0613.JPG'
+                },
+                {
+                    main: false,
+                    src: 'img/IMG_0614.JPG',
+                    srcMobile: 'img/IMG_0614.JPG',
+                    srcTablet: 'img/IMG_0614.JPG'
+                },
+                {
+                    main: false,
+                    src: 'img/IMG_0619.JPG',
+                    srcMobile: 'img/IMG_0619.JPG',
+                    srcTablet: 'img/IMG_0619.JPG'
+                },
+                {
+                    main: false,
+                    src: 'img/IMG_0621.JPG',
+                    srcMobile: 'img/IMG_0621.JPG',
+                    srcTablet: 'img/IMG_0621.JPG'
+                },
+                {
+                    main: false,
+                    src: 'img/IMG_1142.JPG',
+                    srcMobile: 'img/IMG_1142.JPG',
+                    srcTablet: 'img/IMG_1142.JPG'
+                },
+                {
+                    main: false,
+                    src: 'img/IMG_1144.JPG',
+                    srcMobile: 'img/IMG_1144.JPG',
+                    srcTablet: 'img/IMG_1144.JPG'
+                },
+            ]
 
 
 
         },
+
         methods: {
             checkedChange() { //при нажатии на ссылку в мобильном меню - оно сворачивается
                 const burger = document.querySelectorAll(".burger");
@@ -284,7 +556,8 @@ v-on:click="dataTransfer" type="button"
             },
         }
 
-    })
+    });
+
 // smoth transition href
 $(function () {
     $('a[href*=#]').click(function () {

@@ -87,13 +87,13 @@
 h1 {
     font-family: @font-black;
     font-size: 32px;
-    color: #000000;
+    color: @light-grey;
 }
 
 h2 {
     font-family: @font-semibold;
     font-size: 24px;
-    color: #000000;
+    color: @light-grey;
 }
 
 p {
@@ -231,10 +231,6 @@ summary::-webkit-details-marker {
     align-items: center;
 }
 
-h2 {
-    color: white;
-}
-
 .logo {
     &:hover {}
 }
@@ -311,6 +307,7 @@ img {}
         line-height: 22px;
         padding-bottom: 10px;
         padding-top: 10px;
+        max-width: 280px;
     }
 }
 
@@ -343,17 +340,19 @@ img {}
         line-height: 22px;
         padding-bottom: 10px;
         padding-top: 10px;
+        max-width: 280px;
+
     }
 
     .social-media {
-        margin-top: 0px;
+        margin-top: 24px;
         margin-bottom: 24px;
         display: flex;
         justify-content: space-between;
     }
 }
 
-.drop_down {
+.drop-down {
     display: block;
 
 }
@@ -471,7 +470,7 @@ label {}
     a {
         .center-flex();
         color: #ffffff;
-        background: @blue;
+        background: @orange;
         border-radius: 50%;
         min-width: 38px;
         min-height: 38px;
@@ -506,7 +505,7 @@ label {}
     transform: translate(-50%, -50%);
     z-index: 1000;
     opacity: 1;
-    min-height: 45%;
+    // min-height: 45%;
     min-width: fit-content;
     flex-direction: column;
 
@@ -678,6 +677,7 @@ label {}
         display: block;
         width: 100%;
         line-height: 38px;
+        color: @gray;
     }
 
     p {
@@ -698,6 +698,13 @@ label {}
         flex-direction: column;
         padding-bottom: 27px;
         padding-top: 27px;
+        color: @gray;
+
+        h2 {
+            color: @gray;
+
+        }
+
 
         &+p {
             font-size: 14px;
@@ -708,6 +715,7 @@ label {}
         .steps-item {
             display: flex;
             flex-direction: column;
+
 
             p {
                 font-size: 14px;
@@ -786,7 +794,7 @@ label {}
 
 .order {
     .order-wrap {
-        background: #F7F7F7;
+        background: @orange;
         padding-bottom: 23px;
         padding-top: 23px;
         display: flex;
@@ -799,6 +807,7 @@ label {}
     .order-h2 {
         font-size: 24px;
         margin-bottom: 9px;
+        color: @light-grey;
     }
 
     .sendit-btn {
@@ -1253,7 +1262,7 @@ label {}
         label {}
     }
 
-    .drop_down {}
+    .drop-down {}
 
     .drop-down-li {}
 
@@ -1334,6 +1343,51 @@ label {}
     visibility: hidden;
     opacity: 0;
 }
+
+
+
+//gallery
+.pictures {
+    .row {
+        display: -ms-flexbox;
+        /* IE10 */
+        display: flex;
+        -ms-flex-wrap: wrap;
+        /* IE10 */
+        flex-wrap: wrap;
+        padding: 0 4px;
+    }
+
+    /* Create four equal columns that sits next to each other */
+    .column {
+        -ms-flex: 25%;
+        /* IE10 */
+        flex: 25%;
+        max-width: 25%;
+        padding: 0 4px;
+
+        picture {
+            margin-top: 8px;
+            vertical-align: middle;
+
+            &:hover {
+                box-shadow: 0px 4px 15px 0px @gray;
+            }
+
+
+            img {
+                width: 100%;
+
+                &:hover {
+                    box-shadow: 0px 4px 15px 0px @gray;
+                }
+
+            }
+        }
+
+    }
+}
+
 
 @import "media.less";
 @import "carousel.css";
