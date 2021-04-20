@@ -246,9 +246,17 @@
 
 
     }
+
+    h2 {
+        font-size: 28px;
+    }
 }
 
 @media (min-width:640px) {
+    h2 {
+        font-size: 36px;
+    }
+
     .wrap {
         padding: 0 34px;
         min-width: 100%;
@@ -815,7 +823,7 @@
 
         .faq-h2-wrap {
             display: flex;
-            align-items: baseline;
+            align-items: center;
             justify-content: space-between;
 
         }
@@ -824,33 +832,10 @@
             font-size: 20px;
             width: 33%;
             display: flex;
+            flex: 1;
         }
 
-        .faq-form {
-            flex-grow: 1;
-            display: grid;
-            grid-template: ~"50px 1fr/1fr 1fr";
-            grid-column-gap: 10%;
 
-            label {
-                grid-column: ~"1/2";
-                grid-row: ~"2/3";
-            }
-
-            span {}
-        }
-
-        .faq-input {
-            grid-column: ~"1/2";
-            grid-row: ~"1/2";
-            width: 100%;
-        }
-
-        .faq-submit-btn {
-            grid-column: ~"2/3";
-            grid-row: ~"1/2";
-            width: 100%;
-        }
 
         #personal-data-footer {}
 
@@ -1532,6 +1517,14 @@
                     &.fa-facebook-f {}
                 }
             }
+        }
+
+        .faq-form-wrap {
+            display: flex;
+            flex: 2;
+            justify-content: space-between;
+            align-items: center;
+            flex-direction: row;
         }
 
         .nav-menu-drop-logo {}

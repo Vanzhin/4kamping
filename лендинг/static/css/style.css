@@ -49,8 +49,12 @@ h1 {
 }
 h2 {
   font-family: MyriadPro-Semibold;
-  font-size: 24px;
+  font-size: 28px;
   color: #F7F7F7;
+}
+h3 {
+  font-family: MyriadPro-Semibold;
+  font-size: 20px;
 }
 p {
   font-family: MyriadPro-Regular;
@@ -241,7 +245,7 @@ summary::-webkit-details-marker {
   margin-top: 10px;
 }
 .drop-down-link {
-  font-size: 18px;
+  font-size: 17px;
   color: #000000;
   font-family: MyriadPro-Light;
   transition: 0.4s;
@@ -251,7 +255,8 @@ summary::-webkit-details-marker {
 }
 .nav-menu-form {
   display: flex;
-  flex-direction: column;
+  width: -webkit-fill-available;
+  justify-content: center;
 }
 .nav-menu-form #nav-menu-tel-footer,
 .nav-menu-form #nav-menu-tel {
@@ -712,6 +717,7 @@ summary::-webkit-details-marker {
 .our-advantage .our-advantage-h2 {
   font-size: 28px;
   margin-bottom: 13px;
+  color: gray;
 }
 .our-advantage .our-advantage-content {
   display: grid;
@@ -747,6 +753,34 @@ summary::-webkit-details-marker {
   font-size: 10px;
   text-align: center;
   padding: 0 3px;
+}
+.gallery .gallery-wrap {
+  padding-bottom: 21px;
+  padding-top: 21px;
+}
+.gallery .gallery-wrap .gallery-h1 {
+  color: gray;
+}
+.prices .prices-wrap {
+  padding-bottom: 21px;
+  padding-top: 21px;
+  background-color: #F7F7F7;
+}
+.prices .prices-wrap h2 {
+  color: gray;
+}
+.prices .prices-wrap .prices-item {
+  justify-content: space-evenly;
+  align-items: center;
+  display: flex;
+  margin: 10px;
+  font-size: 20px;
+}
+.prices .prices-wrap .prices-item .price-value p {
+  font-family: MyriadPro-Semibold;
+}
+.prices .prices-wrap .prices-item .fa-ruble-sign {
+  font-size: 16px;
 }
 .doubt .doubt-wrap {
   padding-top: 25px;
@@ -810,19 +844,76 @@ summary::-webkit-details-marker {
   line-height: 17px;
   padding: 20px 25px;
 }
-.partners .partners-wrap {
-  padding-bottom: 20px;
-  padding-top: 20px;
+.contacts .contacts-wrap {
+  display: flex;
+  padding-bottom: 21px;
+  padding-top: 21px;
+  flex-direction: column;
+}
+.contacts h2 {
+  color: #e95110;
+  margin-bottom: 10px;
+}
+.contacts .contacts-column-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contacts .contacts-column-wrap .contacts-column {
+  display: flex;
+  flex-direction: column;
+  color: gray;
+  align-items: center;
+}
+.contacts .contacts-column-wrap .contacts-column h3 {
+  margin-bottom: 10px;
+}
+.contacts .contacts-column-wrap .contacts-column p {
+  padding: 5px 0;
+  text-align: justify;
+}
+.contacts .contacts-column-wrap .contacts-column p a {
+  color: gray;
+  opacity: 0.7;
+}
+.contacts .contacts-column-wrap .contacts-column p a:hover {
+  opacity: 1;
+}
+.contacts .contacts-column-wrap .contacts-column .contacts-social {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+.contacts .contacts-column-wrap .contacts-column .contacts-social a {
   display: flex;
   justify-content: center;
   align-items: center;
-  justify-content: space-evenly;
+  color: #ffffff;
+  background: #e95110;
+  border-radius: 50%;
+  min-width: 38px;
+  min-height: 38px;
+  opacity: 0.7;
+  transition: 0.4s;
 }
-.partners .partners-wrap h2 {
-  color: #e95110;
+.contacts .contacts-column-wrap .contacts-column .contacts-social a:hover {
+  opacity: 1;
 }
-.partners .partners-wrap img {
-  width: 80px;
+.contacts .partners-wrap {
+  padding-bottom: 5px;
+  padding-top: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contacts .partners-wrap img {
+  width: 50px;
+  opacity: 0.7;
+  transition: 0.4s;
+}
+.contacts .partners-wrap img:hover {
+  opacity: 1;
 }
 .footer .faq-wrap {
   padding-top: 15px;
@@ -836,22 +927,18 @@ summary::-webkit-details-marker {
   font-size: 18px;
   line-height: 22px;
   margin-bottom: 10px;
-  text-align: center;
 }
-.footer .faq-form {
+.footer .faq-form-wrap {
   display: flex;
-  flex-direction: column;
+  flex: 2;
+  justify-content: space-between;
   align-items: center;
+  flex-direction: column;
 }
-.footer .faq-form label {
-  font-size: 10px;
-  font-family: MyriadPro-Regular;
-  display: flex;
-}
-.footer .faq-form span {
-  color: #9E9E9E;
-  margin-left: 10px;
-  margin-top: 1px;
+.footer .faq-form-wrap p {
+  color: gray;
+  text-align: center;
+  margin: 5px auto;
 }
 .footer #personal-data-footer {
   width: 10px;
@@ -867,6 +954,9 @@ summary::-webkit-details-marker {
   margin-bottom: 18px;
   margin-top: 13px;
 }
+.footer .nav-footer a h2 {
+  color: #e95110;
+}
 .footer .logo {
   margin-bottom: 15px;
   margin-top: 15px;
@@ -879,10 +969,15 @@ summary::-webkit-details-marker {
 .footer .copy .social-media {
   display: none;
 }
-.footer .copy .design-p {
-  display: flex;
-  justify-content: space-between;
-  width: 30%;
+.footer .copy .design-p a {
+  color: gray;
+  opacity: 0.8;
+}
+.footer .copy .design-p a:hover {
+  opacity: 1;
+}
+.footer .copy .design-p a:active {
+  color: #e95110;
 }
 .faq-submit-btn {
   font-size: 16px;
@@ -1118,8 +1213,14 @@ summary::-webkit-details-marker {
     flex-wrap: wrap;
     justify-content: flex-end;
   }
+  h2 {
+    font-size: 28px;
+  }
 }
 @media (min-width: 640px) {
+  h2 {
+    font-size: 36px;
+  }
   .wrap {
     padding: 0 34px;
     min-width: 100%;
@@ -1326,11 +1427,6 @@ summary::-webkit-details-marker {
   .doubt .doubt-details .doubt-details-p {
     font-size: 16px;
   }
-  .partners .partners-wrap {
-    /* padding-bottom: 40px; */
-    /* padding-top: 40px; */
-    /* justify-content: space-between; */
-  }
   .partners .partners-wrap .partners-li:nth-child(n) {
     display: block;
   }
@@ -1343,33 +1439,14 @@ summary::-webkit-details-marker {
   }
   .footer .faq-h2-wrap {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     justify-content: space-between;
   }
   .footer .faq-h2 {
     font-size: 20px;
     width: 33%;
     display: flex;
-  }
-  .footer .faq-form {
-    flex-grow: 1;
-    display: grid;
-    grid-template: 50px 1fr/1fr 1fr;
-    grid-column-gap: 10%;
-  }
-  .footer .faq-form label {
-    grid-column: 1/2;
-    grid-row: 2/3;
-  }
-  .footer .faq-input {
-    grid-column: 1/2;
-    grid-row: 1/2;
-    width: 100%;
-  }
-  .footer .faq-submit-btn {
-    grid-column: 2/3;
-    grid-row: 1/2;
-    width: 100%;
+    flex: 1;
   }
   .footer .nav-menu {
     flex-grow: 0.9;
@@ -1567,12 +1644,15 @@ summary::-webkit-details-marker {
     margin: 10px 0;
     width: 49%;
   }
-  .partners .partners-wrap {
-    /* padding-bottom: 55px; */
-    /* padding-top: 55px; */
-  }
   .footer .faq-h2 {
     font-size: 30px;
+  }
+  .footer .faq-form-wrap {
+    display: flex;
+    flex: 2;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
   }
   .footer .drop-down-link {
     font-size: 18px;

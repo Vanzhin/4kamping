@@ -57,7 +57,7 @@ app.post('/order', (request, response) => {
 				from: '"4kamping" <4kamping@mail.ru>',
 				to: 'nikolay.vanzhin@yandex.ru',
 				subject: 'Новая заявка 4Kamping.ru',
-				text: `Заявка с сайта. телефон: +${item.tel}, время: ${item.date}`,
+				html: `<p>Заявка с сайта. <br>телефон: +${item.tel}, <br>время: ${item.date}</p>`,
 			})
 
 			console.log(result);

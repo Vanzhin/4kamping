@@ -1,5 +1,22 @@
 "use strict"
 const API_ROOT = 'http://localhost:3000';
+
+Vue.component('prices', {
+
+    props: ['pricelist'],
+    template: `
+    <section name="prices" class="prices">
+            <div class="prices-wrap wrap">
+                <h2 class="prices-h1">ЦЕНЫ</h2>
+                <div class="prices-item" v-for="item in pricelist">
+                    <div class="price-category"><p>{{item.category}}</p></div>
+                    <div class="price-value"><p>{{item.value}}&nbsp<i class="fas fa-ruble-sign"></i></p></div>
+                </div>
+
+            </div>
+        </section>`
+})
+
 Vue.component('v-header', {
     props: ['checkedChange', 'formVisibilityChange', 'menuLinks'],
 
@@ -70,25 +87,23 @@ Vue.component('v-footer', {
             <div class="faq-wrap wrap">
                 <div class="faq-h2-wrap">
                     <h2 class="faq-h2">ОСТАЛИСЬ ВОПРОСЫ?</h2>
-                    <form class="faq-form">
-                        <input type="tel" placeholder="Ваш телефон" class="faq-input">
-                        <button class="faq-submit-btn">заказать звонок</button>
-                        <label for="personal-data-footer"><input type="checkbox" name="personal-data" id="personal-data-footer" required><span>Я согласен на обработку персональных данных</span></label>
-                    </form>
+                    <div class="faq-form-wrap"><p>Закажите звонок, и менеджер Вам всё расскажет и объяснит</p>
+
+                    <form class="nav-menu-form">
+                    <button class="sendit-btn header-sendit-btn" v-on:click="formVisibilityChange">заказать звонок</button>
+    
+                    </form></div>
+                    
                 </div>
                 <v-footer-menu
                 v-bind:checked-change='checkedChange'
                 v-bind:form-visibility-change="formVisibilityChange"
                 v-bind:menu-links='menuLinks'></v-footer-menu>
                 <div class="copy">
-                    <p class="copy-p">&copy; Сами копипастим и вам разрешаем</p>
-                    <div class="social-media">
-                        <a href="#"><i class="fab fa-vk"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-
-                    </div>
-                    <p class="design-p"><span>2019</span>Задизайнено мной</p>
+                    <p class="copy-p">&copy; 4Kamping, {{new Date().getFullYear()}}</p>
+                    
+                    <p class="design-p"><a href="mailto:vanzhin@outlook.com">сайт создан: V</a>
+                    </p>
                 </div>
             </div>
         </footer>`
@@ -151,54 +166,6 @@ Vue.component('picture-list', {
     </div>`,
     }),
 
-    Vue.component('order', {
-        props: {
-            isTelNumOk: {
-                type: Boolean,
-                required: true
-            },
-            isFormActive: {
-                type: Boolean,
-                required: true
-            }
-
-
-        },
-
-        template: `<div class="callback-tel-wrap" >
-
-            <from class="contact-info">
-                <div class="close" @click="closeForm"><i class="far fa-times-circle"></i></div>
-                <div  class="err-warning" v-bind:class="{hidden: !isTelNumOk}" v-bind:isTelNumOk='isTelNumOk'>Ошибка! Номер телефона должен состоять из 11 цифр</div>
-                <input type="tel" id="your-tel" class="callback-input" placeholder="Ваш сотовый" v-on:input="handleInput">
-                <button class="sendit-btn header-sendit-btn" v-on:click="handleSearch" type="submit">отправить</button>
-            </form>
-        </div>`,
-        data() {
-            return {
-                inputValue: '',
-            };
-        },
-        methods: {
-            handleInput(e) {
-                this.inputValue = e.target.value;
-                this.changeIsNumOk;
-
-            },
-            handleSearch() {
-                this.$emit('search', this.inputValue);
-            },
-            closeForm() {
-                this.$emit('close-form', this.isFormActive);
-            },
-            changeIsNumOk() {
-                this.$emit('change', this.inputValue);
-            },
-
-        }
-
-
-    }),
     Vue.component('new-order', {
         props: ['regexpTel', 'orderOkMessage', 'orderErrMessage', 'orderFormClose', 'loading', ],
 
@@ -255,7 +222,7 @@ v-on:click="dataTransfer" type="button"
                     var valueIndex = 0;
                     var maskIndex = 0;
 
-                    for (; maskIndex < maskLength;) {
+                    while (maskIndex < maskLength) {
                         if (maskIndex >= value.length) break;
 
                         if (mask[maskIndex] === "0" && value[valueIndex].match(numberPattern) === null) break;
@@ -308,6 +275,19 @@ v-on:click="dataTransfer" type="button"
             orderOkMessage: false,
             orderErrMessage: false,
             loading: false,
+            pricelist: [{
+                category: "1 сутки",
+                value: 100
+            }, {
+                category: "2 сутки",
+                value: 200
+            }, {
+                category: "3 сутки",
+                value: 300
+            }, {
+                category: "4 сутки",
+                value: 300
+            }, ],
             menuLinks: [{
                 name: "О нас",
                 link: "#whoweare"
@@ -462,6 +442,9 @@ v-on:click="dataTransfer" type="button"
 
 
         },
+        computed: {
+
+        },
 
         methods: {
             checkedChange() { //при нажатии на ссылку в мобильном меню - оно сворачивается
@@ -480,6 +463,7 @@ v-on:click="dataTransfer" type="button"
                 this.orderOkMessage = false;
                 this.orderErrMessage = false;
                 this.orderFormClose = false;
+                this.loading = false;
 
             },
             handleInput(e) {
