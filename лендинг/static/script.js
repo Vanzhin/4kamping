@@ -26,7 +26,8 @@ Vue.component('v-header', {
                 <v-header-menu
                 v-bind:checked-change='checkedChange'
                 v-bind:form-visibility-change="formVisibilityChange"
-                v-bind:menu-links='menuLinks'></v-header-menu>
+                v-bind:menu-links='menuLinks'
+                v-on:order-click='formVisibilityChange'></v-header-menu>
                 <div class="header-h1-wrap">
                     <h1 class="header-h1">Отдых как искусство</h1>
                     <h2 class="header-h2">Слоган 2</h2>
@@ -61,10 +62,10 @@ Vue.component('v-header-menu', {
 
             <p>ОСТАЛИСЬ ВОПРОСЫ?</p>
             <p>Закажите звонок, и менеджер Вам всё расскажет и объяснит</p>
-            <form class="nav-menu-form">
-            <button class="sendit-btn header-sendit-btn" v-on:click="formVisibilityChange">заказать звонок</button>
+            <div class="nav-menu-form">
+            <button class="sendit-btn header-sendit-btn" v-on:click="$emit('order-click')">заказать звонок</button>
 
-            </form>
+            </div>
             <div class="social-media">
                 <a href="#"><i class="fab fa-vk"></i></a>
                 <a href="https://instagram.com/4kamping"><i class="fab fa-instagram"></i></a>
@@ -89,16 +90,17 @@ Vue.component('v-footer', {
                     <h2 class="faq-h2">ОСТАЛИСЬ ВОПРОСЫ?</h2>
                     <div class="faq-form-wrap"><p>Закажите звонок, и менеджер Вам всё расскажет и объяснит</p>
 
-                    <form class="nav-menu-form">
+                    <div class="nav-menu-form">
                     <button class="sendit-btn header-sendit-btn" v-on:click="formVisibilityChange">заказать звонок</button>
     
-                    </form></div>
+                    </div></div>
                     
                 </div>
                 <v-footer-menu
                 v-bind:checked-change='checkedChange'
                 v-bind:form-visibility-change="formVisibilityChange"
-                v-bind:menu-links='menuLinks'></v-footer-menu>
+                v-bind:menu-links='menuLinks'
+                v-on:order-click='formVisibilityChange'></v-footer-menu>
                 <div class="copy">
                     <p class="copy-p">&copy; 4Kamping, {{new Date().getFullYear()}}</p>
                     
@@ -110,7 +112,7 @@ Vue.component('v-footer', {
 })
 
 Vue.component('v-footer-menu', {
-    props: ['checkedChange', 'formVisibilityChange', 'menuLinks'],
+    props: ['checkedChange', 'menuLinks'],
 
     template: `<nav class="nav nav-footer">
     <a href="#" class="logo"><h2>4Kamping</h2></a>
@@ -133,10 +135,10 @@ Vue.component('v-footer-menu', {
                 <p>ОСТАЛИСЬ ВОПРОСЫ?</p>
                 <p>Закажите звонок, и менеджер Вам всё расскажет и объяснит</p>
 
-                <form class="nav-menu-form">
-                <button class="sendit-btn header-sendit-btn" v-on:click="formVisibilityChange">заказать звонок</button>
+                <div class="nav-menu-form">
+                <button class="sendit-btn header-sendit-btn" v-on:click="$emit('order-click')">заказать звонок</button>
 
-                </form>
+                </div>
                 <div class="social-media">
                     <a href="#"><i class="fab fa-vk"></i></a>
                     <a href="https://instagram.com/4kamping"><i class="fab fa-instagram"></i></a>
@@ -457,6 +459,7 @@ v-on:click="dataTransfer" type="button"
             },
 
             formVisibilityChange() {
+                console.log("form");
                 this.isFormActive = !this.isFormActive;
 
                 //перевожу в начальное положение, чтобы все было как при первом нажатии на кнопку
