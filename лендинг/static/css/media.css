@@ -8,8 +8,10 @@
   }
 }
 @media (min-width: 320px) and (max-width: 635px) {
+  .sendit-btn {
+    min-width: 280px;
+  }
   .header .header-wrap {
-    background-size: 135%;
     background-position: top right;
     background-repeat: no-repeat;
   }
@@ -27,6 +29,7 @@
     flex-direction: column;
     flex-wrap: wrap;
     max-height: 100%;
+    justify-content: center;
   }
   .nav .nav-menu-drop h2 {
     display: block;
@@ -37,15 +40,18 @@
     top: 65%;
     transform: translate(-50%, -50%);
   }
-  .nav-menu-drop-footer h2 {
+  .nav-menu-drop-footer .nav-menu-drop-link {
     display: block;
+    width: fit-content;
+  }
+  .nav-menu-drop-footer .nav-menu-form {
+    margin-top: 10px;
   }
 }
 @media (max-width: 380px) {
   .nav-menu #burger-footer:checked ~ .burger-label-footer {
-    margin-top: 25px;
-    bottom: 80px;
-    right: 20px;
+    bottom: 60px;
+    right: 23px;
   }
 }
 @media screen and (max-width: 800px) {
@@ -152,8 +158,18 @@
   }
   #burger:checked ~ .nav-menu-drop {
     transform: scaleY(1);
-    min-height: 90%;
+    min-height: 100%;
     position: fixed;
+    text-align: center;
+    justify-content: space-between;
+  }
+  #burger:checked ~ .nav-menu-drop .column-menu .social-media {
+    width: 280px;
+    margin: 0 auto;
+  }
+  #burger:checked ~ .nav-menu-drop .column-menu:last-child {
+    display: flex;
+    flex-direction: column;
   }
   #burger-footer:checked ~ .nav-menu-drop-footer {
     transform: scaleY(1);
@@ -163,7 +179,9 @@
     position: fixed;
     max-height: 100%;
     flex-wrap: wrap;
-    justify-content: flex-end;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
   }
   h2 {
     font-size: 28px;
@@ -566,21 +584,20 @@
   .our-advantage .our-advantage-item-p {
     font-size: 18px;
   }
-  .our-warranty .our-warranty-wrap {
-    padding-bottom: 64px;
-    padding-top: 80px;
+  .gallery .gallery-wrap {
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
-  .our-warranty .our-warranty-slider .our-warranty-article .our-warranty-img {
-    margin-bottom: 32px;
+  .prices .prices-wrap {
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
-  .our-warranty .our-warranty-slider .our-warranty-article .our-warranty-h2 {
-    font-size: 30px;
-    margin-bottom: 30px;
+  .prices .prices-wrap h2 {
+    margin-bottom: 25px;
   }
-  .our-warranty .our-warranty-slider .our-warranty-article .our-warranty-p {
-    font-size: 16px;
-    line-height: 19px;
-    padding-bottom: 32px;
+  .contacts .contacts-wrap {
+    padding-top: 60px;
+    padding-bottom: 60px;
   }
   .doubt .doubt-wrap {
     padding-top: 65px;

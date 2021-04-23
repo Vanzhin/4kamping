@@ -1,5 +1,26 @@
 "use strict"
 const API_ROOT = 'http://localhost:3000';
+Vue.component('gallery', {
+    props: ['mainPictures'],
+    template: `
+    <section name="gallery" class="gallery">
+            <div class="gallery-wrap wrap">
+            <div class="gallery-title"><h2 class="gallery-h1">ФОТО</h2>
+            </div>
+                              <div class="carousel"
+   data-flickity='{ "lazyLoad": 2, "adaptiveHeight": true, "wrapAround": true, "autoPlay":2000,"fullscreen": true}'>
+  <div class="carousel-cell" v-for="item in mainPictures">
+    <img class="carousel-cell-image" :alt="item.title"
+      :data-flickity-lazyload-src="item.src"
+      :data-flickity-lazyload-srcset="item.srcTablet + ' 720w'+','+ item.Mobile +' 360w'"
+      sizes="(min-width: 1024px) 720px, 360px"
+      
+      />
+  </div>
+</div>
+</div>
+</section>`
+})
 
 Vue.component('prices', {
 
@@ -8,9 +29,13 @@ Vue.component('prices', {
     <section name="prices" class="prices">
             <div class="prices-wrap wrap">
                 <h2 class="prices-h1">ЦЕНЫ</h2>
+                <div class="prices-table-header">
+                <h3 class="prices-h2">Период аренды</h3>
+                <h3 class="prices-h2">стоимость в сутки</h3>
+                </div>
                 <div class="prices-item" v-for="item in pricelist">
                     <div class="price-category"><p>{{item.category}}</p></div>
-                    <div class="price-value"><p>{{item.value}}&nbsp<i class="fas fa-ruble-sign"></i></p></div>
+                    <div class="price-value"><p>{{item.value}}</i></p></div>
                 </div>
 
             </div>
@@ -30,7 +55,7 @@ Vue.component('v-header', {
                 v-on:order-click='formVisibilityChange'></v-header-menu>
                 <div class="header-h1-wrap">
                     <h1 class="header-h1">Отдых как искусство</h1>
-                    <h2 class="header-h2">Слоган 2</h2>
+                    <h2 class="header-h2">Аренда стильных и комфортных кемперов</h2>
                     <button class="sendit-btn header-sendit-btn" v-on:click="formVisibilityChange">арендовать</button>
                 </div>
             </div>
@@ -38,7 +63,7 @@ Vue.component('v-header', {
 })
 
 Vue.component('v-header-menu', {
-    props: ['checkedChange', 'formVisibilityChange', 'menuLinks'],
+    props: ['checkedChange', 'menuLinks'],
 
     template: `<nav class="nav">
     <a href="#" class="logo">
@@ -59,7 +84,7 @@ Vue.component('v-header-menu', {
             </ul> 
             </div>
             <div class="column-menu">
-
+            
             <p>ОСТАЛИСЬ ВОПРОСЫ?</p>
             <p>Закажите звонок, и менеджер Вам всё расскажет и объяснит</p>
             <div class="nav-menu-form">
@@ -67,9 +92,9 @@ Vue.component('v-header-menu', {
 
             </div>
             <div class="social-media">
-                <a href="#"><i class="fab fa-vk"></i></a>
-                <a href="https://instagram.com/4kamping"><i class="fab fa-instagram"></i></a>
-                <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-vk"></i></a>
+            <a href="https://instagram.com/4kamping"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
 
             </div>
 
@@ -104,7 +129,7 @@ Vue.component('v-footer', {
                 <div class="copy">
                     <p class="copy-p">&copy; 4Kamping, {{new Date().getFullYear()}}</p>
                     
-                    <p class="design-p"><a href="mailto:vanzhin@outlook.com">сайт создан: V</a>
+                    <p class="design-p"><a href="mailto:vanzhin@outlook.com">сайт создан: NV</a>
                     </p>
                 </div>
             </div>
@@ -115,7 +140,7 @@ Vue.component('v-footer-menu', {
     props: ['checkedChange', 'menuLinks'],
 
     template: `<nav class="nav nav-footer">
-    <a href="#" class="logo"><h2>4Kamping</h2></a>
+    <a href="#header" class="logo"><h2>4Kamping</h2></a>
     <section class="nav-menu">
         <input type="checkbox" id="burger-footer" class="burger">
         <label for="burger-footer" class="burger-label-footer">
@@ -124,14 +149,15 @@ Vue.component('v-footer-menu', {
             <span></span>
         </label>
         <div class="nav-menu-drop-footer">
-            <h2>4Kamping</h2>
-            <div class="column-menu">
+        <a href="#header" class= "nav-menu-drop-link" v-on:click="checkedChange">4Kamping</a>
+                <div class="column-menu">
                 <ul class="drop-down">
                 <li class="drop-down-li" v-for="item in menuLinks"><a :href="item.link" class="drop-down-link" v-on:click="checkedChange">{{item.name}}</a></li>
 
                 </ul>  
             </div>
             <div class="column-menu">
+            
                 <p>ОСТАЛИСЬ ВОПРОСЫ?</p>
                 <p>Закажите звонок, и менеджер Вам всё расскажет и объяснит</p>
 
@@ -278,17 +304,17 @@ v-on:click="dataTransfer" type="button"
             orderErrMessage: false,
             loading: false,
             pricelist: [{
-                category: "1 сутки",
-                value: 100
+                category: "от 2 до 5 суток ",
+                value: '2000 ₽'
             }, {
-                category: "2 сутки",
-                value: 200
+                category: "от 6 до 10 суток",
+                value: '1750 ₽'
             }, {
-                category: "3 сутки",
-                value: 300
+                category: "от 11 до 20 суток",
+                value: '1500 ₽'
             }, {
-                category: "4 сутки",
-                value: 300
+                category: "более 20 суток",
+                value: 'обсудим'
             }, ],
             menuLinks: [{
                 name: "О нас",
@@ -312,132 +338,154 @@ v-on:click="dataTransfer" type="button"
                 name: "Контакты",
                 link: "#contact"
             }],
+            mainPictures: [],
 
             pictures: [{
                     main: false,
-                    src: 'img/IMG_1140.JPG',
-                    srcMobile: 'img/IMG_1140.JPG',
-                    srcTablet: 'img/IMG_1140.JPG'
+                    title: '4Kamping',
+                    src: './img/IMG_1140.JPG',
+                    srcMobile: './img/IMG_1140.JPG',
+                    srcTablet: './img/IMG_1140.JPG'
                 },
                 {
                     main: false,
-                    src: 'img/IMG_0613.JPG',
-                    srcMobile: 'img/IMG_0613.JPG',
-                    srcTablet: 'img/IMG_0613.JPG'
+                    title: '4Kamping',
+                    src: './img/IMG_0613.JPG',
+                    srcMobile: './img/IMG_0613.JPG',
+                    srcTablet: './img/IMG_0613.JPG'
                 },
                 {
                     main: false,
-                    src: 'img/IMG_0614.JPG',
-                    srcMobile: 'img/IMG_0614.JPG',
-                    srcTablet: 'img/IMG_0614.JPG'
+                    src: './img/IMG_0614.JPG',
+                    title: '4Kamping',
+                    srcMobile: './img/IMG_0614.JPG',
+                    srcTablet: './img/IMG_0614.JPG'
                 },
                 {
                     main: false,
-                    src: 'img/IMG_0619.JPG',
-                    srcMobile: 'img/IMG_0619.JPG',
-                    srcTablet: 'img/IMG_0619.JPG'
+                    title: '4Kamping',
+                    src: './img/IMG_0619.JPG',
+                    srcMobile: './img/IMG_0619.JPG',
+                    srcTablet: './img/IMG_0619.JPG'
                 },
                 {
                     main: false,
-                    src: 'img/IMG_0621.JPG',
-                    srcMobile: 'img/IMG_0621.JPG',
-                    srcTablet: 'img/IMG_0621.JPG'
+                    title: '4Kamping',
+                    src: './img/IMG_0621.JPG',
+                    srcMobile: './img/IMG_0621.JPG',
+                    srcTablet: './img/IMG_0621.JPG'
                 },
                 {
                     main: false,
-                    src: 'img/IMG_1142.JPG',
-                    srcMobile: 'img/IMG_1142.JPG',
-                    srcTablet: 'img/IMG_1142.JPG'
+                    title: '4Kamping',
+                    src: './img/IMG_1142.JPG',
+                    srcMobile: './img/IMG_1142.JPG',
+                    srcTablet: './img/IMG_1142.JPG'
                 },
                 {
                     main: false,
-                    src: 'img/IMG_1144.JPG',
-                    srcMobile: 'img/IMG_1144.JPG',
-                    srcTablet: 'img/IMG_1144.JPG'
+                    title: '4Kamping',
+                    src: './img/IMG_1144.JPG',
+                    srcMobile: './img/IMG_1144.JPG',
+                    srcTablet: './img/IMG_1144.JPG'
                 },
                 {
                     main: false,
-                    src: 'img/IMG_1140.JPG',
-                    srcMobile: 'img/IMG_1140.JPG',
-                    srcTablet: 'img/IMG_1140.JPG'
+                    title: '4Kamping',
+                    src: './img/IMG_1140.JPG',
+                    srcMobile: './img/IMG_1140.JPG',
+                    srcTablet: './img/IMG_1140.JPG'
                 },
                 {
                     main: false,
-                    src: 'img/IMG_0613.JPG',
-                    srcMobile: 'img/IMG_0613.JPG',
-                    srcTablet: 'img/IMG_0613.JPG'
+                    title: '4Kamping',
+                    src: './img/IMG_0613.JPG',
+                    srcMobile: './img/IMG_0613.JPG',
+                    srcTablet: './img/IMG_0613.JPG'
                 },
                 {
                     main: false,
-                    src: 'img/IMG_0614.JPG',
-                    srcMobile: 'img/IMG_0614.JPG',
-                    srcTablet: 'img/IMG_0614.JPG'
+                    title: '4Kamping',
+                    src: './img/IMG_0614.JPG',
+                    srcMobile: './img/IMG_0614.JPG',
+                    srcTablet: './img/IMG_0614.JPG'
                 },
                 {
                     main: false,
-                    src: 'img/IMG_0619.JPG',
-                    srcMobile: 'img/IMG_0619.JPG',
-                    srcTablet: 'img/IMG_0619.JPG'
+                    title: '4Kamping',
+                    src: './img/IMG_0619.JPG',
+                    srcMobile: './img/IMG_0619.JPG',
+                    srcTablet: './img/IMG_0619.JPG'
                 },
                 {
                     main: false,
-                    src: 'img/IMG_0621.JPG',
-                    srcMobile: 'img/IMG_0621.JPG',
-                    srcTablet: 'img/IMG_0621.JPG'
+                    title: '4Kamping',
+                    src: './img/IMG_0621.JPG',
+                    srcMobile: './img/IMG_0621.JPG',
+                    srcTablet: './img/IMG_0621.JPG'
                 },
                 {
                     main: false,
-                    src: 'img/IMG_1142.JPG',
-                    srcMobile: 'img/IMG_1142.JPG',
-                    srcTablet: 'img/IMG_1142.JPG'
+                    title: '4Kamping',
+                    src: './img/IMG_1142.JPG',
+                    srcMobile: './img/IMG_1142.JPG',
+                    srcTablet: './img/IMG_1142.JPG'
                 },
                 {
                     main: false,
-                    src: 'img/IMG_1144.JPG',
-                    srcMobile: 'img/IMG_1144.JPG',
-                    srcTablet: 'img/IMG_1144.JPG'
+                    title: '4Kamping',
+                    src: './img/IMG_1144.JPG',
+                    srcMobile: './img/IMG_1144.JPG',
+                    srcTablet: './img/IMG_1144.JPG'
                 },
                 {
                     main: false,
-                    src: 'img/IMG_1140.JPG',
-                    srcMobile: 'img/IMG_1140.JPG',
-                    srcTablet: 'img/IMG_1140.JPG'
+                    title: '4Kamping',
+                    src: './img/IMG_1140.JPG',
+                    srcMobile: './img/IMG_1140.JPG',
+                    srcTablet: './img/IMG_1140.JPG'
                 },
                 {
                     main: false,
-                    src: 'img/IMG_0613.JPG',
-                    srcMobile: 'img/IMG_0613.JPG',
-                    srcTablet: 'img/IMG_0613.JPG'
+                    title: '4Kamping',
+                    src: './img/IMG_0613.JPG',
+                    srcMobile: './img/IMG_0613.JPG',
+                    srcTablet: './img/IMG_0613.JPG'
                 },
                 {
                     main: false,
-                    src: 'img/IMG_0614.JPG',
-                    srcMobile: 'img/IMG_0614.JPG',
-                    srcTablet: 'img/IMG_0614.JPG'
+                    title: '4Kamping',
+                    src: './img/IMG_0614.JPG',
+                    srcMobile: './img/IMG_0614.JPG',
+                    srcTablet: './img/IMG_0614.JPG'
                 },
                 {
                     main: false,
-                    src: 'img/IMG_0619.JPG',
-                    srcMobile: 'img/IMG_0619.JPG',
-                    srcTablet: 'img/IMG_0619.JPG'
+                    title: '4Kamping',
+                    src: './img/IMG_0619.JPG',
+                    srcMobile: './img/IMG_0619.JPG',
+                    srcTablet: './img/IMG_0619.JPG'
                 },
                 {
-                    main: false,
-                    src: 'img/IMG_0621.JPG',
-                    srcMobile: 'img/IMG_0621.JPG',
-                    srcTablet: 'img/IMG_0621.JPG'
+                    main: true,
+                    title: '4Kamping',
+                    src: './img/IMG_0621.JPG',
+                    srcMobile: './img/IMG_0621.JPG',
+                    srcTablet: './img/IMG_0621.JPG'
                 },
                 {
-                    main: false,
-                    src: 'img/IMG_1142.JPG',
-                    srcMobile: 'img/IMG_1142.JPG',
-                    srcTablet: 'img/IMG_1142.JPG'
+                    main: true,
+                    title: '4Kamping',
+                    src: './img/IMG_1142.JPG',
+                    srcMobile: './img/IMG_1142.JPG',
+                    srcTablet: './img/IMG_1142.JPG'
                 },
                 {
-                    main: false,
-                    src: 'img/IMG_1144.JPG',
-                    srcMobile: 'img/IMG_1144.JPG',
-                    srcTablet: 'img/IMG_1144.JPG'
+                    main: true,
+                    title: '4Kamping',
+                    src: './img/IMG_1144.JPG',
+                    srcMobile: './img/IMG_1144.JPG',
+                    srcTablet: './img/IMG_1144.JPG'
                 },
             ]
 
@@ -447,11 +495,26 @@ v-on:click="dataTransfer" type="button"
         computed: {
 
         },
+        created() {
+            this.pictureToMain();
+        },
+
 
         methods: {
+
+            pictureToMain() {
+                this.pictures.forEach(element => {
+                    if (element.main) {
+                        this.mainPictures.push(element)
+                    }
+
+
+                });
+                console.log(this.mainPictures);
+
+            },
             checkedChange() { //при нажатии на ссылку в мобильном меню - оно сворачивается
                 const burger = document.querySelectorAll(".burger");
-                console.log(burger);
                 for (let i = 0; i < burger.length; i++) {
                     burger[i].checked = false;
                 }
@@ -459,7 +522,6 @@ v-on:click="dataTransfer" type="button"
             },
 
             formVisibilityChange() {
-                console.log("form");
                 this.isFormActive = !this.isFormActive;
 
                 //перевожу в начальное положение, чтобы все было как при первом нажатии на кнопку

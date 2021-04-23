@@ -17,11 +17,15 @@
 }
 
 @media (min-width:320px) and (max-width: 635px) {
+    .sendit-btn {
+        min-width: 280px;
+    }
+
     .header {
         .header-wrap {
             // background-image: url(../img/bg1%203%202.png);
 
-            background-size: 135%;
+            // background-size: 135%;
             background-position: top right;
             background-repeat: no-repeat;
         }
@@ -44,6 +48,7 @@
             flex-direction: column;
             flex-wrap: wrap;
             max-height: 100%;
+            justify-content: center;
 
             h2 {
                 display: block;
@@ -61,8 +66,13 @@
     }
 
     .nav-menu-drop-footer {
-        h2 {
+        .nav-menu-drop-link {
             display: block;
+            width: fit-content;
+        }
+
+        .nav-menu-form {
+            margin-top: 10px;
         }
     }
 
@@ -73,9 +83,8 @@
 
 @media(max-width:380px) {
     .nav-menu #burger-footer:checked~.burger-label-footer {
-        margin-top: 25px;
-        bottom: 80px;
-        right: 20px;
+        bottom: 60px;
+        right: 23px;
     }
 }
 
@@ -229,8 +238,24 @@
 
     #burger:checked~.nav-menu-drop {
         transform: scaleY(1);
-        min-height: 90%;
+        min-height: 100%;
         position: fixed;
+        text-align: center;
+        justify-content: space-between;
+
+
+        .column-menu {
+            .social-media {
+                width: 280px;
+                margin: 0 auto;
+            }
+
+
+            &:last-child {
+                display: flex;
+                flex-direction: column;
+            }
+        }
 
     }
 
@@ -242,7 +267,9 @@
         position: fixed;
         max-height: 100%;
         flex-wrap: wrap;
-        justify-content: flex-end;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
 
 
     }
@@ -1308,116 +1335,33 @@
         }
     }
 
-    .our-warranty {
-        .our-warranty-wrap {
-            padding-bottom: 64px;
-            padding-top: 80px;
-
+    .gallery {
+        .gallery-wrap {
+            padding-top: 60px;
+            padding-bottom: 60px
         }
 
-        .our-warranty-h1 {}
+    }
 
-        .our-warranty-slider {
-            .feedback-slider-arrow-column {
-                &.our-warranty-slider-arrow-column {}
+    .prices {
+        .prices-wrap {
+            padding-top: 60px;
+            padding-bottom: 60px;
 
-                .feedback-slider-arrow-btn {
-                    &.our-warranty-arrow-btn {}
-                }
+            h2 {
+                margin-bottom: 25px;
 
-                .fas {
-                    &.fa-chevron-left {}
-                }
-            }
-
-            .our-warranty-article {
-                &.warranty-article-item1 {}
-
-                .our-warranty-article-wrap {}
-
-                .our-warranty-img {
-                    margin-bottom: 32px;
-                }
-
-                .warranty-picture {}
-
-                source {}
-
-                img {}
-
-                .our-warranty-h2 {
-                    font-size: 30px;
-                    margin-bottom: 30px;
-                }
-
-                .our-warranty-p {
-                    font-size: 16px;
-                    line-height: 19px;
-                    padding-bottom: 32px;
-                }
-
-                .sendit-btn {
-                    &.our-warranty-sendit-btn {}
-                }
-            }
-
-            .our-warranty-article {
-                &.warranty-article-item2 {}
-
-                .our-warranty-article-wrap {}
-
-                .our-warranty-img {}
-
-                .warranty-picture {}
-
-                source {}
-
-                img {}
-
-                .our-warranty-h2 {}
-
-                .our-warranty-p {}
-
-                .sendit-btn {
-                    &.our-warranty-sendit-btn {}
-                }
-            }
-
-            .our-warranty-article {
-                &.warranty-article-item3 {}
-
-                .our-warranty-article-wrap {}
-
-                .our-warranty-img {}
-
-                .warranty-picture {}
-
-                source {}
-
-                img {}
-
-                .our-warranty-h2 {}
-
-                .our-warranty-p {}
-
-                .sendit-btn {
-                    &.our-warranty-sendit-btn {}
-                }
-            }
-
-            .feedback-slider-arrow-column {
-                &.our-warranty-slider-arrow-column {}
-
-                .feedback-slider-arrow-btn {
-                    &.our-warranty-arrow-btn {}
-                }
-
-                .fas {
-                    &.fa-chevron-right {}
-                }
             }
         }
     }
+
+    .contacts {
+        .contacts-wrap {
+            padding-top: 60px;
+            padding-bottom: 60px;
+        }
+    }
+
 
     .doubt {
         .doubt-wrap {

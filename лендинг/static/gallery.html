@@ -30,162 +30,47 @@
 
 <body>
     <div id="app">
-        <div class="callback-tel" v-if="isFormActive" v-on:click="formVisibilityChange">
+        <div class="callback-tel" v-bind:class="[{invisible: !isFormActive}]" v-on:click="formVisibilityChange">
+            
         </div>
-<!--        <order @search="valueFromChild" v-on:search='isValidTel' v-if="isFormActive" v-bind:is-tel-num-ok="isTelNumOk" v-on:close-form="formVisibilityChange"></order>-->
-<new-order 
-v-if="isFormActive" 
-v-on:close-form="formVisibilityChange" 
-v-bind:regexp-tel="regexpTel"
-v-bind:order-ok-message="orderOkMessage"
-v-bind:order-err-message="orderErrMessage"
-v-bind:order-form-close="orderFormClose"
+        <new-order 
+        v-bind:class="[{invisible: !isFormActive}]"
+        v-on:close-form="formVisibilityChange"
+            v-bind:regexp-tel="regexpTel"
+            v-bind:order-ok-message="orderOkMessage"
+            v-bind:order-err-message="orderErrMessage"
+            v-on:phone-number="userPhoneNum" 
+            v-bind:order-form-close="orderFormClose"  
+            v-bind:loading="loading" 
+            ></new-order>
 
-
-    v-on:phone-number="userPhoneNum"    
-    
-
-    
-    
-    
-   
-></new-order>
-        <header class="header">
-            <div class="header-wrap wrap">
-                <nav class="nav">
-                    <a href="#" class="logo">
-                        <h2>4Kamping</h2>
-                    </a>
-                    <section class="nav-menu">
-                        <input type="checkbox" id="burger">
-                        <label for="burger" class="burger-label">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </label>
-                        <div class="nav-menu-drop">
-                        <h2>4Kamping</h2>
-                            <div class="column-menu">
-                               <ul class="drop_down">
-                                <li class="drop-down-li"><a href="index.html" class="drop-down-link">Главная</a></li>
-                                <li class="drop-down-li"><a href="index.html/#whoweare" class="drop-down-link">О нас</a></li>
-                                <li class="drop-down-li"><a href="#" class="drop-down-link">Преимущества</a></li>
-                                <li class="drop-down-li"><a href="#" class="drop-down-link">Отзывы</a></li>
-                                <li class="drop-down-li"><a href="#" class="drop-down-link">Партнёры</a></li>
-                                <li class="drop-down-li"><a href="#" class="drop-down-link">Я там был</a></li>
-                                <li class="drop-down-li"><a href="#" class="drop-down-link">FAQ</a></li>
-                            </ul> 
-                            </div>
-                                                        <div class="column-menu">
-
-                            <p>ОСТАЛИСЬ ВОПРОСЫ?</p>
-                            <form class="nav-menu-form">
-                                <input id="nav-menu-tel" type="tel" placeholder="Ваш телефон">
-                                <button id="nav-menu-callback" class="sendit-btn">заказать звонок</button>
-                                <label for="nav-menu-personal-data"><input id="nav-menu-personal-data" type="checkbox">Я согласен на обработку персональных данных</label>
-                            </form>
-                            <div class="social-media">
-                                <a href="#"><i class="fab fa-vk"></i></a>
-                                <a href="https://instagram.com/4kamping"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
-
-                            </div>
-
-                        </div>
-</div>
-                    </section>
-                </nav>
-                <div class="header-h1-wrap">
-                    <h1 class="header-h1">Отдых как искусство</h1>
-                    <h2 class="header-h2">Слоган 2</h2>
-                    <button class="sendit-btn header-sendit-btn" v-on:click="formVisibilityChange">арендовать</button>
-                </div>
-            </div>
-        </header>
-
+        <v-header
+        v-bind:checked-change='checkedChange'
+                v-bind:form-visibility-change="formVisibilityChange"
+                v-bind:menu-links='menuLinks'
+                ></v-header>
         <section class="pictures">
             <div class="wrap pictures-wrap">
-                <div class="row"> 
+                
                         
-                    <picture-list
-                    v-bind:pictures="pictures"
                     
-                    ></picture-list>
-                    <picture-list
-                    v-bind:pictures="pictures"
-                    
-                    ></picture-list>
-                    <picture-list
-                    v-bind:pictures="pictures"
-                    
-                    ></picture-list>
                     <picture-list
                     v-bind:pictures="pictures"
                     
                     ></picture-list>
                     
-            </div>
         </div>
         </section>
-        <footer class="footer">
-            <div class="faq-wrap wrap">
-                <div class="faq-h2-wrap">
-                    <h2 class="faq-h2">ОСТАЛИСЬ ВОПРОСЫ?</h2>
-                    <form class="faq-form">
-                        <input type="tel" placeholder="Ваш телефон" class="faq-input">
-                        <button class="faq-submit-btn">заказать звонок</button>
-                        <label for="personal-data-footer"><input type="checkbox" name="personal-data" id="personal-data-footer" required><span>Я согласен на обработку персональных данных</span></label>
-                    </form>
-                </div>
-                <nav class="nav nav-footer">
-                    <a href="#" class="logo"><img src="img/8f0193b0ffa4806af3c4c42328c4478a.png" alt="SendIt!"></a>
-                    <section class="nav-menu">
-                        <input type="checkbox" id="burger-footer">
-                        <label for="burger-footer" class="burger-label-footer">
-                            <span></span>
-                            <span></span>
-                            <span></span>
-                        </label>
-                        <div class="nav-menu-drop-footer">
-                            <img src="img/logo.png" alt="Sendit!" class="nav-menu-drop-logo">
-                            <ul class="drop_down">
-                                <li class="drop-down-li"><a href="#" class="drop-down-link">Главная</a></li>
-                                <li class="drop-down-li"><a href="#" class="drop-down-link">Описание</a></li>
-                                <li class="drop-down-li"><a href="#" class="drop-down-link">Преимущества</a></li>
-                                <li class="drop-down-li"><a href="#" class="drop-down-link">Отзывы</a></li>
-                                <li class="drop-down-li"><a href="#" class="drop-down-link">Партнёры</a></li>
-                                <li class="drop-down-li"><a href="galery.html" class="drop-down-link">Я там был</a></li>
-                                <li class="drop-down-li"><a href="#" class="drop-down-link">FAQ</a></li>
-                            </ul>
-                            <p>ОСТАЛИСЬ ВОПРОСЫ?</p>
-                            <form class="nav-menu-form">
-                                <input id="nav-menu-tel-footer" type="tel" placeholder="Ваш телефон">
-                                <button id="nav-menu-callback-footer" class="sendit-btn">заказать звонок</button>
-                                <label for="nav-menu-personal-data-footer"><input id="nav-menu-personal-data-footer" type="checkbox">Я согласен на обработку персональных данных</label>
-                            </form>
-                            <div class="social-media">
-                                <a href="#"><i class="fab fa-vk"></i></a>
-                                <a href="#"><i class="fab fa-instagram"></i></a>
-                                <a href="#"><i class="fab fa-facebook-f"></i></a>
+        
 
-                            </div>
 
-                        </div>
 
-                    </section>
-                </nav>
-                <div class="copy">
-                    <p class="copy-p">&copy; Сами копипастим и вам разрешаем</p>
-                    <div class="social-media">
-                        <a href="#"><i class="fab fa-vk"></i></a>
-                        <a href="#"><i class="fab fa-instagram"></i></a>
-                        <a href="#"><i class="fab fa-facebook-f"></i></a>
-
-                    </div>
-                    <p class="design-p"><span>2019</span>Задизайнено мной</p>
-                </div>
-            </div>
-        </footer>
+        
+        
+        <v-footer
+        v-bind:checked-change='checkedChange'
+                v-bind:form-visibility-change="formVisibilityChange"
+                v-bind:menu-links='menuLinks'></v-footer>
     </div>
 </body>
 

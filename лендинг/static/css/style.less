@@ -137,7 +137,7 @@ p {
     }
 
     &:active {
-        background: rgba(148, 209, 236, 1);
+        background: @orange;
 
 
     }
@@ -195,9 +195,10 @@ summary::-webkit-details-marker {
     .header-wrap {
         //        background-image: url(../img/bg1%203.png);
         background-color: @orange;
+        background: linear-gradient(rgba(65, 240, 240, 0.5), rgba(233, 81, 16, 0.7)), url(../img/priroda-gory-utki-ozero-peizazh.jpg);
         background-position: top;
         background-repeat: no-repeat;
-        background-size: contain;
+        background-size: cover;
         display: flex;
         flex-direction: column;
         padding-top: 20px;
@@ -257,13 +258,23 @@ img {}
         justify-content: space-between;
 
 
-        & span {
+        span {
             display: block;
             height: 4px;
-            background: #ffffff;
+            background: @orange;
             transition: all 0.3s ease 0.2s;
 
             //            transition: transform 0.3s ease 0s, background 0.3s ease 0.5s, opacity ;
+
+        }
+
+
+    }
+
+    .burger-label {
+        span {
+            background: white;
+
 
         }
     }
@@ -313,6 +324,12 @@ img {}
         padding-bottom: 10px;
         padding-top: 10px;
         max-width: 280px;
+        margin: 0 auto;
+        text-align: center;
+    }
+
+    .nav-menu-form {
+        margin: 0 auto;
     }
 }
 
@@ -329,9 +346,12 @@ img {}
     transform-origin: bottom;
     transition: 0.3s;
 
-    h2 {
+
+    .nav-menu-drop-link {
         display: none;
         color: black;
+        font-family: @font-semibold;
+        font-size: 28px;
     }
 
     .nav-menu-drop-logo {
@@ -346,6 +366,8 @@ img {}
         padding-bottom: 10px;
         padding-top: 10px;
         max-width: 280px;
+        margin: 0 auto;
+        text-align: center;
 
     }
 
@@ -354,6 +376,10 @@ img {}
         margin-bottom: 24px;
         display: flex;
         justify-content: space-between;
+    }
+
+    .nav-menu-form {
+        margin: 0 auto;
     }
 }
 
@@ -383,7 +409,6 @@ span {}
 
 .nav-menu-form {
     display: flex;
-    width: -webkit-fill-available;
     justify-content: center;
 
     & #nav-menu-tel-footer,
@@ -932,7 +957,7 @@ label {}
     .feedback-h1 {
         font-size: 28px;
         line-height: 34px;
-        color: #000000;
+        color: gray;
         margin-bottom: 15px;
 
     }
@@ -1073,9 +1098,22 @@ label {}
         padding-bottom: 21px;
         padding-top: 21px;
 
-        .gallery-h1 {
-            color: gray;
+        .gallery-title {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            .gallery-h1 {
+                color: gray;
+            }
+
+            a {
+                font-family: @font-semibold;
+                color: @orange;
+
+            }
         }
+
 
 
 
@@ -1093,26 +1131,96 @@ label {}
             color: @gray;
         }
 
+        .prices-table-header {
+            .center-flex();
+
+            :nth-child(odd) {
+                border-top-left-radius: 30px;
+
+            }
+
+            :nth-child(even) {
+                border-bottom-right-radius: 30px;
+
+            }
+
+            h3 {
+                min-height: fit-content;
+                padding-top: 5px;
+                padding-bottom: 5px;
+                text-align: center;
+                width: 50%;
+                color: white;
+                background-color: @orange;
+
+            }
+        }
+
         .prices-item {
             display: flex;
             justify-content: space-evenly;
             align-items: center;
-            display: flex;
-
-            margin: 10px;
+            min-height: fit-content;
             font-size: 20px;
+            height: 40px;
 
-            .price-value p {
-                font-family: @font-semibold;
+            &:nth-child(odd) {
+
+                background-color: rgba(128, 128, 128, 0.2);
+                height: 70px;
+                border-bottom-left-radius: 30px;
+                border-top-right-radius: 30px;
+
+
             }
 
-            .fa-ruble-sign {
-                font-size: 16px;
+            &:nth-child(even) {
+                background-color: white;
+                border-bottom-right-radius: 30px;
+                border-top-left-radius: 30px;
+
             }
+
+            &:last-child {
+                border-bottom-right-radius: 30px;
+                min-height: 50px;
+
+            }
+
 
         }
+
+        .price-category {
+
+
+            display: flex;
+            flex: 1.5;
+            justify-content: center;
+
+        }
+
+        .price-value {
+
+            flex: 1;
+            display: flex;
+            justify-content: center;
+
+            p {
+                font-family: @font-semibold;
+
+                text-align: center;
+
+                &:last-child {}
+            }
+        }
+
+        .fa-ruble-sign {
+            font-size: 16px;
+        }
+
     }
 }
+
 
 
 .doubt {
@@ -1473,25 +1581,17 @@ label {}
 
 //gallery
 .pictures {
-    .row {
-        display: -ms-flexbox;
-        /* IE10 */
-        display: flex;
-        -ms-flex-wrap: wrap;
-        /* IE10 */
-        flex-wrap: wrap;
-        padding: 0 4px;
-    }
-
-    /* Create four equal columns that sits next to each other */
     .column {
         -ms-flex: 25%;
         /* IE10 */
         flex: 25%;
-        max-width: 25%;
         padding: 0 4px;
+        display: flex;
+        flex-wrap: wrap;
 
         picture {
+            display: flex;
+            flex-basis: 0.25;
             margin-top: 8px;
             vertical-align: middle;
 
