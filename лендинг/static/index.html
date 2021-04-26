@@ -86,7 +86,7 @@
                         <img src="img/Asset%204@4x%202.png" alt="create">
                     </picture>
                     <h2 class="step2-h2">Шаг 2</h2>
-                    <p class="step2-p">Отправьте заявку ссылка на кнопку. Менеджер позвонит и подтвердит запрос, уточнит все необходимые данные</p>
+                    <p class="step2-p">Отправьте <span v-on:click="formVisibilityChange">заявку</span> или позвоните нам. Менеджер подтвердит запрос и уточнит все необходимые данные</p>
                 </div>
                 <div class="steps-item step3">
                     <picture class="whoweare-picture">
@@ -291,11 +291,16 @@
                 </article>
   </div>
 </div>
+<input class="feedback-form-preview" type="checkbox" name="feedbackMenu" id="feedbackMenu"><label class="feedback-form-open" for="feedbackMenu"><span class="open">Оставить отзыв</span></label>
+
+    <feedback-form
+    ></feedback-form>
 
 
 
-            </div>
-        </section>   
+ </div>
+  
+     </section>   
         <section name="doubt" class="doubt">
             <div class="doubt-wrap wrap">
                 <h2 class="doubt-h1">ОСТАЛИСЬ СОМНЕНИЯ?</h2>

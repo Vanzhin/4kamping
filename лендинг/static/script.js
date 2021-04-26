@@ -1,5 +1,58 @@
 "use strict"
 const API_ROOT = 'http://localhost:3000';
+Vue.component('feedback-form', {
+    props: [],
+    data() {
+        return {}
+    },
+    template: `
+    <div class="feedback-write-form" >
+    <div class="feedback-write-form-item">
+        <label for="userName" class="form-label">Имя<span>*</span>: </label><input id="userName" type="text" class="form-input">
+    </div>
+    <div class="feedback-write-form-item">
+        <label for="userEmail" class="form-label">Почта<span>*</span>: </label><input id="userEmail" type="email" class="form-input">
+    </div>
+    <div class="checkbox">
+        <p>Срок аренды:</p>
+        <input  checked type="radio" name="agreement" id="userPeriod1" class="checkbox-input">
+        <label for="userPeriod1" class="form-label"><span>менее 3 суток</span></label>
+        <input   type="radio" name="agreement" id="userPeriod2" class="checkbox-input">
+        <label for="userPeriod2" class="form-label"><span>от 3 до 14 суток</span></label>
+        <input    type="radio" name="agreement" id="userPeriod3" class="checkbox-input">
+        <label for="userPeriod3" class="form-label"><span>более 14 суток</span></label>
+
+    </div>
+    <div class="feedback-write-form-item">
+        <label for="userMessage" class="form-label">Сообщение<span>*</span>: </label><textarea id="userMessage" class="form-input"></textarea>
+    </div>
+    <div class="feedback-write-form-item">
+        <div class="file-item">
+            <p>Прикрепить фото:</p>
+            <input accept=".jpg, .png, .bmp" type="file" name="file" id="userFile" class="form-input-file">
+            <div class="file-button">Выбрать</div>
+        </div>
+        
+    </div>
+    <div class="feedback-write-form-item">
+        
+        <div class="checkbox">
+            <input required  checked type="checkbox" name="agreement" id="userAgreement" class="checkbox-input">
+            <label for="userAgreement" class="form-label"><span>согласен на обработку персональных данных</span></label>
+
+        </div>
+    </div>
+    <div class="feedback-write">
+        <button class="sendit-btn header-sendit-btn"
+        >оставить отзыв</button>
+    </div>
+</div>
+
+    `,
+    methods: {
+
+    }
+})
 Vue.component('gallery', {
     props: ['mainPictures'],
     template: `
@@ -303,6 +356,8 @@ v-on:click="dataTransfer" type="button"
             orderOkMessage: false,
             orderErrMessage: false,
             loading: false,
+            feedbackVisiblity: false,
+
             pricelist: [{
                 category: "от 2 до 5 суток ",
                 value: '2000 ₽'
@@ -501,6 +556,10 @@ v-on:click="dataTransfer" type="button"
 
 
         methods: {
+            visibilityOn() {
+                this.feedbackVisiblity = !this.feedbackVisiblity;
+                console.log("gopa")
+            },
 
             pictureToMain() {
                 this.pictures.forEach(element => {
