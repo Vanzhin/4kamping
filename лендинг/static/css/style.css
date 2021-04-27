@@ -363,6 +363,7 @@ summary::-webkit-details-marker {
   z-index: 999;
   background-color: rgba(0, 0, 0, 0.8);
   opacity: 1;
+  transition: 0.6s ease-in-out;
 }
 .callback-tel-wrap {
   display: flex;
@@ -377,7 +378,6 @@ summary::-webkit-details-marker {
   opacity: 1;
   min-width: fit-content;
   flex-direction: column;
-  transition: opacity 0.6s ease-in-out;
 }
 .loading {
   position: absolute;
@@ -1123,7 +1123,7 @@ summary::-webkit-details-marker {
   align-items: center;
 }
 .contacts .partners-wrap img {
-  width: 50px;
+  width: 70px;
   opacity: 0.7;
   transition: 0.4s;
 }
