@@ -1014,6 +1014,7 @@ label {}
 
 
         .feedback-write-form-item {
+            position: relative;
             display: flex;
             flex-direction: column;
             margin: 10px 0px;
@@ -1056,6 +1057,11 @@ label {}
 
             }
 
+            .errors {
+                color: red;
+                position: absolute;
+                left: 62px;
+            }
 
         }
 
@@ -1085,6 +1091,10 @@ label {}
                 opacity: 0;
                 font-size: 0px;
                 cursor: pointer;
+            }
+
+            .file-name {
+                margin-left: 20px;
             }
         }
 

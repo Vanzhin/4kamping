@@ -1,56 +1,137 @@
 "use strict"
 const API_ROOT = 'http://localhost:3000';
+
 Vue.component('feedback-form', {
-    props: [],
+    props: ['addFeedbackInfo'],
     data() {
-        return {}
+        return {
+            name: "",
+            email: "",
+            message: "",
+            checkedPeriod: '',
+            file: null,
+            errors: {},
+            agree: "",
+        }
     },
     template: `
-    <div class="feedback-write-form" >
+    <form id="formElem" class="feedback-write-form" @submit.prevent="onSubmit" enctype="multipart/form-data" method="POST">
     <div class="feedback-write-form-item">
-        <label for="userName" class="form-label">Имя<span>*</span>: </label><input id="userName" type="text" class="form-input">
+    <p class="errors">{{errors.name}}</p>
+        <label for="userName" class="form-label">Имя<span>*</span>:</label><input v-model="name" id="userName" name="userName" type="text" class="form-input">
     </div>
     <div class="feedback-write-form-item">
-        <label for="userEmail" class="form-label">Почта<span>*</span>: </label><input id="userEmail" type="email" class="form-input">
+    <p class="errors">{{errors.email}}</p>
+        <label for="userEmail" class="form-label">Почта<span>*</span>: </label><input v-model.lazy="email" id="userEmail" name="userEmail" type="text" class="form-input">
     </div>
     <div class="checkbox">
+    <p class="errors">{{errors.checkedPeriod}}</p>
         <p>Срок аренды:</p>
-        <input  checked type="radio" name="agreement" id="userPeriod1" class="checkbox-input">
+        <input v-model="checkedPeriod"
+        checked type="radio" name="userPeriod" id="userPeriod1" class="checkbox-input" value="менее 3 суток">
         <label for="userPeriod1" class="form-label"><span>менее 3 суток</span></label>
-        <input   type="radio" name="agreement" id="userPeriod2" class="checkbox-input">
+        <input  v-model="checkedPeriod" type="radio" name="userPeriod" id="userPeriod2" class="checkbox-input" value="от 3 до 14 суток">
         <label for="userPeriod2" class="form-label"><span>от 3 до 14 суток</span></label>
-        <input    type="radio" name="agreement" id="userPeriod3" class="checkbox-input">
+        <input  v-model="checkedPeriod"  type="radio" name="userPeriod" id="userPeriod3" class="checkbox-input" value="более 14 суток">
         <label for="userPeriod3" class="form-label"><span>более 14 суток</span></label>
-
     </div>
     <div class="feedback-write-form-item">
-        <label for="userMessage" class="form-label">Сообщение<span>*</span>: </label><textarea id="userMessage" class="form-input"></textarea>
+    <p class="errors">{{errors.message}}</p>
+
+        <label for="userMessage" class="form-label">Сообщение<span>*</span>: </label><textarea v-model.lazy="message" id="userMessage" name="userMessage" class="form-input"></textarea>
     </div>
     <div class="feedback-write-form-item">
         <div class="file-item">
             <p>Прикрепить фото:</p>
-            <input accept=".jpg, .png, .bmp" type="file" name="file" id="userFile" class="form-input-file">
-            <div class="file-button">Выбрать</div>
+            <input ref="file" v-on:change="handleFileUpload" accept=".jpg, .png, .bmp" type="file" name="filedata" id="userFile" class="form-input-file">
+            <div class="file-button">Выбрать</div><span class="file-name" v-if="file">Выбран: {{file.name}}</span>
+
         </div>
         
     </div>
     <div class="feedback-write-form-item">
         
         <div class="checkbox">
-            <input required  checked type="checkbox" name="agreement" id="userAgreement" class="checkbox-input">
+        <p class="errors">{{errors.agree}}</p>
+
+            <input value="agree"  v-model="agree" checked type="checkbox" name="agreement" id="userAgreement" class="checkbox-input">
             <label for="userAgreement" class="form-label"><span>согласен на обработку персональных данных</span></label>
 
         </div>
     </div>
     <div class="feedback-write">
-        <button class="sendit-btn header-sendit-btn"
+        <button type="submit" class="sendit-btn header-sendit-btn"
         >оставить отзыв</button>
     </div>
-</div>
+</form>
 
     `,
     methods: {
+        handleFileUpload() {
+            this.file = this.$refs.file.files[0];
+            console.log(this.file);
+        },
+        onSubmit() {
+            let productReview = [];
+            if (/^[A-zА-яЁё]+$/.test(this.name)) {
+                productReview.push({
+                    name: this.name
+                });
+                this.$set(this.errors, 'name', "");
 
+            } else {
+                this.$set(this.errors, 'name', "Имя было указано с ошибкой или поле сталось пустым. Пожалуйста, укажите имя без цифр и символов");
+            };
+            if (/^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.]{2,6})$/.test(this.email)) {
+                productReview.push({
+                    email: this.email
+                });
+                this.$set(this.errors, 'email', '');
+            } else {
+                this.$set(this.errors, 'email', "Почта была указана с ошибкой или осталось пустым. Пожалуйста, укажите почту в формате ivan@mail.ru")
+            };
+            if (!this.message) this.$set(this.errors, "message", "Пожалуйста, напишите что-то")
+            else {
+                productReview.push({
+                    message: this.message
+                });
+                this.$set(this.errors, "message", "");
+            };
+            if (!this.checkedPeriod) this.$set(this.errors, "checkedPeriod", "Пожалуйста, укажите период аренды")
+            else {
+                productReview.push({
+                    checkedPeriod: this.checkedPeriod
+                });
+                this.$set(this.errors, "checkedPeriod", "")
+            };
+            if (this.agree.length === 0) {
+                this.$set(this.errors, "agree", "Нам необходимо получить Ваше согласие на обработку персональных данных")
+            } else {
+                productReview.push({
+                    agree: this.agree
+                });
+                this.$set(this.errors, "agree", "")
+
+            }
+            productReview.push({
+                file: this.file
+            });
+            console.log(productReview);
+            console.log(this.errors);
+            if (productReview.length === 6) {
+                this.$emit('review-submitted', productReview);
+                this.name = '';
+                this.email = '';
+                this.message = '';
+                this.checkedPeriod = '';
+                this.file = null;
+                this.errors = {};
+
+            }
+            productReview.file = this.file;
+            console.log(productReview);
+            console.log(this.errors);
+        }
     }
 })
 Vue.component('gallery', {
@@ -619,7 +700,7 @@ v-on:click="dataTransfer" type="button"
 
             async addOrderInfo(item) {
                 await this.changerLoad();
-
+                console.log(item);
 
                 let contactLog = {
                     tel: '',
@@ -643,6 +724,26 @@ v-on:click="dataTransfer" type="button"
                 let result = await response.json();
                 this.loading = !this.loading;
                 this.clearInput();
+                if (result.result === 1) {
+                    this.orderOkMessage = !this.orderOkMessage;
+                } else {
+                    this.orderErrMessage = !this.orderErrMessage;
+                }
+
+
+            },
+            async addFeedbackInfo(item) {
+                let response = await fetch(`${API_ROOT}/feedback`, {
+                    method: 'POST',
+                    // headers: {
+                    //     'Content-Type': 'form/multipart'
+                    // },
+
+
+                    body: new FormData(formElem)
+                });
+
+                let result = await response;
                 if (result.result === 1) {
                     this.orderOkMessage = !this.orderOkMessage;
                 } else {

@@ -293,7 +293,8 @@
 </div>
 <input class="feedback-form-preview" type="checkbox" name="feedbackMenu" id="feedbackMenu"><label class="feedback-form-open" for="feedbackMenu"><span class="open">Оставить отзыв</span></label>
 
-    <feedback-form
+    <feedback-form 
+    v-on:review-submitted="addFeedbackInfo"
     ></feedback-form>
 
 

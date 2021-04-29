@@ -715,6 +715,7 @@ summary::-webkit-details-marker {
   opacity: 0;
 }
 .feedback .feedback-write-form .feedback-write-form-item {
+  position: relative;
   display: flex;
   flex-direction: column;
   margin: 10px 0px;
@@ -744,6 +745,11 @@ summary::-webkit-details-marker {
   resize: vertical;
   padding: 20px;
 }
+.feedback .feedback-write-form .feedback-write-form-item .errors {
+  color: red;
+  position: absolute;
+  left: 62px;
+}
 .feedback .feedback-write-form .file-item {
   position: relative;
 }
@@ -756,6 +762,9 @@ summary::-webkit-details-marker {
   opacity: 0;
   font-size: 0px;
   cursor: pointer;
+}
+.feedback .feedback-write-form .file-item .file-name {
+  margin-left: 20px;
 }
 .feedback .feedback-write-form .file-button {
   display: inline-flex;
