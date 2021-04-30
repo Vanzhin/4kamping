@@ -93,6 +93,9 @@ p {
 .disabled:hover {
   box-shadow: none;
 }
+._error {
+  box-shadow: 0px 4px 15px 0px #ff0000;
+}
 button {
   transition: 0.4s;
 }
@@ -727,7 +730,7 @@ summary::-webkit-details-marker {
 .feedback .feedback-write-form .feedback-write-form-item .form-input {
   max-width: 550px;
   min-height: 30px;
-  border-radius: 30px;
+  border-radius: 70px;
   border: 1px gray solid;
   margin: 0px 0px 10px 0px;
   padding: 20px;
@@ -746,9 +749,16 @@ summary::-webkit-details-marker {
   padding: 20px;
 }
 .feedback .feedback-write-form .feedback-write-form-item .errors {
-  color: red;
   position: absolute;
-  left: 62px;
+  background-color: aliceblue;
+  padding: 3px;
+  font-size: 14px;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 1;
+}
+.feedback .feedback-write-form .feedback-write-form-item .invisible {
+  transition: 0.5s ease-in-out;
 }
 .feedback .feedback-write-form .file-item {
   position: relative;
@@ -782,6 +792,15 @@ summary::-webkit-details-marker {
 }
 .feedback .feedback-write-form .checkbox p {
   margin-bottom: 10px;
+}
+.feedback .feedback-write-form .checkbox .errors {
+  position: absolute;
+  background-color: aliceblue;
+  padding: 3px;
+  font-size: 14px;
+  border-radius: 5px;
+  text-align: center;
+  z-index: 1;
 }
 .feedback .feedback-write-form .checkbox .checkbox-input:checked + .form-label::after {
   transform: scale(1);

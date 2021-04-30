@@ -92,6 +92,7 @@ app.post('/order', (request, response) => {
 });
 app.post('/feedback', (request, response) => {
 	let filedata = request.file;
+	console.log(filedata);
 	if (!filedata) {
 
 		filedata = {};
@@ -142,7 +143,19 @@ app.post('/feedback', (request, response) => {
 					filename: `${filedata.originalname}`,
 					path: `${filedata.path}`
 				}]
+			});
+			fs.stat(`./${filedata.path}`, (err, stats) => {
+				if (err) {
+					console.error(err)
+					return
+				} else {
+					fs.unlink(`./${filedata.path}`, (err) => {
+						if (err) console.log(err); // если возникла ошибка    
+						else console.log(`${filedata.originalname} was deleted`);
+					});
+				}
 			})
+
 
 			console.log(result);
 		};
@@ -164,6 +177,7 @@ app.post('/feedback', (request, response) => {
 		})
 
 	});
+
 
 
 });
