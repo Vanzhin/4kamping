@@ -2,7 +2,7 @@
 const API_ROOT = 'http://localhost:3000';
 
 Vue.component('feedback-form', {
-    props: ['addFeedbackInfo'],
+    props: ['sending', 'sent'],
     data() {
         return {
             name: "",
@@ -12,7 +12,6 @@ Vue.component('feedback-form', {
             file: null,
             errors: {},
             agree: "",
-            inputError: false,
             popUpErrors: {
                 name: false,
                 email: false,
@@ -23,14 +22,14 @@ Vue.component('feedback-form', {
         }
     },
     template: `
-    <form id="formElem" class="feedback-write-form" @submit.prevent="onSubmit" enctype="multipart/form-data" method="POST">
+    <form id="formElem" :class="['feedback-write-form', { _sending: sending, _sent: sent}]" @submit.prevent="onSubmit" enctype="multipart/form-data" method="POST">
     <div class="feedback-write-form-item">
     <p v-bind:class="['errors', { invisible: !popUpErrors.name}]">{{errors.name}}</p>
-        <label for="userName" class="form-label">Имя<span>*</span>:</label><input v-on:click.prevent="popUpErrors.name=false" v-model="name" id="userName" name="userName" type="text" :class="['form-input', { _error: inputError}]">
+        <label for="userName" class="form-label">Имя<span>*</span>:</label><input v-on:click.prevent="popUpErrors.name=false" v-model="name" id="userName" name="userName" type="text" :class="['form-input', { _error: popUpErrors.name}]">
     </div>
     <div class="feedback-write-form-item">
     <p :class="['errors', { invisible: !popUpErrors.email}]">{{errors.email}}</p>
-        <label for="userEmail" class="form-label">Почта<span>*</span>: </label><input @click.prevent="popUpErrors.email=false" v-model.lazy="email" id="userEmail" name="userEmail" type="text" :class="['form-input', { _error: inputError}]">
+        <label for="userEmail" class="form-label">Почта<span>*</span>: </label><input @click.prevent="popUpErrors.email=false" v-model.lazy="email" id="userEmail" name="userEmail" type="text" :class="['form-input', { _error: popUpErrors.email}]">
     </div>
     <div class="checkbox">
     <p :class="['errors', { invisible: !popUpErrors.period}]">{{errors.checkedPeriod}}</p>
@@ -46,7 +45,7 @@ Vue.component('feedback-form', {
     <div class="feedback-write-form-item">
     <p :class="['errors', { invisible: !popUpErrors.message}]">{{errors.message}}</p>
 
-        <label for="userMessage" class="form-label">Сообщение<span>*</span>: </label><textarea :class="['form-input', { _error: inputError}]" @click="popUpErrors.message=false" v-model.lazy="message" id="userMessage" name="userMessage" class="form-input"></textarea>
+        <label for="userMessage" class="form-label">Сообщение<span>*</span>: </label><textarea :class="['form-input', { _error: popUpErrors.message}]" @click="popUpErrors.message=false" v-model.lazy="message" id="userMessage" name="userMessage" class="form-input"></textarea>
     </div>
     <div class="feedback-write-form-item">
         <div class="file-item">
@@ -87,15 +86,18 @@ Vue.component('feedback-form', {
             }
         },
         onSubmit() {
+
+
             let productReview = [];
             if (/^[A-zА-яЁё]+$/.test(this.name)) {
                 productReview.push({
                     name: this.name
                 });
                 this.$set(this.errors, 'name', "");
+                this.popUpErrors.name = false;
+
 
             } else {
-                this.inputError = true;
                 this.$set(this.errors, 'name', "Имя было указано с ошибкой или поле сталось пустым. Пожалуйста, укажите имя без цифр и символов");
                 this.popUpErrors.name = true;
                 // setTimeout(() => this.popUpError = true, 3000);
@@ -107,6 +109,8 @@ Vue.component('feedback-form', {
                     email: this.email
                 });
                 this.$set(this.errors, 'email', '');
+                this.popUpErrors.email = false;
+
             } else {
                 this.$set(this.errors, 'email', "Почта была указана с ошибкой или поле осталось пустым. Пожалуйста, укажите почту в формате ivan@mail.ru");
                 this.popUpErrors.email = true;
@@ -121,6 +125,8 @@ Vue.component('feedback-form', {
                     message: this.message
                 });
                 this.$set(this.errors, "message", "");
+                this.popUpErrors.message = false;
+
             };
             if (!this.checkedPeriod) {
                 this.$set(this.errors, "checkedPeriod", "Пожалуйста, укажите период аренды")
@@ -129,7 +135,9 @@ Vue.component('feedback-form', {
                 productReview.push({
                     checkedPeriod: this.checkedPeriod
                 });
-                this.$set(this.errors, "checkedPeriod", "")
+                this.$set(this.errors, "checkedPeriod", "");
+                this.popUpErrors.period = false;
+
             };
             if (this.agree.length === 0) {
                 this.popUpErrors.agree = true;
@@ -139,7 +147,9 @@ Vue.component('feedback-form', {
                 productReview.push({
                     agree: this.agree
                 });
-                this.$set(this.errors, "agree", "")
+                this.$set(this.errors, "agree", "");
+                this.popUpErrors.agree = false;
+
 
             }
             productReview.push({
@@ -147,6 +157,7 @@ Vue.component('feedback-form', {
             });
             console.log(productReview);
             console.log(this.errors);
+
             if (productReview.length === 6) {
                 this.$emit('review-submitted', productReview);
                 this.name = '';
@@ -160,6 +171,7 @@ Vue.component('feedback-form', {
             productReview.file = this.file;
             console.log(productReview);
             console.log(this.errors);
+
         }
     }
 })
@@ -467,6 +479,9 @@ v-on:click="dataTransfer" type="button"
             orderErrMessage: false,
             loading: false,
             feedbackVisiblity: false,
+            sending: false,
+            sent: false,
+
 
             pricelist: [{
                 category: "от 2 до 5 суток ",
@@ -762,6 +777,7 @@ v-on:click="dataTransfer" type="button"
 
             },
             async addFeedbackInfo(item) {
+                this.sending = true;
                 let response = await fetch(`${API_ROOT}/feedback`, {
                     method: 'POST',
                     // headers: {
@@ -772,11 +788,12 @@ v-on:click="dataTransfer" type="button"
                     body: new FormData(formElem)
                 });
 
-                let result = await response;
+                let result = await response.json();
                 if (result.result === 1) {
-                    this.orderOkMessage = !this.orderOkMessage;
+                    this.sending = false;
+                    this.sent = true;
+
                 } else {
-                    this.orderErrMessage = !this.orderErrMessage;
                 }
 
 

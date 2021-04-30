@@ -149,8 +149,9 @@ app.post('/feedback', (request, response) => {
 					console.error(err)
 					return
 				} else {
+					console.log(stats);
 					fs.unlink(`./${filedata.path}`, (err) => {
-						if (err) console.log(err); // если возникла ошибка    
+						if (err) console.log("file was not attached", err); // если возникла ошибка    
 						else console.log(`${filedata.originalname} was deleted`);
 					});
 				}
