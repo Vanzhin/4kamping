@@ -1,5 +1,5 @@
 "use strict"
-const API_ROOT = 'http://q91641a1.beget.tech';
+const API_ROOT = 'http://q91641a1.beget.tech/public_html';
 
 Vue.component('feedback-form', {
     props: ['sending', 'sent'],
