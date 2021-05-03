@@ -979,7 +979,7 @@ label {}
     }
 
     .feedback-form-preview:checked~.feedback-write-form {
-        height: 650px;
+        height: 666px;
         overflow: revert;
         opacity: 1;
 
@@ -1226,6 +1226,7 @@ label {}
         // transition: opacity 0.4s ease-in-out, visibility 0.4s ease-in-out;
         opacity: 1;
         visibility: visible;
+        text-align: center;
     }
 
     .feedback-write {
@@ -1420,26 +1421,28 @@ label {}
         }
 
         .prices-table-header {
-            .center-flex();
+            display: flex;
+            justify-content: center;
 
             :nth-child(odd) {
-                border-top-left-radius: 30px;
+                border-top-left-radius: 10px;
 
             }
 
             :nth-child(even) {
-                border-bottom-right-radius: 30px;
+                border-top-right-radius: 10px;
 
             }
 
             h3 {
-                min-height: fit-content;
-                padding-top: 5px;
+                .center-flex();
+                padding: 5px;
                 padding-bottom: 5px;
                 text-align: center;
                 width: 50%;
                 color: white;
                 background-color: @orange;
+                min-height: 60px;
 
             }
         }
@@ -1456,21 +1459,22 @@ label {}
 
                 background-color: rgba(128, 128, 128, 0.2);
                 height: 70px;
-                border-bottom-left-radius: 30px;
-                border-top-right-radius: 30px;
+                // border-bottom-left-radius: 30px;
+                // border-top-right-radius: 30px;
 
 
             }
 
             &:nth-child(even) {
                 background-color: white;
-                border-bottom-right-radius: 30px;
-                border-top-left-radius: 30px;
+                // border-bottom-right-radius: 30px;
+                // border-top-left-radius: 30px;
 
             }
 
             &:last-child {
-                border-bottom-right-radius: 30px;
+                border-bottom-right-radius: 10px;
+                border-bottom-left-radius: 10px;
 
             }
 
@@ -1481,7 +1485,7 @@ label {}
 
 
             display: flex;
-            flex: 1.5;
+            flex: 1;
             justify-content: center;
 
         }
@@ -1644,7 +1648,7 @@ label {}
 
             .contacts-social {
                 display: flex;
-                justify-content: space-between;
+                justify-content: center;
                 align-items: center;
                 width: 100%;
 
@@ -1659,6 +1663,7 @@ label {}
                     min-height: 38px;
                     opacity: 0.7;
                     transition: 0.4s;
+                    margin: 10px;
 
                     &:hover {
                         opacity: 1;

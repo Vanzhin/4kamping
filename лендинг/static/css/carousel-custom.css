@@ -2,6 +2,9 @@
 .flickity-button {
   color: #e95110;
 }
+.flickity-viewport {
+  min-height: 260px;
+}
 .flickity-page-dots {
   bottom: -15px;
   display: none;
@@ -32,6 +35,7 @@
   object-fit: cover;
   width: 100%;
   height: 100%;
+  border-radius: 5px;
 }
 .carousel-cell-image {
   display: block;

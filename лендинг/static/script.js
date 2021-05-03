@@ -205,8 +205,8 @@ Vue.component('prices', {
             <div class="prices-wrap wrap">
                 <h2 class="prices-h1">ЦЕНЫ</h2>
                 <div class="prices-table-header">
-                <h3 class="prices-h2">Период аренды</h3>
-                <h3 class="prices-h2">стоимость в сутки</h3>
+                <h3 class="prices-h2">Период аренды (сутки)</h3>
+                <h3 class="prices-h2">Стоимость (₽ в сутки)</h3>
                 </div>
                 <div class="prices-item" v-for="item in pricelist">
                     <div class="price-category"><p>{{item.category}}</p></div>
@@ -484,16 +484,16 @@ v-on:click="dataTransfer" type="button"
 
 
             pricelist: [{
-                category: "от 2 до 5 суток ",
-                value: '2000 ₽'
+                category: "2 - 5  ",
+                value: 2000
             }, {
-                category: "от 6 до 10 суток",
-                value: '1750 ₽'
+                category: "6 - 10",
+                value: 1750
             }, {
-                category: "от 11 до 20 суток",
-                value: '1500 ₽'
+                category: "11 - 20",
+                value: 1500
             }, {
-                category: "более 20 суток",
+                category: "> 20",
                 value: 'обсудим'
             }, ],
             menuLinks: [{
@@ -793,8 +793,7 @@ v-on:click="dataTransfer" type="button"
                     this.sending = false;
                     this.sent = true;
 
-                } else {
-                }
+                } else {}
 
 
             },
