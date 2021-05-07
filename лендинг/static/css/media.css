@@ -12,6 +12,7 @@
     min-width: 280px;
   }
   .header .header-wrap {
+    background: linear-gradient(rgba(65, 240, 240, 0.5), rgba(233, 81, 16, 0.7)), url(../img/11_tel.jpeg);
     background-position: top right;
     background-repeat: no-repeat;
   }
@@ -196,6 +197,7 @@
     min-width: 100%;
   }
   .header .header-wrap {
+    background: linear-gradient(rgba(65, 240, 240, 0.5), rgba(233, 81, 16, 0.7)), url(../img/11_tablet.jpeg);
     min-height: 413px;
     background-size: cover;
     background-position: center right;
@@ -471,6 +473,7 @@
     min-width: 360px;
   }
   .header .header-wrap {
+    background: linear-gradient(rgba(65, 240, 240, 0.5), rgba(233, 81, 16, 0.7)), url(../img/11.jpeg);
     min-height: 525px;
     background-size: cover;
     background-position: center right;

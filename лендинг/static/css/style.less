@@ -197,9 +197,8 @@ summary::-webkit-details-marker {
 
 .header {
     .header-wrap {
-        //        background-image: url(../img/bg1%203.png);
         background-color: @orange;
-        background: linear-gradient(rgba(65, 240, 240, 0.5), rgba(233, 81, 16, 0.7)), url(../img/11.jpg);
+        background: linear-gradient(rgba(65, 240, 240, 0.5), rgba(233, 81, 16, 0.7)), url(../img/11.jpeg);
         background-position: top;
         background-repeat: no-repeat;
         background-size: cover;
@@ -240,12 +239,6 @@ summary::-webkit-details-marker {
     margin-bottom: calc(20%*4);
     align-items: center;
 }
-
-.logo {
-    &:hover {}
-}
-
-img {}
 
 .nav-menu {
 
@@ -313,8 +306,6 @@ img {}
     h2 {
         display: none;
     }
-
-    .drop-down-link:hover {}
 
     .nav-menu-drop-logo {
         margin-bottom: 10px;
@@ -409,8 +400,6 @@ img {}
     }
 }
 
-span {}
-
 .nav-menu-form {
     display: flex;
     justify-content: center;
@@ -479,10 +468,6 @@ span {}
     }
 }
 
-#tel {}
-
-#callback {}
-
 #nav-menu-personal-data {
     width: 10px;
     height: 10px;
@@ -495,7 +480,6 @@ span {}
     margin-right: 10px;
 }
 
-label {}
 
 .social-media {
     margin-top: 24px;
@@ -510,7 +494,6 @@ label {}
         min-width: 38px;
         min-height: 38px;
 
-        &:hover {}
     }
 }
 
@@ -696,6 +679,15 @@ label {}
         .whoweare-picture {
             width: 100%;
             .center-flex();
+            position: relative;
+
+            &::before {
+                content: "";
+                background: linear-gradient(rgba(65, 240, 240, 0.5), rgba(255, 254, 254, 0.7));
+                width: 100%;
+                height: 100%;
+                position: absolute;
+            }
         }
 
     }
@@ -778,27 +770,6 @@ label {}
                 width: 100%;
             }
 
-            &.step1 {}
-
-            img {}
-        }
-
-        .steps-item {
-            &.step2 {}
-
-            img {}
-        }
-
-        .steps-item {
-            &.step3 {}
-
-            img {}
-        }
-
-        .steps-item {
-            &.step4 {}
-
-            img {}
         }
     }
 
@@ -834,8 +805,6 @@ label {}
         margin-top: 30px;
         margin-bottom: 6px;
     }
-
-    .step4-p {}
 }
 
 .order {
@@ -854,10 +823,6 @@ label {}
         font-size: 24px;
         margin-bottom: 9px;
         color: @light-grey;
-    }
-
-    .sendit-btn {
-        &.order-sendit-btn {}
     }
 }
 
@@ -939,8 +904,6 @@ label {}
 
 
         }
-
-        &.callback-submit-btn {}
     }
 
 
@@ -1051,7 +1014,6 @@ label {}
 
             }
 
-            span {}
 
 
 
@@ -1097,20 +1059,6 @@ label {}
             .invisible {
                 transition: 0.5s ease-in-out;
             }
-        }
-
-        #userName {
-            &.form-input {}
-        }
-
-        #userEmail {
-            &.form-input {}
-        }
-
-        #userMessage {}
-
-        #userFile {
-            &.form-input {}
         }
 
         .file-item {
@@ -1203,8 +1151,6 @@ label {}
 
                 }
             }
-
-            span {}
         }
 
 
@@ -1227,12 +1173,6 @@ label {}
         opacity: 1;
         visibility: visible;
         text-align: center;
-    }
-
-    .feedback-write {
-        .sendit-btn {
-            &.header-sendit-btn {}
-        }
     }
 
     .feedback-write {
@@ -1302,12 +1242,6 @@ label {}
             font-family: @font-regular;
         }
 
-        .service {}
-
-        .from {}
-
-        .where {}
-
         .feedback-text {
             grid-row-start: 2;
             grid-row-end: 3;
@@ -1373,7 +1307,7 @@ label {}
 
     }
 
-    img {}
+
 
     .our-advantage-item-p {
         font-size: 10px;
@@ -1500,8 +1434,6 @@ label {}
                 font-family: @font-semibold;
 
                 text-align: center;
-
-                &:last-child {}
             }
         }
 
@@ -1728,12 +1660,6 @@ label {}
         flex-direction: column;
     }
 
-
-
-
-
-
-
     #personal-data-footer {
         width: 10px;
         height: 10px;
@@ -1760,41 +1686,6 @@ label {}
     .logo {
         margin-bottom: 15px;
         margin-top: 15px;
-
-        &:hover {}
-    }
-
-    img {}
-
-    .nav-menu {}
-
-    .nav-menu-drop {
-        span {}
-
-        form {}
-
-        label {}
-    }
-
-    .drop-down {}
-
-    .drop-down-li {}
-
-    .drop-down-link {
-        &:hover {}
-    }
-
-    #tel {}
-
-    #callback {}
-
-    #personaldata {}
-
-    .social-media {
-        a {
-            &:hover {}
-
-        }
     }
 
     .copy {
@@ -1824,8 +1715,6 @@ label {}
             }
         }
     }
-
-    p {}
 }
 
 .faq-submit-btn {

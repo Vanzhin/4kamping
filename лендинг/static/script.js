@@ -1,5 +1,5 @@
 "use strict"
-const API_ROOT = 'http://q91641a1.beget.tech/public_html';
+const API_ROOT = 'http://localhost:3000';
 
 Vue.component('feedback-form', {
     props: ['sending', 'sent'],
@@ -503,14 +503,14 @@ v-on:click="dataTransfer" type="button"
                 name: "Преимущества",
                 link: "#our-advantage"
             }, {
-                name: "Отзывы",
-                link: "#feedback"
+                name: "Фото",
+                link: "#gallery"
             }, {
                 name: "Цены",
                 link: "#prices"
             }, {
-                name: "Фото",
-                link: "#gallery"
+                name: "Отзывы",
+                link: "#feedback"
             }, {
                 name: "Вопросы",
                 link: "#doubt"
@@ -521,151 +521,172 @@ v-on:click="dataTransfer" type="button"
             mainPictures: [],
 
             pictures: [{
-                    main: false,
+                    main: true,
                     title: '4Kamping',
-                    src: './img/IMG_1140.JPG',
-                    srcMobile: './img/IMG_1140.JPG',
-                    srcTablet: './img/IMG_1140.JPG'
-                },
-                {
-                    main: false,
-                    title: '4Kamping',
-                    src: './img/IMG_0613.JPG',
-                    srcMobile: './img/IMG_0613.JPG',
-                    srcTablet: './img/IMG_0613.JPG'
-                },
-                {
-                    main: false,
-                    src: './img/IMG_0614.JPG',
-                    title: '4Kamping',
-                    srcMobile: './img/IMG_0614.JPG',
-                    srcTablet: './img/IMG_0614.JPG'
-                },
-                {
-                    main: false,
-                    title: '4Kamping',
-                    src: './img/IMG_0619.JPG',
-                    srcMobile: './img/IMG_0619.JPG',
-                    srcTablet: './img/IMG_0619.JPG'
-                },
-                {
-                    main: false,
-                    title: '4Kamping',
-                    src: './img/IMG_0621.JPG',
-                    srcMobile: './img/IMG_0621.JPG',
-                    srcTablet: './img/IMG_0621.JPG'
-                },
-                {
-                    main: false,
-                    title: '4Kamping',
-                    src: './img/IMG_1142.JPG',
-                    srcMobile: './img/IMG_1142.JPG',
-                    srcTablet: './img/IMG_1142.JPG'
-                },
-                {
-                    main: false,
-                    title: '4Kamping',
-                    src: './img/IMG_1144.JPG',
-                    srcMobile: './img/IMG_1144.JPG',
-                    srcTablet: './img/IMG_1144.JPG'
-                },
-                {
-                    main: false,
-                    title: '4Kamping',
-                    src: './img/IMG_1140.JPG',
-                    srcMobile: './img/IMG_1140.JPG',
-                    srcTablet: './img/IMG_1140.JPG'
-                },
-                {
-                    main: false,
-                    title: '4Kamping',
-                    src: './img/IMG_0613.JPG',
-                    srcMobile: './img/IMG_0613.JPG',
-                    srcTablet: './img/IMG_0613.JPG'
-                },
-                {
-                    main: false,
-                    title: '4Kamping',
-                    src: './img/IMG_0614.JPG',
-                    srcMobile: './img/IMG_0614.JPG',
-                    srcTablet: './img/IMG_0614.JPG'
-                },
-                {
-                    main: false,
-                    title: '4Kamping',
-                    src: './img/IMG_0619.JPG',
-                    srcMobile: './img/IMG_0619.JPG',
-                    srcTablet: './img/IMG_0619.JPG'
-                },
-                {
-                    main: false,
-                    title: '4Kamping',
-                    src: './img/IMG_0621.JPG',
-                    srcMobile: './img/IMG_0621.JPG',
-                    srcTablet: './img/IMG_0621.JPG'
-                },
-                {
-                    main: false,
-                    title: '4Kamping',
-                    src: './img/IMG_1142.JPG',
-                    srcMobile: './img/IMG_1142.JPG',
-                    srcTablet: './img/IMG_1142.JPG'
-                },
-                {
-                    main: false,
-                    title: '4Kamping',
-                    src: './img/IMG_1144.JPG',
-                    srcMobile: './img/IMG_1144.JPG',
-                    srcTablet: './img/IMG_1144.JPG'
-                },
-                {
-                    main: false,
-                    title: '4Kamping',
-                    src: './img/IMG_1140.JPG',
-                    srcMobile: './img/IMG_1140.JPG',
-                    srcTablet: './img/IMG_1140.JPG'
-                },
-                {
-                    main: false,
-                    title: '4Kamping',
-                    src: './img/IMG_0613.JPG',
-                    srcMobile: './img/IMG_0613.JPG',
-                    srcTablet: './img/IMG_0613.JPG'
-                },
-                {
-                    main: false,
-                    title: '4Kamping',
-                    src: './img/IMG_0614.JPG',
-                    srcMobile: './img/IMG_0614.JPG',
-                    srcTablet: './img/IMG_0614.JPG'
-                },
-                {
-                    main: false,
-                    title: '4Kamping',
-                    src: './img/IMG_0619.JPG',
-                    srcMobile: './img/IMG_0619.JPG',
-                    srcTablet: './img/IMG_0619.JPG'
+                    src: './img/IMG_1140.jpeg',
+                    srcMobile: './img/IMG_1140_tel.jpeg',
+                    srcTablet: './img/IMG_1140_tablet.jpeg'
                 },
                 {
                     main: true,
                     title: '4Kamping',
-                    src: './img/IMG_0621.JPG',
-                    srcMobile: './img/IMG_0621.JPG',
-                    srcTablet: './img/IMG_0621.JPG'
+                    src: './img/IMG_0613.jpeg',
+                    srcMobile: './img/IMG_0613_tel.jpeg',
+                    srcTablet: './img/IMG_0613_tablet.jpeg'
+                },
+                {
+                    main: true,
+                    src: './img/IMG_0614.jpeg',
+                    title: '4Kamping',
+                    srcMobile: './img/IMG_0614_tel.jpeg',
+                    srcTablet: './img/IMG_0614_tablet.jpeg'
                 },
                 {
                     main: true,
                     title: '4Kamping',
-                    src: './img/IMG_1142.JPG',
-                    srcMobile: './img/IMG_1142.JPG',
-                    srcTablet: './img/IMG_1142.JPG'
+                    src: './img/IMG_0619.jpeg',
+                    srcMobile: './img/IMG_0619_tel.jpeg',
+                    srcTablet: './img/IMG_0619_tablet.jpeg'
                 },
                 {
                     main: true,
                     title: '4Kamping',
-                    src: './img/IMG_1144.JPG',
-                    srcMobile: './img/IMG_1144.JPG',
-                    srcTablet: './img/IMG_1144.JPG'
+                    src: './img/IMG_0621.jpeg',
+                    srcMobile: './img/IMG_0621_tel.jpeg',
+                    srcTablet: './img/IMG_0621.jpeg'
+                },
+                {
+                    main: true,
+                    title: '4Kamping',
+                    src: './img/IMG_1142.jpeg',
+                    srcMobile: './img/IMG_1142_tel.jpeg',
+                    srcTablet: './img/IMG_1142_tablet.jpeg'
+                },
+                {
+                    main: true,
+                    title: '4Kamping',
+                    src: './img/IMG_1144.jpeg',
+                    srcMobile: './img/IMG_1144_tel.jpeg',
+                    srcTablet: './img/IMG_1144_tablet.jpeg'
+                },
+                {
+                    main: true,
+                    title: '4Kamping',
+                    src: './img/IMG_1150.jpeg',
+                    srcMobile: './img/IMG_1150_tel.jpeg',
+                    srcTablet: './img/IMG_1150_tablet.jpeg'
+                },
+                {
+                    main: true,
+                    title: '4Kamping',
+                    src: './img/IMG_1162.jpeg',
+                    srcMobile: './img/IMG_1162_tel.jpeg',
+                    srcTablet: './img/IMG_1162_tablet.jpeg'
+                },
+                {
+                    main: true,
+                    title: '4Kamping',
+                    src: './img/IMG_0614.jpeg',
+                    srcMobile: './img/IMG_0614_tel.jpeg',
+                    srcTablet: './img/IMG_0614_tablet.jpeg'
+                },
+                {
+                    main: true,
+                    title: '4Kamping',
+                    src: './img/IMG_1167.jpeg',
+                    srcMobile: './img/IMG_1167_tel.jpeg',
+                    srcTablet: './img/IMG_1167_tablet.jpeg'
+                },
+                {
+                    main: true,
+                    title: '4Kamping',
+                    src: './img/IMG_1339.jpeg',
+                    srcMobile: './img/IMG_1339_tel.jpeg',
+                    srcTablet: './img/IMG_1339_tablet.jpeg'
+                },
+                {
+                    main: true,
+                    title: '4Kamping',
+                    src: './img/IMG_1343.jpeg',
+                    srcMobile: './img/IMG_1343_tel.jpeg',
+                    srcTablet: './img/IMG_1343_tablet.jpeg'
+                },
+                {
+                    main: true,
+                    title: '4Kamping',
+                    src: './img/IMG_1357.jpeg',
+                    srcMobile: './img/IMG_1357_tel.jpeg',
+                    srcTablet: './img/IMG_1357_tablet.jpeg'
+                },
+                {
+                    main: true,
+                    title: '4Kamping',
+                    src: './img/IMG_1140.jpeg',
+                    srcMobile: './img/IMG_1140_tel.jpeg',
+                    srcTablet: './img/IMG_1140_tablet.jpeg'
+                },
+                {
+                    main: true,
+                    title: '4Kamping',
+                    src: './img/IMG_1454.jpeg',
+                    srcMobile: './img/IMG_1454_tel.jpeg',
+                    srcTablet: './img/IMG_1454_tablet.jpeg'
+                },
+                {
+                    main: true,
+                    title: '4Kamping',
+                    src: './img/IMG_1476.jpeg',
+                    srcMobile: './img/IMG_1476_tel.jpeg',
+                    srcTablet: './img/IMG_1476_tablet.jpeg'
+                },
+                {
+                    main: true,
+                    title: '4Kamping',
+                    src: './img/IMG_2063.jpeg',
+                    srcMobile: './img/IMG_2063_tel.jpeg',
+                    srcTablet: './img/IMG_2063_tablet.jpeg'
+                },
+                {
+                    main: true,
+                    title: '4Kamping',
+                    src: './img/IMG_0621.jpeg',
+                    srcMobile: './img/IMG_0621_tel.jpeg',
+                    srcTablet: './img/IMG_0621_tablet.jpeg'
+                },
+                {
+                    main: true,
+                    title: '4Kamping',
+                    src: './img/IMG_2270.jpeg',
+                    srcMobile: './img/IMG_2270_tel.jpeg',
+                    srcTablet: './img/IMG_2270_tablet.jpeg'
+                },
+                {
+                    main: true,
+                    title: '4Kamping',
+                    src: './img/IMG_2271.jpeg',
+                    srcMobile: './img/IMG_2271_tel.jpeg',
+                    srcTablet: './img/IMG_2271_tablet.jpeg'
+                },
+                {
+                    main: true,
+                    title: '4Kamping',
+                    src: './img/IMG_2358.jpeg',
+                    srcMobile: './img/IMG_2358_tel.jpeg',
+                    srcTablet: './img/IMG_2358_tablet.jpeg'
+                },
+                {
+                    main: true,
+                    title: '4Kamping',
+                    src: './img/IMG_3675.jpeg',
+                    srcMobile: './img/IMG_3675_tel.jpeg',
+                    srcTablet: './img/IMG_3675_tablet.jpeg'
+                },
+                {
+                    main: true,
+                    title: '4Kamping',
+                    src: './img/IMG_3678.jpeg',
+                    srcMobile: './img/IMG_3678_tel.jpeg',
+                    srcTablet: './img/IMG_3678_tablet.jpeg'
                 },
             ]
 
