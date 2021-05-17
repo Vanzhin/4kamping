@@ -22,8 +22,8 @@
         <section name="whoweare" class="whoweare">
             <div class="whoweare-wrap wrap">
                 <picture class="whoweare-picture">
-                    <source media="(min-width:640px)" srcset="img/кемпер с прозрачным небом 3.png">
-                    <img src="img/кемпер с прозрачным небом 3.png" alt="4Kamping">
+                    <source media="(min-width:640px)" srcset="static/img/кемпер с прозрачным небом 3.png">
+                    <img src="static/img/кемпер с прозрачным небом 3.png" alt="4Kamping">
                 </picture>
                 <h2 class="whoweare-h2">Мы – сервис по аренде кемперов</h2>
                 <p class="whoweare-p">С нами удобно Вам, вашим клиентам и курьерским службам. Для вас наши услуги бесплатны, так как мы получаем бонусы от служб доставок за предоставленный объем заказов, а вы получаете надежный сервис в подарок!</p>
@@ -34,9 +34,9 @@
             <div class="steps-wrap wrap">
                 <div class="steps-item step1">
                     <picture class="whoweare-picture">
-                        <source media="(min-width:640px) and (max-width:1199px)" srcset="img/Asset%203@4x-768.png">
-                        <source media="(min-width:1200px)" srcset="img/Asset%203@4x-1440.png">
-                        <img src="img/Asset%203@4x.png" alt="think">
+                        <source media="(min-width:640px) and (max-width:1199px)" srcset="static/img/Asset%203@4x-768.png">
+                        <source media="(min-width:1200px)" srcset="static/img/Asset%203@4x-1440.png">
+                        <img src="static/img/Asset%203@4x.png" alt="think">
                     </picture>
 
                     <h2 class="step1-h2">Шаг 1</h2>
@@ -44,27 +44,27 @@
                 </div>
                 <div class="steps-item step2">
                     <picture class="whoweare-picture">
-                        <source media="(min-width:640px) and (max-width:1199px)" srcset="img/Asset%204@4x%202-768.png">
-                        <source media="(min-width:1200px)" srcset="img/Asset%204@4x%202-1440.png">
-                        <img src="img/Asset%204@4x%202.png" alt="create">
+                        <source media="(min-width:640px) and (max-width:1199px)" srcset="static/img/Asset%204@4x%202-768.png">
+                        <source media="(min-width:1200px)" srcset="static/img/Asset%204@4x%202-1440.png">
+                        <img src="static/img/Asset%204@4x%202.png" alt="create">
                     </picture>
                     <h2 class="step2-h2">Шаг 2</h2>
                     <p class="step2-p">Отправьте <span v-on:click="formVisibilityChange">заявку</span> или позвоните нам. Менеджер подтвердит запрос и уточнит все необходимые данные</p>
                 </div>
                 <div class="steps-item step3">
                     <picture class="whoweare-picture">
-                        <source media="(min-width:640px) and (max-width:1199px)" srcset="img/Asset%205@4x-768.png">
-                        <source media="(min-width:1200px)" srcset="img/Asset%205@4x-1440.png">
-                        <img src="img/Asset%205@4x.png" alt="meet">
+                        <source media="(min-width:640px) and (max-width:1199px)" srcset="static/img/Asset%205@4x-768.png">
+                        <source media="(min-width:1200px)" srcset="static/img/Asset%205@4x-1440.png">
+                        <img src="static/img/Asset%205@4x.png" alt="meet">
                     </picture>
                     <h2 class="step3-h2">Шаг 3</h2>
                     <p class="step3-p">Подписываете договор аренды и забираете кемпер</p>
                 </div>
                 <div class="steps-item step4">
                     <picture class="whoweare-picture">
-                        <source media="(min-width:640px) and (max-width:1199px)" srcset="img/Asset%206@4x-768.png">
-                        <source media="(min-width:1200px)" srcset="img/Asset%206@4x-1440.png">
-                        <img src="img/Asset%206@4x.png" alt="deliver">
+                        <source media="(min-width:640px) and (max-width:1199px)" srcset="static/img/Asset%206@4x-768.png">
+                        <source media="(min-width:1200px)" srcset="static/img/Asset%206@4x-1440.png">
+                        <img src="static/img/Asset%206@4x.png" alt="deliver">
                     </picture>
 
                     <h2 class="step4-h2">Шаг 4</h2>
@@ -90,9 +90,9 @@
                     <div class="our-advantage-item-wrap">
                         <div class="our-advantage-item">
                             <!-- <picture class="advantage-picture">
-                                <source media="(min-width:640px) and (max-width:1199px)" srcset="img/Layer%203-768.png">
-                                <source media="(min-width:1200px)" srcset="img/Layer%203-1440.png">
-                                <img src="img/Layer%203.png" alt="free-sevice">
+                                <source media="(min-width:640px) and (max-width:1199px)" srcset="./static/img/Layer%203-768.png">
+                                <source media="(min-width:1200px)" srcset="./static/img/Layer%203-1440.png">
+                                <img src="./static/img/Layer%203.png" alt="free-sevice">
                             </picture> -->
                             <i class="fas fa-map-marked-alt"></i>
 
@@ -102,9 +102,9 @@
                     <div class="our-advantage-item-wrap">
                         <div class="our-advantage-item">
                             <!-- <picture class="advantage-picture">
-                                <source media="(min-width:640px) and (max-width:1199px)" srcset="img/Layer%201-768.png">
-                                <source media="(min-width:1200px)" srcset="img/Layer%201-1440.png">
-                                <img src="img/Layer%201.png" alt="select">
+                                <source media="(min-width:640px) and (max-width:1199px)" srcset="./static/img/Layer%201-768.png">
+                                <source media="(min-width:1200px)" srcset="./static/img/Layer%201-1440.png">
+                                <img src="./static/img/Layer%201.png" alt="select">
                             </picture> -->
                             <i class="fas fa-caravan"></i>
                         </div>
@@ -113,9 +113,9 @@
                     <div class="our-advantage-item-wrap">
                         <div class="our-advantage-item">
                             <!-- <picture class="advantage-picture">
-                                <source media="(min-width:640px) and (max-width:1199px)" srcset="img/Layer%206-768.png">
-                                <source media="(min-width:1200px)" srcset="img/Layer%206-1440.png">
-                                <img src="img/Layer%206.png" alt="parameter">
+                                <source media="(min-width:640px) and (max-width:1199px)" srcset="./static/img/Layer%206-768.png">
+                                <source media="(min-width:1200px)" srcset="./static/img/Layer%206-1440.png">
+                                <img src="./static/img/Layer%206.png" alt="parameter">
                             </picture> -->
                             <i class="fas fa-egg"></i>
                         </div>
@@ -124,9 +124,9 @@
                     <div class="our-advantage-item-wrap">
                         <div class="our-advantage-item">
                             <!-- <picture class="advantage-picture">
-                                <source media="(min-width:640px) and (max-width:1199px)" srcset="img/Layer%205-768.png">
-                                <source media="(min-width:1200px)" srcset="img/Layer%205-1440.png">
-                                <img src="img/Layer%205.png" alt="comfort">
+                                <source media="(min-width:640px) and (max-width:1199px)" srcset="./static/img/Layer%205-768.png">
+                                <source media="(min-width:1200px)" srcset="./static/img/Layer%205-1440.png">
+                                <img src="./static/img/Layer%205.png" alt="comfort">
                             </picture> -->
                             <i class="fas fa-mug-hot"></i>
 
@@ -136,9 +136,9 @@
                     <div class="our-advantage-item-wrap">
                         <div class="our-advantage-item">
                             <!-- <picture class="advantage-picture">
-                                <source media="(min-width:640px) and (max-width:1199px)" srcset="img/Layer%202-768.png">
-                                <source media="(min-width:1200px)" srcset="img/Layer%202-1440.png">
-                                <img src="img/Layer%202.png" alt="comfort">
+                                <source media="(min-width:640px) and (max-width:1199px)" srcset="./static/img/Layer%202-768.png">
+                                <source media="(min-width:1200px)" srcset="./static/img/Layer%202-1440.png">
+                                <img src="./static/img/Layer%202.png" alt="comfort">
                             </picture> -->
                             <i class="fas fa-feather-alt"></i>
                         </div>
@@ -147,9 +147,9 @@
                     <div class="our-advantage-item-wrap">
                         <div class="our-advantage-item">
                             <!-- <picture class="advantage-picture">
-                                <source media="(min-width:640px) and (max-width:1199px)" srcset="img/Layer%204-768.png">
-                                <source media="(min-width:1200px)" srcset="img/Layer%204-1440.png">
-                                <img src="img/Layer%204.png" alt="one-number">
+                                <source media="(min-width:640px) and (max-width:1199px)" srcset="./static/img/Layer%204-768.png">
+                                <source media="(min-width:1200px)" srcset="./static/img/Layer%204-1440.png">
+                                <img src="./static/img/Layer%204.png" alt="one-number">
                             </picture> -->
                             <i class="fas fa-bed"></i>
                         </div>
@@ -188,8 +188,8 @@
   <div class="carousel-cell">
       <article class="feedback-slider-content-column content-column-item">
                     <picture class="feedback-picture">
-                        <source media="(min-width:1200px)" srcset="img/image-1440.png">
-                        <img src="img/image.png" alt="customer_photo">
+                        <source media="(min-width:1200px)" srcset="static/img/image-1440.png">
+                        <img src="static/img/image.png" alt="customer_photo">
                     </picture>
                     <div class="customer-info">
                         <h2 class="customer-info-h2">Дарья</h2>
@@ -205,8 +205,8 @@
   <div class="carousel-cell">
       <article class="feedback-slider-content-column content-column-item">
                     <picture class="feedback-picture">
-                        <source media="(min-width:1200px)" srcset="img/image-1-1440.png">
-                        <img src="img/image-2.png" alt="customer_photo">
+                        <source media="(min-width:1200px)" srcset="static/img/image-1-1440.png">
+                        <img src="static/img/image-2.png" alt="customer_photo">
                     </picture>
 
                     <div class="customer-info">
@@ -222,8 +222,8 @@
   <div class="carousel-cell">
       <article class="feedback-slider-content-column content-column-item">
                     <picture class="feedback-picture">
-                        <source media="(min-width:1200px)" srcset="img/image-1440.png">
-                        <img src="img/image.png" alt="customer_photo">
+                        <source media="(min-width:1200px)" srcset="static/img/image-1440.png">
+                        <img src="static/img/image.png" alt="customer_photo">
                     </picture>
                     <div class="customer-info">
                         <h2 class="customer-info-h2">Дарья</h2>
@@ -239,8 +239,8 @@
   <div class="carousel-cell">
       <article class="feedback-slider-content-column content-column-item">
                     <picture class="feedback-picture">
-                        <source media="(min-width:1200px)" srcset="img/image-1-1440.png">
-                        <img src="img/image-2.png" alt="customer_photo">
+                        <source media="(min-width:1200px)" srcset="static/img/image-1-1440.png">
+                        <img src="static/img/image-2.png" alt="customer_photo">
                     </picture>
 
                     <div class="customer-info">
@@ -350,7 +350,7 @@
                         <div class="partners-wrap wrap">
 
                             <h3 class="partners-h2"> Наши партнеры </h3>
-                            <a href="https://smartcamper.ru/main"> <img src="img/logo_zel_menu.svg" alt="smartcamper"></a>
+                            <a href="https://smartcamper.ru/main"> <img src="static/img/logo_zel_menu.svg" alt="smartcamper"></a>
                          </div>
                     </div>
                 </div>
@@ -365,6 +365,7 @@
 </template>
 
 <script>
+let API_ROOT='http://localhost:3000';
 
 import FeedbackForm from './components/FeedbackForm.vue'
 import Gallery from './components/Gallery.vue'
@@ -445,170 +446,170 @@ export default {
             pictures: [{
                     main: true,
                     title: '4Kamping',
-                    src: 'img/IMG_1140.jpeg',
-                    srcMobile: 'img/IMG_1140_tel.jpeg',
-                    srcTablet: 'img/IMG_1140_tablet.jpeg'
+                    src: './static/img/IMG_1140.jpeg',
+                    srcMobile: './static/img/IMG_1140_tel.jpeg',
+                    srcTablet: './static/img/IMG_1140_tablet.jpeg'
                 },
                 {
                     main: true,
                     title: '4Kamping',
-                    src: 'img/IMG_0613.jpeg',
-                    srcMobile: 'img/IMG_0613_tel.jpeg',
-                    srcTablet: 'img/IMG_0613_tablet.jpeg'
+                    src: './static/img/IMG_0613.jpeg',
+                    srcMobile: './static/img/IMG_0613_tel.jpeg',
+                    srcTablet: './static/img/IMG_0613_tablet.jpeg'
                 },
                 {
                     main: true,
-                    src: 'img/IMG_0614.jpeg',
+                    src: './static/img/IMG_0614.jpeg',
                     title: '4Kamping',
-                    srcMobile: 'img/IMG_0614_tel.jpeg',
-                    srcTablet: 'img/IMG_0614_tablet.jpeg'
-                },
-                {
-                    main: true,
-                    title: '4Kamping',
-                    src: 'img/IMG_0619.jpeg',
-                    srcMobile: 'img/IMG_0619_tel.jpeg',
-                    srcTablet: 'img/IMG_0619_tablet.jpeg'
+                    srcMobile: './static/img/IMG_0614_tel.jpeg',
+                    srcTablet: './static/img/IMG_0614_tablet.jpeg'
                 },
                 {
                     main: true,
                     title: '4Kamping',
-                    src: 'img/IMG_0621.jpeg',
-                    srcMobile: 'img/IMG_0621_tel.jpeg',
-                    srcTablet: 'img/IMG_0621.jpeg'
+                    src: './static/img/IMG_0619.jpeg',
+                    srcMobile: './static/img/IMG_0619_tel.jpeg',
+                    srcTablet: './static/img/IMG_0619_tablet.jpeg'
                 },
                 {
                     main: true,
                     title: '4Kamping',
-                    src: 'img/IMG_1142.jpeg',
-                    srcMobile: 'img/IMG_1142_tel.jpeg',
-                    srcTablet: 'img/IMG_1142_tablet.jpeg'
+                    src: './static/img/IMG_0621.jpeg',
+                    srcMobile: './static/img/IMG_0621_tel.jpeg',
+                    srcTablet: './static/img/IMG_0621.jpeg'
                 },
                 {
                     main: true,
                     title: '4Kamping',
-                    src: 'img/IMG_1144.jpeg',
-                    srcMobile: 'img/IMG_1144_tel.jpeg',
-                    srcTablet: 'img/IMG_1144_tablet.jpeg'
+                    src: './static/img/IMG_1142.jpeg',
+                    srcMobile: './static/img/IMG_1142_tel.jpeg',
+                    srcTablet: './static/img/IMG_1142_tablet.jpeg'
                 },
                 {
                     main: true,
                     title: '4Kamping',
-                    src: 'img/IMG_1150.jpeg',
-                    srcMobile: 'img/IMG_1150_tel.jpeg',
-                    srcTablet: 'img/IMG_1150_tablet.jpeg'
+                    src: './static/img/IMG_1144.jpeg',
+                    srcMobile: './static/img/IMG_1144_tel.jpeg',
+                    srcTablet: './static/img/IMG_1144_tablet.jpeg'
                 },
                 {
                     main: true,
                     title: '4Kamping',
-                    src: 'img/IMG_1162.jpeg',
-                    srcMobile: 'img/IMG_1162_tel.jpeg',
-                    srcTablet: 'img/IMG_1162_tablet.jpeg'
+                    src: './static/img/IMG_1150.jpeg',
+                    srcMobile: './static/img/IMG_1150_tel.jpeg',
+                    srcTablet: './static/img/IMG_1150_tablet.jpeg'
                 },
                 {
                     main: true,
                     title: '4Kamping',
-                    src: 'img/IMG_0614.jpeg',
-                    srcMobile: 'img/IMG_0614_tel.jpeg',
-                    srcTablet: 'img/IMG_0614_tablet.jpeg'
+                    src: './static/img/IMG_1162.jpeg',
+                    srcMobile: './static/img/IMG_1162_tel.jpeg',
+                    srcTablet: './static/img/IMG_1162_tablet.jpeg'
                 },
                 {
                     main: true,
                     title: '4Kamping',
-                    src: 'img/IMG_1167.jpeg',
-                    srcMobile: 'img/IMG_1167_tel.jpeg',
-                    srcTablet: 'img/IMG_1167_tablet.jpeg'
+                    src: './static/img/IMG_0614.jpeg',
+                    srcMobile: './static/img/IMG_0614_tel.jpeg',
+                    srcTablet: './static/img/IMG_0614_tablet.jpeg'
                 },
                 {
                     main: true,
                     title: '4Kamping',
-                    src: 'img/IMG_1339.jpeg',
-                    srcMobile: 'img/IMG_1339_tel.jpeg',
-                    srcTablet: 'img/IMG_1339_tablet.jpeg'
+                    src: './static/img/IMG_1167.jpeg',
+                    srcMobile: './static/img/IMG_1167_tel.jpeg',
+                    srcTablet: './static/img/IMG_1167_tablet.jpeg'
                 },
                 {
                     main: true,
                     title: '4Kamping',
-                    src: 'img/IMG_1343.jpeg',
-                    srcMobile: 'img/IMG_1343_tel.jpeg',
-                    srcTablet: 'img/IMG_1343_tablet.jpeg'
+                    src: './static/img/IMG_1339.jpeg',
+                    srcMobile: './static/img/IMG_1339_tel.jpeg',
+                    srcTablet: './static/img/IMG_1339_tablet.jpeg'
                 },
                 {
                     main: true,
                     title: '4Kamping',
-                    src: 'img/IMG_1357.jpeg',
-                    srcMobile: 'img/IMG_1357_tel.jpeg',
-                    srcTablet: 'img/IMG_1357_tablet.jpeg'
+                    src: './static/img/IMG_1343.jpeg',
+                    srcMobile: './static/img/IMG_1343_tel.jpeg',
+                    srcTablet: './static/img/IMG_1343_tablet.jpeg'
                 },
                 {
                     main: true,
                     title: '4Kamping',
-                    src: 'img/IMG_1140.jpeg',
-                    srcMobile: 'img/IMG_1140_tel.jpeg',
-                    srcTablet: 'img/IMG_1140_tablet.jpeg'
+                    src: './static/img/IMG_1357.jpeg',
+                    srcMobile: './static/img/IMG_1357_tel.jpeg',
+                    srcTablet: './static/img/IMG_1357_tablet.jpeg'
                 },
                 {
                     main: true,
                     title: '4Kamping',
-                    src: 'img/IMG_1454.jpeg',
-                    srcMobile: 'img/IMG_1454_tel.jpeg',
-                    srcTablet: 'img/IMG_1454_tablet.jpeg'
+                    src: './static/img/IMG_1140.jpeg',
+                    srcMobile: './static/img/IMG_1140_tel.jpeg',
+                    srcTablet: './static/img/IMG_1140_tablet.jpeg'
                 },
                 {
                     main: true,
                     title: '4Kamping',
-                    src: 'img/IMG_1476.jpeg',
-                    srcMobile: 'img/IMG_1476_tel.jpeg',
-                    srcTablet: 'img/IMG_1476_tablet.jpeg'
+                    src: './static/img/IMG_1454.jpeg',
+                    srcMobile: './static/img/IMG_1454_tel.jpeg',
+                    srcTablet: './static/img/IMG_1454_tablet.jpeg'
                 },
                 {
                     main: true,
                     title: '4Kamping',
-                    src: 'img/IMG_2063.jpeg',
-                    srcMobile: 'img/IMG_2063_tel.jpeg',
-                    srcTablet: 'img/IMG_2063_tablet.jpeg'
+                    src: './static/img/IMG_1476.jpeg',
+                    srcMobile: './static/img/IMG_1476_tel.jpeg',
+                    srcTablet: './static/img/IMG_1476_tablet.jpeg'
                 },
                 {
                     main: true,
                     title: '4Kamping',
-                    src: 'img/IMG_0621.jpeg',
-                    srcMobile: 'img/IMG_0621_tel.jpeg',
-                    srcTablet: 'img/IMG_0621_tablet.jpeg'
+                    src: './static/img/IMG_2063.jpeg',
+                    srcMobile: './static/img/IMG_2063_tel.jpeg',
+                    srcTablet: './static/img/IMG_2063_tablet.jpeg'
                 },
                 {
                     main: true,
                     title: '4Kamping',
-                    src: 'img/IMG_2270.jpeg',
-                    srcMobile: 'img/IMG_2270_tel.jpeg',
-                    srcTablet: 'img/IMG_2270_tablet.jpeg'
+                    src: './static/img/IMG_0621.jpeg',
+                    srcMobile: './static/img/IMG_0621_tel.jpeg',
+                    srcTablet: './static/img/IMG_0621_tablet.jpeg'
                 },
                 {
                     main: true,
                     title: '4Kamping',
-                    src: 'img/IMG_2271.jpeg',
-                    srcMobile: 'img/IMG_2271_tel.jpeg',
-                    srcTablet: 'img/IMG_2271_tablet.jpeg'
+                    src: './static/img/IMG_2270.jpeg',
+                    srcMobile: './static/img/IMG_2270_tel.jpeg',
+                    srcTablet: './static/img/IMG_2270_tablet.jpeg'
                 },
                 {
                     main: true,
                     title: '4Kamping',
-                    src: 'img/IMG_2358.jpeg',
-                    srcMobile: 'img/IMG_2358_tel.jpeg',
-                    srcTablet: 'img/IMG_2358_tablet.jpeg'
+                    src: './static/img/IMG_2271.jpeg',
+                    srcMobile: './static/img/IMG_2271_tel.jpeg',
+                    srcTablet: './static/img/IMG_2271_tablet.jpeg'
                 },
                 {
                     main: true,
                     title: '4Kamping',
-                    src: 'img/IMG_3675.jpeg',
-                    srcMobile: 'img/IMG_3675_tel.jpeg',
-                    srcTablet: 'img/IMG_3675_tablet.jpeg'
+                    src: './static/img/IMG_2358.jpeg',
+                    srcMobile: './static/img/IMG_2358_tel.jpeg',
+                    srcTablet: './static/img/IMG_2358_tablet.jpeg'
                 },
                 {
                     main: true,
                     title: '4Kamping',
-                    src: 'img/IMG_3678.jpeg',
-                    srcMobile: 'img/IMG_3678_tel.jpeg',
-                    srcTablet: 'img/IMG_3678_tablet.jpeg'
+                    src: './static/img/IMG_3675.jpeg',
+                    srcMobile: './static/img/IMG_3675_tel.jpeg',
+                    srcTablet: './static/img/IMG_3675_tablet.jpeg'
+                },
+                {
+                    main: true,
+                    title: '4Kamping',
+                    src: './static/img/IMG_3678.jpeg',
+                    srcMobile: './static/img/IMG_3678_tel.jpeg',
+                    srcTablet: './static/img/IMG_3678_tablet.jpeg'
                 },
             ]
 

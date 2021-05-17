@@ -132,16 +132,15 @@ module.exports = {
 		}),
 		new CopyWebpackPlugin({
 			patterns: [{
-					from: './static/img',
-					to: "./img"
-				}, {
-					from: './static/carousel.js',
-					to: "./side"
-				},{
-					from: './static/fontawesome-free-5.15.1-web/js/all.min.js',
-					to: "./side"
-				},
-			]
+				from: './static/img',
+				to: "./static/img"
+			}, {
+				from: './static/carousel.js',
+				to: "./sideJs"
+			}, {
+				from: './static/fontawesome-free-5.15.1-web/js/fontawesome.min.js',
+				to: "./sideJs"
+			}, ]
 
 		}),
 		// убедитесь что подключили плагин!

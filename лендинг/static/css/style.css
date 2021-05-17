@@ -1,5 +1,6 @@
 @import "carousel.css";
 @import "carousel-custom.css";
+@import '../fontawesome-free-5.15.1-web/css/all.min.css';
 @font-face {
   font-family: 'MyriadPro-Regular';
   src: url('../fonts/MyriadPro-Regular.eot');
