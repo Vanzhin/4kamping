@@ -1,0 +1,62 @@
+/*variables*/
+.flickity-button {
+  color: #e95110;
+}
+.flickity-viewport {
+  min-height: 260px;
+}
+.flickity-page-dots {
+  bottom: -15px;
+  display: none;
+}
+@media (min-width: 320px) and (max-width: 635px) {
+  .flickity-prev-next-button {
+    display: none;
+  }
+}
+.feedback .carousel-cell {
+  width: 66%;
+}
+@media (min-width: 320px) and (max-width: 635px) {
+  .feedback .carousel-cell {
+    background: none;
+    width: 100%;
+  }
+}
+.carousel {
+  margin-top: 20px;
+}
+.carousel-cell {
+  width: 66%;
+  height: 250px;
+  margin-right: 10px;
+}
+.carousel-cell img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  border-radius: 5px;
+}
+.carousel-cell-image {
+  display: block;
+  max-height: 100%;
+  margin: 0 auto;
+  max-width: 100%;
+  opacity: 0;
+  -webkit-transition: opacity 0.4s;
+  transition: opacity 0.4s;
+}
+/* fade in lazy loaded image */
+.carousel-cell-image.flickity-lazyloaded,
+.carousel-cell-image.flickity-lazyerror {
+  opacity: 1;
+}
+.carousel.is-fullscreen .carousel-cell {
+  height: 100%;
+}
+@media (min-width: 320px) and (max-width: 635px) {
+  .carousel-cell {
+    background: none;
+    width: 100%;
+  }
+}
