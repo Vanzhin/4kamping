@@ -38,7 +38,7 @@
         <div class="checkbox">
         <p :class="['errors', { invisible: !popUpErrors.agree}]">{{errors.agree}}</p>
 
-            <input value="agree"  v-model="agree" checked type="checkbox" name="agreement" id="userAgreement" class="checkbox-input">
+            <input value="agree"  v-model="agree" type="checkbox" name="agreement" id="userAgreement" class="checkbox-input">
             <label for="userAgreement" class="form-label"><span>согласен на обработку персональных данных</span></label>
 
         </div>
@@ -135,7 +135,7 @@ methods: {
                 this.popUpErrors.period = false;
 
             };
-            if (this.agree.length === 0) {
+            if (this.agree === false || null) {
                 this.popUpErrors.agree = true;
                 setTimeout(() => this.popUpErrors.agree = false, 3000);
                 this.$set(this.errors, "agree", "Нам необходимо получить Ваше согласие на обработку персональных данных")
