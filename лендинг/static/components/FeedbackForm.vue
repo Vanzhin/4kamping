@@ -59,7 +59,7 @@ props: ['sending', 'sent'],
             checkedPeriod: '',
             file: null,
             errors: {},
-            agree: "",
+            agree: "true",
             popUpErrors: {
                 name: false,
                 email: false,
@@ -135,7 +135,7 @@ methods: {
                 this.popUpErrors.period = false;
 
             };
-            if (this.agree === false || null) {
+            if (this.agree === false) {
                 this.popUpErrors.agree = true;
                 setTimeout(() => this.popUpErrors.agree = false, 3000);
                 this.$set(this.errors, "agree", "Нам необходимо получить Ваше согласие на обработку персональных данных")
