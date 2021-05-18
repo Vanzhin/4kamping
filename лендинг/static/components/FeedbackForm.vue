@@ -59,7 +59,7 @@ props: ['sending', 'sent'],
             checkedPeriod: '',
             file: null,
             errors: {},
-            agree: "true",
+            agree: "false",
             popUpErrors: {
                 name: false,
                 email: false,
