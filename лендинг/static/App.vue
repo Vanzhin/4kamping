@@ -365,7 +365,7 @@
 </template>
 
 <script>
-let API_ROOT='http://localhost:3000';
+let API_ROOT='http://vanzhin.na4u.ru';
 
 import FeedbackForm from './components/FeedbackForm.vue'
 import Gallery from './components/Gallery.vue'
@@ -391,7 +391,7 @@ export default {
 	},
 	data(){
 		return{
-            API_ROOT:'http://localhost:3000',
+            API_ROOT:'http://vanzhin.na4u.ru',
             isFormActive: false,
             inputValue: '',
             regexpTel: /^(89|\+79)\d{9}$/,
