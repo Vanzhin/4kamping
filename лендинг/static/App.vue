@@ -325,7 +325,10 @@
                     <div class="contacts-column">
                         <h3 class="contacts-h3">Мы на связи </h3> 
                         <p>Остались вопросы, звоните!</p>
-                        <p>+7 (902) 877-30-61</p>
+                        <p><a href="tel:+79028773061">+7 (902) 877-30-61</a></p>
+
+
+
                         <div class="contacts-column">
                              
         <div class="contacts-social">

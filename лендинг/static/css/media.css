@@ -258,25 +258,26 @@
   }
   .whoweare .whoweare-wrap {
     display: grid;
-    grid-template-columns: 40% 1fr;
-    grid-template-rows: 15% 1fr 30%;
+    grid-template-columns: 1fr 40%;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 7%;
   }
   .whoweare .whoweare-picture {
-    grid-column: 2;
-    grid-row: 2/span 2;
+    grid-column: 1/1;
+    grid-row: 1/4;
   }
   .whoweare .whoweare-h2 {
-    grid-column: 1/span 2;
+    grid-column: 2;
     grid-row: 1;
     margin-bottom: 0;
     font-size: 36px;
   }
   .whoweare .whoweare-p {
-    grid-column: 1;
+    grid-column: 2;
     grid-row: 2;
     margin-bottom: 0;
     padding-right: 20px;
-    font-size: 14px;
+    font-size: 16px;
   }
   .whoweare.whoweare-sendit-btn {
     grid-column: 1;
@@ -338,52 +339,6 @@
     padding: 0;
     width: 100%;
   }
-  .our-warranty .our-warranty-wrap .our-warranty-h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
-  .our-warranty .our-warranty-slider {
-    justify-content: space-between;
-  }
-  .our-warranty .our-warranty-slider .our-warranty-article {
-    padding: 0;
-    width: 31%;
-  }
-  .our-warranty .our-warranty-slider .our-warranty-article.warranty-article-item1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .our-warranty .our-warranty-slider .our-warranty-article .our-warranty-article-wrap {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-  }
-  .our-warranty .our-warranty-slider .our-warranty-article .our-warranty-img {
-    width: 13vw;
-    height: 13vw;
-    margin-bottom: 20px;
-  }
-  .our-warranty .our-warranty-slider .our-warranty-article .our-warranty-h2 {
-    font-size: 20px;
-    padding: 0;
-  }
-  .our-warranty .our-warranty-slider .our-warranty-article .our-warranty-sendit-btn {
-    min-width: 100%;
-  }
-  .our-warranty .our-warranty-slider .our-warranty-article.warranty-article-item2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .our-warranty .our-warranty-slider .our-warranty-article.warranty-article-item3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .our-warranty .our-warranty-slider-arrow-column {
-    display: none;
-  }
   .doubt .doubt-h1 {
     font-size: 36px;
   }
@@ -406,6 +361,9 @@
     flex-grow: 0.8;
     justify-content: space-around;
   }
+  .nav-menu-form {
+    min-width: 280px;
+  }
   .footer .faq-wrap {
     padding-top: 33px;
   }
@@ -419,6 +377,12 @@
     width: 33%;
     display: flex;
     flex: 1;
+  }
+  .footer .faq-form-wrap {
+    flex-direction: row;
+  }
+  .footer .faq-form-wrap p {
+    padding-right: 20px;
   }
   .footer .nav-menu {
     flex-grow: 0.9;
@@ -616,6 +580,9 @@
     margin: 10px 0;
     width: 49%;
   }
+  .nav-menu-form {
+    min-width: 360px;
+  }
   .footer .faq-h2 {
     font-size: 30px;
   }
@@ -625,6 +592,9 @@
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+  }
+  .footer .faq-form-wrap p {
+    width: 45%;
   }
   .footer .drop-down-link {
     font-size: 18px;

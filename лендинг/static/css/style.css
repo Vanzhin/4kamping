@@ -275,6 +275,7 @@ summary::-webkit-details-marker {
 .nav-menu-form {
   display: flex;
   justify-content: center;
+  min-width: 280px;
 }
 .nav-menu-form #nav-menu-tel-footer,
 .nav-menu-form #nav-menu-tel {
@@ -502,7 +503,6 @@ summary::-webkit-details-marker {
   position: absolute;
 }
 .whoweare img {
-  margin-bottom: 25px;
   max-width: max-content;
   width: 100%;
 }
@@ -888,7 +888,6 @@ summary::-webkit-details-marker {
   font-size: 28px;
   line-height: 34px;
   color: gray;
-  margin-bottom: 15px;
 }
 .feedback .feedback-slider {
   display: flex;
@@ -966,10 +965,6 @@ summary::-webkit-details-marker {
 }
 .our-advantage .our-advantage-item {
   background: #FFFFFF;
-  /*background-image: url(../img/Layer%203.1.png);
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;*/
   width: 86px;
   height: 86px;
   border-radius: 50%;
@@ -1014,6 +1009,7 @@ summary::-webkit-details-marker {
 .prices .prices-wrap .prices-table-header {
   display: flex;
   justify-content: center;
+  margin-top: 10px;
 }
 .prices .prices-wrap .prices-table-header :nth-child(odd) {
   border-top-left-radius: 10px;
@@ -1084,6 +1080,7 @@ summary::-webkit-details-marker {
 .doubt .doubt-details {
   width: 100%;
   margin-bottom: 10px;
+  outline: none;
 }
 .doubt .doubt-details[open] {
   background-color: #E9E9E9;
@@ -1101,8 +1098,7 @@ summary::-webkit-details-marker {
   border-radius: 32px;
   background-color: white;
   min-height: 80px;
-  display: flex;
-  align-items: center;
+  outline: none;
 }
 .doubt .doubt-details .doubt-summary::after {
   content: '\f078';
@@ -1125,6 +1121,9 @@ summary::-webkit-details-marker {
   font-size: 14px;
   line-height: 17px;
   padding: 10px 48px 10px 24px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
 }
 .doubt .doubt-details .doubt-details-p {
   font-size: 14px;
@@ -1154,6 +1153,7 @@ summary::-webkit-details-marker {
 }
 .contacts .contacts-column-wrap .contacts-column h3 {
   margin-bottom: 10px;
+  text-align: center;
 }
 .contacts .contacts-column-wrap .contacts-column p {
   padding: 5px 0;
@@ -1585,25 +1585,26 @@ summary::-webkit-details-marker {
   }
   .whoweare .whoweare-wrap {
     display: grid;
-    grid-template-columns: 40% 1fr;
-    grid-template-rows: 15% 1fr 30%;
+    grid-template-columns: 1fr 40%;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 7%;
   }
   .whoweare .whoweare-picture {
-    grid-column: 2;
-    grid-row: 2/span 2;
+    grid-column: 1/1;
+    grid-row: 1/4;
   }
   .whoweare .whoweare-h2 {
-    grid-column: 1/span 2;
+    grid-column: 2;
     grid-row: 1;
     margin-bottom: 0;
     font-size: 36px;
   }
   .whoweare .whoweare-p {
-    grid-column: 1;
+    grid-column: 2;
     grid-row: 2;
     margin-bottom: 0;
     padding-right: 20px;
-    font-size: 14px;
+    font-size: 16px;
   }
   .whoweare.whoweare-sendit-btn {
     grid-column: 1;
@@ -1665,52 +1666,6 @@ summary::-webkit-details-marker {
     padding: 0;
     width: 100%;
   }
-  .our-warranty .our-warranty-wrap .our-warranty-h1 {
-    font-size: 36px;
-    margin-bottom: 20px;
-  }
-  .our-warranty .our-warranty-slider {
-    justify-content: space-between;
-  }
-  .our-warranty .our-warranty-slider .our-warranty-article {
-    padding: 0;
-    width: 31%;
-  }
-  .our-warranty .our-warranty-slider .our-warranty-article.warranty-article-item1 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .our-warranty .our-warranty-slider .our-warranty-article .our-warranty-article-wrap {
-    flex-direction: column;
-    align-items: flex-start;
-    width: 100%;
-  }
-  .our-warranty .our-warranty-slider .our-warranty-article .our-warranty-img {
-    width: 13vw;
-    height: 13vw;
-    margin-bottom: 20px;
-  }
-  .our-warranty .our-warranty-slider .our-warranty-article .our-warranty-h2 {
-    font-size: 20px;
-    padding: 0;
-  }
-  .our-warranty .our-warranty-slider .our-warranty-article .our-warranty-sendit-btn {
-    min-width: 100%;
-  }
-  .our-warranty .our-warranty-slider .our-warranty-article.warranty-article-item2 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .our-warranty .our-warranty-slider .our-warranty-article.warranty-article-item3 {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  .our-warranty .our-warranty-slider-arrow-column {
-    display: none;
-  }
   .doubt .doubt-h1 {
     font-size: 36px;
   }
@@ -1733,6 +1688,9 @@ summary::-webkit-details-marker {
     flex-grow: 0.8;
     justify-content: space-around;
   }
+  .nav-menu-form {
+    min-width: 280px;
+  }
   .footer .faq-wrap {
     padding-top: 33px;
   }
@@ -1746,6 +1704,12 @@ summary::-webkit-details-marker {
     width: 33%;
     display: flex;
     flex: 1;
+  }
+  .footer .faq-form-wrap {
+    flex-direction: row;
+  }
+  .footer .faq-form-wrap p {
+    padding-right: 20px;
   }
   .footer .nav-menu {
     flex-grow: 0.9;
@@ -1943,6 +1907,9 @@ summary::-webkit-details-marker {
     margin: 10px 0;
     width: 49%;
   }
+  .nav-menu-form {
+    min-width: 360px;
+  }
   .footer .faq-h2 {
     font-size: 30px;
   }
@@ -1952,6 +1919,9 @@ summary::-webkit-details-marker {
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+  }
+  .footer .faq-form-wrap p {
+    width: 45%;
   }
   .footer .drop-down-link {
     font-size: 18px;

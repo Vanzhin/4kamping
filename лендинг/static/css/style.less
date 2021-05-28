@@ -401,6 +401,7 @@ summary::-webkit-details-marker {
 .nav-menu-form {
     display: flex;
     justify-content: center;
+    min-width: 280px;
 
     & #nav-menu-tel-footer,
     & #nav-menu-tel {
@@ -691,7 +692,6 @@ summary::-webkit-details-marker {
     }
 
     img {
-        margin-bottom: 25px;
         max-width: max-content;
         width: 100%;
     }
@@ -1185,7 +1185,6 @@ summary::-webkit-details-marker {
         font-size: 28px;
         line-height: 34px;
         color: gray;
-        margin-bottom: 15px;
 
     }
 
@@ -1288,10 +1287,6 @@ summary::-webkit-details-marker {
 
     .our-advantage-item {
         background: #FFFFFF;
-        /*background-image: url(../img/Layer%203.1.png);
-        background-position: center;
-        background-size: contain;
-        background-repeat: no-repeat;*/
         width: 86px;
         height: 86px;
         border-radius: 50%;
@@ -1355,6 +1350,7 @@ summary::-webkit-details-marker {
         .prices-table-header {
             display: flex;
             justify-content: center;
+            margin-top: 10px;
 
             :nth-child(odd) {
                 border-top-left-radius: 10px;
@@ -1462,6 +1458,7 @@ summary::-webkit-details-marker {
     .doubt-details {
         width: 100%;
         margin-bottom: 10px;
+        outline: none;
 
 
         &[open] {
@@ -1484,8 +1481,9 @@ summary::-webkit-details-marker {
             border-radius: 32px;
             background-color: white;
             min-height: 80px;
-            display: flex;
-            align-items: center;
+            outline: none;
+
+            
 
             &::after {
                 content: '\f078';
@@ -1516,7 +1514,9 @@ summary::-webkit-details-marker {
             font-size: 14px;
             line-height: 17px;
             padding: 10px 48px 10px 24px;
-        }
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);        }
 
         .doubt-details-p {
             font-size: 14px;
@@ -1559,6 +1559,7 @@ summary::-webkit-details-marker {
 
             h3 {
                 margin-bottom: 10px;
+                text-align: center;
             }
 
             p {

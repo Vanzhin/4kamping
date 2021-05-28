@@ -380,20 +380,21 @@
     .whoweare {
         .whoweare-wrap {
             display: grid;
-            grid-template-columns: 40% 1fr;
-            grid-template-rows: 15% 1fr 30%;
+            grid-template-columns: 1fr 40%;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 7%;
 
 
         }
 
         .whoweare-picture {
-            grid-column: 2;
-            grid-row: ~"2/span 2";
+            grid-column: 1/1;
+    grid-row: 1/4;
         }
 
         .whoweare-h2 {
-            grid-column: ~"1/span 2";
-            grid-row: ~"1";
+            grid-column: 2;
+            grid-row: 1;
             margin-bottom: 0;
             font-size: 36px;
 
@@ -401,11 +402,11 @@
         }
 
         .whoweare-p {
-            grid-column: ~"1";
-            grid-row: ~"2";
+            grid-column: 2;
+            grid-row: 2;
             margin-bottom: 0;
             padding-right: 20px;
-            font-size: 14px;
+            font-size: 16px;
         }
 
         &.whoweare-sendit-btn {
@@ -510,76 +511,6 @@
         }
     }
 
-    .our-warranty {
-        .our-warranty-wrap {
-            .our-warranty-h1 {
-                font-size: 36px;
-                margin-bottom: 20px;
-            }
-        }
-
-        .our-warranty-slider {
-            justify-content: space-between;
-
-            .our-warranty-article {
-                padding: 0;
-                width: 31%;
-
-                &.warranty-article-item1 {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                }
-
-                .our-warranty-article-wrap {
-                    flex-direction: column;
-                    align-items: flex-start;
-                    width: 100%;
-                }
-
-                .our-warranty-img {
-                    width: 13vw;
-                    height: 13vw;
-                    margin-bottom: 20px;
-
-                }
-
-
-                .our-warranty-h2 {
-                    font-size: 20px;
-                    padding: 0;
-                }
-
-
-
-                .our-warranty-sendit-btn {
-                    min-width: 100%;
-                }
-
-            }
-
-            .our-warranty-article {
-                &.warranty-article-item2 {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                }
-            }
-
-            .our-warranty-article {
-                &.warranty-article-item3 {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: space-between;
-                }
-            }
-        }
-
-        .our-warranty-slider-arrow-column {
-            display: none;
-        }
-    }
-
     .doubt {
 
         .doubt-h1 {
@@ -608,9 +539,7 @@
 
     .partners {
         .partners-wrap {
-            // padding-bottom: 40px;
-            // padding-top: 40px;
-            // justify-content: space-between;
+
 
             .partners-li {
                 &:nth-child(n) {
@@ -624,8 +553,11 @@
             justify-content: space-around;
         }
     }
-
+    .nav-menu-form {
+        min-width: 280px;
+    }
     .footer {
+        
         .faq-wrap {
             padding-top: 33px;
 
@@ -644,7 +576,12 @@
             display: flex;
             flex: 1;
         }
-
+        .faq-form-wrap{
+            flex-direction: row;
+            p{
+                padding-right: 20px;
+            }
+        }
 
 
 
@@ -950,7 +887,7 @@
         }
     }
 
-
+    .nav-menu-form{min-width: 360px;}
 
     .footer {
 
@@ -965,6 +902,9 @@
             justify-content: space-between;
             align-items: center;
             flex-direction: row;
+            p{
+                width: 45%;
+            }
         }
 
 
