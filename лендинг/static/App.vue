@@ -3,6 +3,9 @@
         <div class="callback-tel" v-bind:class="[{invisible: !isFormActive}]" v-on:click="formVisibilityChange">
             
         </div>
+        <agreement
+        
+        ></agreement>
         <new-order 
         v-bind:class="[{invisible: !isFormActive}]"
         v-on:close-form="formVisibilityChange"
@@ -377,6 +380,7 @@ import VHeader from './components/VHeader.vue'
 import VFooter from './components/VFooter.vue'
 import PictureList from './components/PictureList.vue'
 import NewOrder from './components/NewOrder.vue'
+import Agreement from './components/Agreement.vue';
 
 
 
@@ -390,7 +394,8 @@ export default {
         VHeader,
         VFooter,
         PictureList,
-        NewOrder
+        NewOrder,
+Agreement
 	},
 	data(){
 		return{

@@ -7,7 +7,7 @@
         <div class="server-warning-ok" v-bind:class= "[{ invisible: !orderOkMessage}]">Благодарим Вас. Заявка принята</div>
         <div class="server-warning-err"
         v-bind:class= "[{ invisible: !orderErrMessage}]">Упс, что-то пошло не так. 
-        Пожалуйста, попробуйте позднее или свяжитесь с нами по телефону <br><a href="tel:+79028773061">+7 (902) 877-30-61</a></div></div>
+        Пожалуйста, попробуйте позднее или свяжитесь с нами по телефону <br>8-999-777-22-22</div></div>
 
             <form action="#" class="contact-info"
             v-bind:class="[{ invisible: orderFormClose}]" 
