@@ -1,4 +1,5 @@
 <template>
+
 <form id="formElem" :class="['feedback-write-form', { _sending: sending, _sent: sent}]" @submit.prevent="onSubmit" enctype="multipart/form-data" method="POST">
     <div class="feedback-write-form-item">
     <p v-bind:class="['errors', { invisible: !popUpErrors.name}]">{{errors.name}}</p>
@@ -39,7 +40,7 @@
         <p :class="['errors', { invisible: !popUpErrors.agree}]">{{errors.agree}}</p>
 
             <input value="agree"  v-model="agree" type="checkbox" name="agreement" id="userAgreement" class="checkbox-input">
-            <label for="userAgreement" class="form-label"><span>согласен на обработку персональных данных</span></label>
+            <label for="userAgreement" class="form-label"><span>Я соглашаюсь на обработку персональных данных</span></label><span @click="showAgreement" class="agr-link">Политика конфиденциальности</span>
 
         </div>
     </div>
@@ -49,6 +50,8 @@
 </form>
 </template>
 <script>
+import {eventEmitter} from '../script';
+
 export default {
 props: ['sending', 'sent'],
  data() {
@@ -70,6 +73,11 @@ props: ['sending', 'sent'],
         }
     },
 methods: {
+    showAgreement(){
+        eventEmitter.$emit('agr');
+        console.log("showAgreement");
+
+    },
         errorHide() {
             this.popUpError = false
         },

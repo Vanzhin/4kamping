@@ -7,7 +7,7 @@ import css from "./css/style.css";
 
 
 Vue.config.productionTip = false
-
+export const eventEmitter = new Vue()
 new Vue({
     render: h => h(App),
 }).$mount('#app');

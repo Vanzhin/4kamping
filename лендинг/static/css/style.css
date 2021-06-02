@@ -98,6 +98,9 @@ p {
 ._error {
   box-shadow: 0px 4px 15px 0px #ff0000;
 }
+.lock {
+  overflow: hidden;
+}
 button {
   transition: 0.4s;
 }
@@ -123,6 +126,44 @@ summary::-webkit-details-marker {
 .wrap {
   margin: 0 auto;
   padding: 0px 20px 0 20px;
+}
+.agreement {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  top: 0;
+  left: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  transition: all 0.5s ease 0s;
+  z-index: 1;
+}
+.agreement .agreement-body {
+  min-height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 30px 10px;
+}
+.agreement .agreement-content {
+  background-color: white;
+  max-width: 800px;
+  padding: 30px;
+  position: relative;
+  border-radius: 5px;
+}
+.agreement .agreement-title {
+  color: black;
+}
+.agreement .agreement-text p {
+  text-align: justify;
+}
+.agreement .agreement-close {
+  color: black;
+  top: 28px;
+  left: auto;
+  right: 0px;
 }
 .header .header-wrap {
   background-color: #e95110;
@@ -501,10 +542,12 @@ summary::-webkit-details-marker {
   width: 100%;
   height: 100%;
   position: absolute;
+  border-radius: 30px;
 }
 .whoweare img {
   max-width: max-content;
   width: 100%;
+  border-radius: 30px;
 }
 .whoweare h2 {
   font-size: 18px;
@@ -691,7 +734,7 @@ summary::-webkit-details-marker {
   display: none;
 }
 .feedback .feedback-form-preview:checked ~ .feedback-write-form {
-  height: 666px;
+  height: 690px;
   overflow: revert;
   opacity: 1;
 }
@@ -754,6 +797,13 @@ summary::-webkit-details-marker {
 .feedback .feedback-write-form .feedback-write-form-item .form-label {
   display: inline-flex;
   margin: 0px 0px 10px 0px;
+}
+.feedback .feedback-write-form .feedback-write-form-item .agr-link {
+  cursor: pointer;
+  padding-left: 30px;
+}
+.feedback .feedback-write-form .feedback-write-form-item .agr-link:hover {
+  text-decoration: underline;
 }
 .feedback .feedback-write-form .feedback-write-form-item .form-input {
   max-width: 550px;
@@ -881,7 +931,7 @@ summary::-webkit-details-marker {
 }
 .feedback .feedback-write {
   display: flex;
-  justify-content: flex-end;
+  justify-content: center;
   align-items: center;
 }
 .feedback .feedback-h1 {

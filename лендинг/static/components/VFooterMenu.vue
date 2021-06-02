@@ -3,7 +3,8 @@
     <a href="#header" class="logo"><h2>4Kamping</h2></a>
     <section class="nav-menu">
         <input type="checkbox" id="burger-footer" class="burger">
-        <label for="burger-footer" class="burger-label-footer">
+        <label for="burger-footer" class="burger-label-footer"
+         @click="bodyLock">
             <span></span>
             <span></span>
             <span></span>
@@ -41,7 +42,14 @@
 </template>
 <script>
 export default {
-	    props: ['checkedChange', 'menuLinks'],
+        props: ['checkedChange', 'menuLinks'],
+         methods: {
+        bodyLock(){
+
+ document.body.classList.add('lock');
+}
+
+    }
 
 }
 </script>

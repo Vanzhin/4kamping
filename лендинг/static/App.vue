@@ -4,7 +4,7 @@
             
         </div>
         <agreement
-        
+  
         ></agreement>
         <new-order 
         v-bind:class="[{invisible: !isFormActive}]"
@@ -264,6 +264,7 @@
         :sending="sending"
         :sent="sent"
         v-on:review-submitted="addFeedbackInfo"
+        
         ></feedback-form>
         
     </div>
@@ -365,8 +366,8 @@
         </section>
         <v-footer
         v-bind:checked-change='checkedChange'
-                v-bind:form-visibility-change="formVisibilityChange"
-                v-bind:menu-links='menuLinks'></v-footer>
+        v-bind:form-visibility-change="formVisibilityChange"
+        v-bind:menu-links='menuLinks'></v-footer>
     </div>
 </template>
 
@@ -395,7 +396,7 @@ export default {
         VFooter,
         PictureList,
         NewOrder,
-Agreement
+        Agreement
 	},
 	data(){
 		return{
@@ -626,6 +627,7 @@ Agreement
         }
 	},
     methods: {
+        
             visibilityOn() {
                 this.feedbackVisiblity = !this.feedbackVisiblity;
                 console.log("gopa")
@@ -647,6 +649,7 @@ Agreement
                 for (let i = 0; i < burger.length; i++) {
                     burger[i].checked = false;
                 }
+                document.body.classList.remove('lock'); //удаляю лок для бади
 
             },
 

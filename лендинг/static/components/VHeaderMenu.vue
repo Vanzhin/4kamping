@@ -4,7 +4,8 @@
     </a>
     <section class="nav-menu">
         <input type="checkbox" id="burger" class="burger">
-        <label for="burger" class="burger-label">
+        <label for="burger" class="burger-label"
+        @click="bodyLock">
             <span></span>
             <span></span>
             <span></span>
@@ -36,9 +37,23 @@
     </section>
 </nav>
 </template>
-<script>export default{    
-	props: ['checkedChange', 'menuLinks'],
+<script>
 
+export default {
+	    props: ['checkedChange', 'menuLinks'],
+
+	data() {
+        return {
+           
+        };
+    },
+    methods: {
+        bodyLock(){
+
+ document.body.classList.add('lock');
+}
+
+    }
 
 }
 </script>

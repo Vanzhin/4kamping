@@ -41,8 +41,8 @@ const {
 } = require('mini-css-extract-plugin');
 
 module.exports = {
-	//mode: 'development',
-	mode: 'production',
+	mode: 'development',
+	// mode: 'production',
 
 	entry: {
 		main: './static/script.js',
