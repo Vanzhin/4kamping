@@ -530,13 +530,6 @@ export default {
                 {
                     main: true,
                     title: '4Kamping',
-                    src: './static/img/IMG_0614.jpeg',
-                    srcMobile: './static/img/IMG_0614_tel.jpeg',
-                    srcTablet: './static/img/IMG_0614_tablet.jpeg'
-                },
-                {
-                    main: true,
-                    title: '4Kamping',
                     src: './static/img/IMG_1167.jpeg',
                     srcMobile: './static/img/IMG_1167_tel.jpeg',
                     srcTablet: './static/img/IMG_1167_tablet.jpeg'
@@ -565,13 +558,6 @@ export default {
                 {
                     main: true,
                     title: '4Kamping',
-                    src: './static/img/IMG_1140.jpeg',
-                    srcMobile: './static/img/IMG_1140_tel.jpeg',
-                    srcTablet: './static/img/IMG_1140_tablet.jpeg'
-                },
-                {
-                    main: true,
-                    title: '4Kamping',
                     src: './static/img/IMG_1454.jpeg',
                     srcMobile: './static/img/IMG_1454_tel.jpeg',
                     srcTablet: './static/img/IMG_1454_tablet.jpeg'
@@ -589,13 +575,6 @@ export default {
                     src: './static/img/IMG_2063.jpeg',
                     srcMobile: './static/img/IMG_2063_tel.jpeg',
                     srcTablet: './static/img/IMG_2063_tablet.jpeg'
-                },
-                {
-                    main: true,
-                    title: '4Kamping',
-                    src: './static/img/IMG_0621.jpeg',
-                    srcMobile: './static/img/IMG_0621_tel.jpeg',
-                    srcTablet: './static/img/IMG_0621_tablet.jpeg'
                 },
                 {
                     main: true,

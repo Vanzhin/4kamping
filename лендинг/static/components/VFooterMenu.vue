@@ -13,7 +13,7 @@
         <a href="#header" class= "nav-menu-drop-link" v-on:click="checkedChange">4Kamping</a>
                 <div class="column-menu">
                 <ul class="drop-down">
-                <li class="drop-down-li" v-for="item in menuLinks" :key="item"><a :href="item.link" class="drop-down-link" v-on:click="checkedChange">{{item.name}}</a></li>
+                <li class="drop-down-li" v-for="item in menuLinks" :key="item.name"><a :href="item.link" class="drop-down-link" v-on:click="checkedChange">{{item.name}}</a></li>
 
                 </ul>  
             </div>

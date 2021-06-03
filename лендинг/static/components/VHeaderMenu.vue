@@ -14,7 +14,7 @@
         <h2>4Kamping</h2>
             <div class="column-menu">
                <ul class="drop-down">
-                <li class="drop-down-li" v-for="item in menuLinks" :key="item"><a :href="item.link" class="drop-down-link" v-on:click="checkedChange">{{item.name}}</a></li>
+                <li class="drop-down-li" v-for="item in menuLinks" :key="item.name"><a :href="item.link" class="drop-down-link" v-on:click="checkedChange">{{item.name}}</a></li>
             </ul> 
             </div>
             <div class="column-menu">
