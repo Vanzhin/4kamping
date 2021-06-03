@@ -46,7 +46,7 @@ export default {
          methods: {
         bodyLock(){
 
- document.body.classList.add('lock');
+ document.body.classList.toggle('lock');
 }
 
     }

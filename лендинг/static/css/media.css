@@ -187,6 +187,15 @@
   h2 {
     font-size: 28px;
   }
+  .whoweare .whoweare-wrap .whoweare-picture {
+    font-size: 80px;
+  }
+  .whoweare .whoweare-h2 {
+    text-align: center;
+  }
+  .whoweare .whoweare-p {
+    text-align: justify;
+  }
 }
 @media (min-width: 640px) {
   h2 {
@@ -258,13 +267,14 @@
   }
   .whoweare .whoweare-wrap {
     display: grid;
-    grid-template-columns: 1fr 40%;
+    grid-template-columns: 1fr 45%;
     grid-template-rows: 1fr 1fr 1fr;
     grid-column-gap: 7%;
   }
-  .whoweare .whoweare-picture {
+  .whoweare .whoweare-wrap .whoweare-picture {
     grid-column: 1/1;
     grid-row: 1/4;
+    font-size: 100px;
   }
   .whoweare .whoweare-h2 {
     grid-column: 2;
@@ -456,7 +466,7 @@
     flex-grow: 0.8;
   }
   .whoweare .whoweare-wrap {
-    grid-template-columns: 1fr 40%;
+    grid-template-columns: 1fr 45%;
     grid-template-rows: 1fr 1fr 1fr;
     grid-column-gap: 7%;
     padding-top: 60px;
@@ -465,6 +475,7 @@
   .whoweare .whoweare-picture {
     grid-column: 1/1;
     grid-row: 1/4;
+    font-size: 125px;
   }
   .whoweare img {
     margin: 0;

@@ -24,10 +24,14 @@
                 ></v-header>
         <section name="whoweare" class="whoweare">
             <div class="whoweare-wrap wrap">
-                <picture class="whoweare-picture">
+                <div class="whoweare-picture">
+                    <i class="fas fa-wind fa-rotate-180"></i>
+                    <i class="fas fa-caravan"></i>
+                <i class="fas fa-car-side"></i></div>   
+                <!-- <picture class="whoweare-picture">
                     <source media="(min-width:640px)" srcset="static/img/кемпер с прозрачным небом 3.png">
                     <img src="static/img/кемпер с прозрачным небом 3.png" alt="4Kamping">
-                </picture>
+                </picture> -->
                 <h2 class="whoweare-h2">Мы – сервис по аренде кемперов</h2>
                 <p class="whoweare-p">С нами удобно Вам, вашим клиентам и курьерским службам. Для вас наши услуги бесплатны, так как мы получаем бонусы от служб доставок за предоставленный объем заказов, а вы получаете надежный сервис в подарок!</p>
                 <button class="sendit-btn header-sendit-btn" v-on:click="formVisibilityChange">арендовать</button>
@@ -36,39 +40,47 @@
         <section class="steps">
             <div class="steps-wrap wrap">
                 <div class="steps-item step1">
-                    <picture class="whoweare-picture">
+                    <div class="whoweare-picture"><span class="fa-stack fa-lg"><i class="fas fa-map fa-stack-1x"></i><i class="fas fa-circle fa-stack-1x"></i><i class="fas fa-compass fa-stack-1x"></i></span></div>
+                    <!-- <picture class="whoweare-picture">
                         <source media="(min-width:640px) and (max-width:1199px)" srcset="static/img/Asset%203@4x-768.png">
                         <source media="(min-width:1200px)" srcset="static/img/Asset%203@4x-1440.png">
                         <img src="static/img/Asset%203@4x.png" alt="think">
-                    </picture>
+                    </picture> -->
 
                     <h2 class="step1-h2">Шаг 1</h2>
                     <p class="step1-p">Придумайте, куда поехать</p>
                 </div>
                 <div class="steps-item step2">
-                    <picture class="whoweare-picture">
+                     <div class="whoweare-picture"><span class="fa-stack fa-lg"><i class="fas fa-window-maximize fa-stack-1x"></i><i class="fas fa-desktop fa-stack-1x"></i><i class="fas fa-mouse-pointer fa-stack-1x"></i></span></div>
+
+                    <!-- <picture class="whoweare-picture">
                         <source media="(min-width:640px) and (max-width:1199px)" srcset="static/img/Asset%204@4x%202-768.png">
                         <source media="(min-width:1200px)" srcset="static/img/Asset%204@4x%202-1440.png">
                         <img src="static/img/Asset%204@4x%202.png" alt="create">
-                    </picture>
+                    </picture> -->
                     <h2 class="step2-h2">Шаг 2</h2>
                     <p class="step2-p">Отправьте <span v-on:click="formVisibilityChange">заявку</span> или позвоните нам. Менеджер подтвердит запрос и уточнит все необходимые данные</p>
                 </div>
                 <div class="steps-item step3">
-                    <picture class="whoweare-picture">
+                    <div class="whoweare-picture"><span class="fa-stack fa-lg"><i class="fas fa-file-signature signature1 fa-stack-1x"></i><i class="fas fa-file-signature signature2 fa-stack-1x"></i><i class="fas fa-certificate fa-stack-1x"></i></span></div>
+
+                    <!-- <picture class="whoweare-picture">
                         <source media="(min-width:640px) and (max-width:1199px)" srcset="static/img/Asset%205@4x-768.png">
                         <source media="(min-width:1200px)" srcset="static/img/Asset%205@4x-1440.png">
                         <img src="static/img/Asset%205@4x.png" alt="meet">
-                    </picture>
+                    </picture> -->
                     <h2 class="step3-h2">Шаг 3</h2>
                     <p class="step3-p">Подписываете договор аренды и забираете кемпер</p>
                 </div>
                 <div class="steps-item step4">
-                    <picture class="whoweare-picture">
+                     <div class="whoweare-picture"><span class="fa-stack fa-lg"><i class="fas fa-tree tree1 fa-stack-1x"></i><i class="fas fa-tree tree2 fa-stack-1x"></i><i class="fas fa-tree tree3 fa-stack-1x"></i><i class="fas fa-caravan fa-stack-1x"></i></span>
+                     </div>
+
+                    <!-- <picture class="whoweare-picture">
                         <source media="(min-width:640px) and (max-width:1199px)" srcset="static/img/Asset%206@4x-768.png">
                         <source media="(min-width:1200px)" srcset="static/img/Asset%206@4x-1440.png">
                         <img src="static/img/Asset%206@4x.png" alt="deliver">
-                    </picture>
+                    </picture> -->
 
                     <h2 class="step4-h2">Шаг 4</h2>
                     <p class="step4-p">Наслаждаетесь комфортом на природе :)</p>
