@@ -573,8 +573,7 @@ summary::-webkit-details-marker {
 .steps .steps-wrap {
   display: flex;
   flex-direction: column;
-  padding-bottom: 27px;
-  padding-top: 27px;
+  padding-top: 40px;
   color: gray;
 }
 .steps .steps-wrap h2 {
@@ -590,7 +589,7 @@ summary::-webkit-details-marker {
   flex-direction: column;
 }
 .steps .steps-wrap .steps-item p {
-  font-size: 14px;
+  font-size: 18px;
   line-height: 17px;
   text-align: center;
 }
@@ -607,6 +606,10 @@ summary::-webkit-details-marker {
   align-items: center;
   font-size: 75px;
   position: relative;
+}
+.steps .steps-wrap .steps-item .whoweare-picture .fa-stack {
+  line-height: 0.75em;
+  height: 0.75em;
 }
 .steps .steps-wrap .steps-item .whoweare-picture .fa-map {
   font-size: 100px;
@@ -688,6 +691,9 @@ summary::-webkit-details-marker {
 .steps .step4-h2 {
   margin-top: 21px;
   margin-bottom: 6px;
+}
+.steps .step4-p {
+  margin-bottom: 30px;
 }
 .order .order-wrap {
   background: #e95110;
@@ -792,7 +798,7 @@ summary::-webkit-details-marker {
   display: none;
 }
 .feedback .feedback-form-preview:checked ~ .feedback-write-form {
-  height: 690px;
+  height: 740px;
   overflow: revert;
   opacity: 1;
 }
@@ -866,7 +872,7 @@ summary::-webkit-details-marker {
 .feedback .feedback-write-form .feedback-write-form-item .form-input {
   max-width: 550px;
   min-height: 30px;
-  border-radius: 70px;
+  border-radius: 30px;
   border: 1px gray solid;
   margin: 0px 0px 10px 0px;
   padding: 20px;
@@ -880,8 +886,8 @@ summary::-webkit-details-marker {
   border: 1px #e95110 solid;
 }
 .feedback .feedback-write-form .feedback-write-form-item textarea.form-input {
-  min-height: 100px;
-  resize: vertical;
+  min-height: 160px;
+  resize: none;
   padding: 20px;
 }
 .feedback .feedback-write-form .feedback-write-form-item .errors {
@@ -1320,8 +1326,6 @@ summary::-webkit-details-marker {
   position: relative;
 }
 .footer .faq-h2 {
-  font-size: 18px;
-  line-height: 22px;
   margin-bottom: 10px;
 }
 .footer .faq-form-wrap {

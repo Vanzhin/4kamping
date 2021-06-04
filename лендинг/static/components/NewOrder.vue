@@ -90,6 +90,7 @@ export default {
         },
         dataTransfer() {
             this.$emit('phone-number', this.phone);
+            this.correctInput = false;
         }
     }
 

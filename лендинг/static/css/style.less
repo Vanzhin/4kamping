@@ -781,8 +781,7 @@ summary::-webkit-details-marker {
     .steps-wrap {
         display: flex;
         flex-direction: column;
-        padding-bottom: 27px;
-        padding-top: 27px;
+        padding-top: 40px;
         color: @gray;
 
         h2 {
@@ -804,7 +803,7 @@ summary::-webkit-details-marker {
 
 
             p {
-                font-size: 14px;
+                font-size: 18px;
                 line-height: 17px;
                 text-align: center;
 
@@ -823,6 +822,10 @@ summary::-webkit-details-marker {
                 .center-flex();
                 font-size: 75px;
                 position: relative;
+                .fa-stack{
+                    line-height: .75em;
+                    height: .75em;
+                }
                 .fa-map{
                     font-size: 100px;
                 }
@@ -919,6 +922,9 @@ summary::-webkit-details-marker {
     .step4-h2 {
         margin-top: 21px;
         margin-bottom: 6px;
+    }
+    .step4-p {
+        margin-bottom: 30px;
     }
 }
 
@@ -1057,7 +1063,7 @@ summary::-webkit-details-marker {
     }
 
     .feedback-form-preview:checked~.feedback-write-form {
-        height: 690px;
+        height: 740px;
         overflow: revert;
         opacity: 1;
 
@@ -1141,7 +1147,7 @@ summary::-webkit-details-marker {
             .form-input {
                 max-width: 550px;
                 min-height: 30px;
-                border-radius: 70px;
+                border-radius: 30px;
                 border: 1px gray solid;
                 margin: 0px 0px 10px 0px;
                 padding: 20px;
@@ -1160,8 +1166,8 @@ summary::-webkit-details-marker {
             }
 
             textarea.form-input {
-                min-height: 100px;
-                resize: vertical;
+                min-height: 160px;
+                resize: none;
                 padding: 20px;
 
             }
@@ -1758,8 +1764,8 @@ summary::-webkit-details-marker {
     }
 
     .faq-h2 {
-        font-size: 18px;
-        line-height: 22px;
+        // font-size: 18px;
+        // line-height: 22px;
         margin-bottom: 10px;
 
 

@@ -47,9 +47,13 @@
 .carousel-cell-image.flickity-lazyloaded,
 .carousel-cell-image.flickity-lazyerror {
   opacity: 1;
+  border-radius: 30px;
 }
 .carousel.is-fullscreen .carousel-cell {
-  height: 100%;
+  height: 97%;
+}
+.flickity-enabled.is-fullscreen {
+  height: 108%;
 }
 @media (min-width: 320px) and (max-width: 635px) {
   .carousel-cell {

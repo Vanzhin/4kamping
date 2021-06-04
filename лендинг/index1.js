@@ -1,57 +1,41 @@
-"use strict"
-const fs = require('fs');
-const http = require('http');
-const path = require('path');
 const express = require('express');
 const app = express();
+const fs = require('fs');
 const cors = require('cors');
+const log = require('./logger');
 const nodemailer = require('nodemailer');
-
+// const bodyParser = require('body-parser')
+// app.use(bodyParser.urlencoded({
+// 	extended: true
+// }));
 let multer = require('multer');
 app.use(multer({
 	dest: "uploads"
 }).single("filedata"));
 
+
+
+app.use(express.static('./static'));
+app.use(cors());
 app.use(express.json());
-// app.use('./sideJs',express.static(path.join(__dirname, 'www/sideJs')));
 
-app.use(express.static(__dirname + './www'));
 
-const {
-	APP_PORT,
-	APP_IP,
-	APP_PATH
-} = process.env;
-
-const indexPath = path.join(path.dirname(APP_PATH), 'index.html');
-const orderPath = path.join(path.dirname(APP_PATH), 'order.json');
-const feedbackPath = path.join(path.dirname(APP_PATH), 'feedback.json');
-
-console.log("индекс:", indexPath);
-app.get('/', (req, res) => {
-	fs.readFile(indexPath, (err, data) => {
+app.get('/order', (request, response) => {
+	fs.readFile('./order.json', 'utf-8', (err, data) => {
 		if (err) {
-			res.writeHead(400, {
-				'Content-Type': 'text/plain'
-			});
-			res.write('index.html not found');
-		} else {
-			res.writeHead(200, {
-				'Content-Type': 'text/html'
-			});
-			res.write(data);
+			console.log("read order.json error", err);
+			response.send("read order.json error");
+			return;
 		}
-		res.end();
+		const orderInfo = JSON.parse(data)
+		console.log(orderInfo);
+		return response.send(data);
 	})
-})
-
-
-app.listen(APP_PORT, () => {
-	console.log(`Server running at http://${APP_IP}:${APP_PORT}/`)
 });
+
 app.post('/order', (request, response) => {
-	// 	console.log("request.body:", request.body);
-	fs.readFile(orderPath, 'utf-8', (err, data) => {
+	console.log(request.body);
+	fs.readFile('./order.json', 'utf-8', (err, data) => {
 		// console.log(data);
 		if (err) {
 			console.log("read order.json error", err);
@@ -59,9 +43,9 @@ app.post('/order', (request, response) => {
 			return;
 		}
 		const order = JSON.parse(data);
-		// 		console.log('order:', order);
+		// console.log(order);
 		const item = request.body;
-		// 		console.log('item:', item);
+		// console.log(item);
 
 
 
@@ -70,19 +54,17 @@ app.post('/order', (request, response) => {
 
 		async function main() {
 			let transporter = nodemailer.createTransport({
-				host: 'mail.netangels.ru',
-				port: 25,
-				secure: false,
+				host: 'smtp.mail.ru',
+				port: 465,
+				secure: true,
 				auth: {
-					user: `info@vanzhin.ru`,
-					pass: `Qwebublzxc1`,
+					user: `4kamping@mail.ru`,
+					pass: `W3llm4N1605`,
 				},
 			})
-
-			// 			console.log(order);
-
+			console.log(order);
 			let result = await transporter.sendMail({
-				from: '<info@vanzhin.ru>',
+				from: '"4kamping" <4kamping@mail.ru>',
 				to: 'nikolay.vanzhin@yandex.ru',
 				subject: 'Новая заявка 4Kamping.ru',
 				html: `<p>Заявка с сайта. <br>телефон: +${item.tel}, <br>время: ${item.date}</p>`,
@@ -92,7 +74,7 @@ app.post('/order', (request, response) => {
 		};
 		main().catch(console.error);
 
-		fs.writeFile(orderPath, JSON.stringify(order), (err) => {
+		fs.writeFile('order.json', JSON.stringify(order), (err) => {
 			if (err) {
 				console.log("write order.json error", err);
 				response.json({
@@ -119,7 +101,7 @@ app.post('/feedback', (request, response) => {
 
 	};
 
-	fs.readFile(feedbackPath, 'utf-8', (err, data) => {
+	fs.readFile('./feedback.json', 'utf-8', (err, data) => {
 		// console.log(data);
 		if (err) {
 			console.log("read feedback.json error", err);
@@ -140,17 +122,17 @@ app.post('/feedback', (request, response) => {
 		async function main() {
 
 			let transporter = nodemailer.createTransport({
-				host: 'mail.netangels.ru',
-				port: 25,
-				secure: false,
+				host: 'smtp.mail.ru',
+				port: 465,
+				secure: true,
 				auth: {
-					user: `info@vanzhin.ru`,
-					pass: `Qwebublzxc1`,
+					user: `4kamping@mail.ru`,
+					pass: `W3llm4N1605`,
 				},
 			})
 			// console.log(feedbackUser);
 			let result = await transporter.sendMail({
-				from: '"4kamping" <info@vanzhin.ru>',
+				from: '"4kamping" <4kamping@mail.ru>',
 				to: 'nikolay.vanzhin@yandex.ru',
 				subject: 'Новый отзыв с 4Kamping.ru',
 				html: `<p>Новый отзыв. <br>Имя пользователя: ${feedbackUser.userName},
@@ -180,7 +162,7 @@ app.post('/feedback', (request, response) => {
 		};
 		main().catch(console.error);
 
-		fs.writeFile(feedbackPath, JSON.stringify(feedback), (err) => {
+		fs.writeFile('./feedback.json', JSON.stringify(feedback), (err) => {
 			if (err) {
 				console.log("write feedback.json error", err);
 				response.json({
@@ -200,11 +182,8 @@ app.post('/feedback', (request, response) => {
 
 
 });
-process.on('SIGTERM', () => {
-	console.info('SIGTERM signal received.');
-	console.log('Closing http server.');
-	server.close(() => {
-		console.log('Http server closed.');
-		process.exit(0);
-	});
-});
+
+
+app.listen(3000, () => {
+	console.log("app is running 3000")
+})

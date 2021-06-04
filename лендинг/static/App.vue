@@ -348,9 +348,9 @@
                         <div class="contacts-column">
                              
         <div class="contacts-social">
-                <a href="https://t.me/nikolay_vanzhin"><i class="fab fa-telegram-plane"></i></a>
-                <a href="https://wa.me/79028773061"><i class="fab fa-whatsapp"></i></a>
-                <a href="viber://add?number=+79028773061"><i class="fab fa-viber"></i></a>
+                <a href="https://t.me/nikolay_vanzhin" title="telegram"><i class="fab fa-telegram-plane"></i></a>
+                <a href="https://wa.me/79028773061" title="whats up"><i class="fab fa-whatsapp"></i></a>
+                <a href="viber://add?number=+79028773061" title="viber"><i class="fab fa-viber"></i></a>
         </div>
                         </div>
                         <p><a href="mailto:4kamping@mail.ru"> 4kamping@mail.ru</a></p>
@@ -360,16 +360,16 @@
                     <div class="contacts-column">
                         <h3 class="contacts-h3">4Kamping в социальных сетях </h3> 
     <div class="contacts-social">
-            <a href="#"><i class="fab fa-vk"></i></a>
-            <a href="https://instagram.com/4kamping"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" title="vkontakte"><i class="fab fa-vk"></i></a>
+            <a href="https://instagram.com/4kamping" title="instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f" title="facebook"></i></a>
     </div>
                     </div>
                     <div class="contacts-column">
                         <div class="partners-wrap wrap">
 
                             <h3 class="partners-h2"> Наши партнеры </h3>
-                            <a href="https://smartcamper.ru/main"> <img src="static/img/logo_zel_menu.svg" alt="smartcamper"></a>
+                            <a href="https://smartcamper.ru/main" title="smartcamper"> <img src="static/img/logo_zel_menu.svg" alt="smartcamper"></a>
                          </div>
                     </div>
                 </div>
