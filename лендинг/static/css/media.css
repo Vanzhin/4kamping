@@ -61,6 +61,9 @@
     flex: 50%;
     max-width: 50%;
   }
+  .whoweare .whoweare-wrap .whoweare-picture {
+    font-size: 0px;
+  }
 }
 @media screen and (max-width: 600px) {
   .pictures .column {
@@ -188,7 +191,7 @@
     font-size: 28px;
   }
   .whoweare .whoweare-wrap .whoweare-picture {
-    font-size: 80px;
+    font-size: 0px;
   }
   .whoweare .whoweare-h2 {
     text-align: center;
@@ -274,7 +277,6 @@
   .whoweare .whoweare-wrap .whoweare-picture {
     grid-column: 1/1;
     grid-row: 1/4;
-    font-size: 100px;
   }
   .whoweare .whoweare-h2 {
     grid-column: 2;
@@ -342,6 +344,9 @@
   .our-advantage .our-advantage-item {
     width: 13vw;
     height: 13vw;
+  }
+  .our-advantage .our-advantage-item img {
+    width: 115%;
   }
   .our-advantage .our-advantage-item-p {
     width: min-content;

@@ -26,8 +26,8 @@
             <div class="whoweare-wrap wrap">
                 <div class="whoweare-picture">
                     <i class="fas fa-wind fa-rotate-180"></i>
-                    <i class="fas fa-caravan"></i>
-                <i class="fas fa-car-side"></i></div>   
+                    <img src="/static/img/camper+auto2.svg" alt="4kamping">
+                </div>   
                 <!-- <picture class="whoweare-picture">
                     <source media="(min-width:640px)" srcset="static/img/кемпер с прозрачным небом 3.png">
                     <img src="static/img/кемпер с прозрачным небом 3.png" alt="4Kamping">
@@ -73,8 +73,8 @@
                     <p class="step3-p">Подписываете договор аренды и забираете кемпер</p>
                 </div>
                 <div class="steps-item step4">
-                     <div class="whoweare-picture"><span class="fa-stack fa-lg"><i class="fas fa-tree tree1 fa-stack-1x"></i><i class="fas fa-tree tree2 fa-stack-1x"></i><i class="fas fa-tree tree3 fa-stack-1x"></i><i class="fas fa-caravan fa-stack-1x"></i></span>
-                     </div>
+                     <div class="whoweare-picture"><span class="fa-stack fa-lg"><i class="fas fa-tree tree1 fa-stack-1x"></i><i class="fas fa-tree tree2 fa-stack-1x"></i><i class="fas fa-tree tree3 fa-stack-1x"></i><img src="/static/img/camper2.svg" alt="4kamping"></span>
+                      </div>
 
                     <!-- <picture class="whoweare-picture">
                         <source media="(min-width:640px) and (max-width:1199px)" srcset="static/img/Asset%206@4x-768.png">
@@ -121,7 +121,7 @@
                                 <source media="(min-width:1200px)" srcset="./static/img/Layer%201-1440.png">
                                 <img src="./static/img/Layer%201.png" alt="select">
                             </picture> -->
-                            <i class="fas fa-caravan"></i>
+                            <i class="fas fa-egg"></i>
                         </div>
                         <p class="our-advantage-item-p">Новые кемперы и оборудование</p>
                     </div>
@@ -132,7 +132,7 @@
                                 <source media="(min-width:1200px)" srcset="./static/img/Layer%206-1440.png">
                                 <img src="./static/img/Layer%206.png" alt="parameter">
                             </picture> -->
-                            <i class="fas fa-egg"></i>
+                            <img src="/static/img/camper3.svg" alt="4kamping">
                         </div>
                         <p class="our-advantage-item-p">Стильный дизайн</p>
                     </div>
@@ -146,7 +146,7 @@
                             <i class="fas fa-mug-hot"></i>
 
                         </div>
-                        <p class="our-advantage-item-p">В кемпере есть полевая кухня</p>
+                        <p class="our-advantage-item-p">Есть полевая кухня</p>
                     </div>
                     <div class="our-advantage-item-wrap">
                         <div class="our-advantage-item">
@@ -348,21 +348,21 @@
                         <div class="contacts-column">
                              
         <div class="contacts-social">
-                <a href="https://t.me/nikolay_vanzhin" title="telegram"><i class="fab fa-telegram-plane"></i></a>
+                <a href="https://t.me/79028773061" title="telegram"><i class="fab fa-telegram-plane"></i></a>
                 <a href="https://wa.me/79028773061" title="whats up"><i class="fab fa-whatsapp"></i></a>
-                <a href="viber://add?number=+79028773061" title="viber"><i class="fab fa-viber"></i></a>
+                <!-- <a href="viber://add?number=+79028773061" title="viber"><i class="fab fa-viber"></i></a> -->
         </div>
                         </div>
-                        <p><a href="mailto:4kamping@mail.ru"> 4kamping@mail.ru</a></p>
+                        <p><a href="mailto:info@4kamping.ru"> info@4kamping.ru</a></p>
                         <p></p> 
                         
                     </div>
                     <div class="contacts-column">
-                        <h3 class="contacts-h3">4Kamping в социальных сетях </h3> 
+                        <h3 class="contacts-h3">4Kamping в социальных сетях</h3> 
     <div class="contacts-social">
             <a href="#" title="vkontakte"><i class="fab fa-vk"></i></a>
             <a href="https://instagram.com/4kamping" title="instagram"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook-f" title="facebook"></i></a>
+            <!-- <a href="#"><i class="fab fa-facebook-f" title="facebook"></i></a> -->
     </div>
                     </div>
                     <div class="contacts-column">

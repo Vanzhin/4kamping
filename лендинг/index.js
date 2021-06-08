@@ -200,11 +200,3 @@ app.post('/feedback', (request, response) => {
 
 
 });
-process.on('SIGTERM', () => {
-	console.info('SIGTERM signal received.');
-	console.log('Closing http server.');
-	server.close(() => {
-		console.log('Http server closed.');
-		process.exit(0);
-	});
-});

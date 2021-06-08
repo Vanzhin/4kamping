@@ -137,7 +137,7 @@ summary::-webkit-details-marker {
   overflow-y: auto;
   overflow-x: hidden;
   transition: all 0.5s ease 0s;
-  z-index: 1;
+  z-index: 5;
 }
 .agreement .agreement-body {
   min-height: 100%;
@@ -535,7 +535,7 @@ summary::-webkit-details-marker {
   justify-content: center;
   align-items: center;
   position: relative;
-  font-size: 125px;
+  font-size: 100px;
 }
 .whoweare .whoweare-wrap .whoweare-picture .fa-wind {
   color: white;
@@ -645,15 +645,16 @@ summary::-webkit-details-marker {
 .steps .steps-wrap .steps-item .tree1 {
   font-size: 80px;
   position: absolute;
-  left: -50px;
+  left: -60px;
 }
 .steps .steps-wrap .steps-item .tree2 {
   color: lightgray;
   font-size: 60px;
+  left: -15px;
 }
 .steps .steps-wrap .steps-item .tree3 {
   position: absolute;
-  left: 35px;
+  left: 25px;
 }
 .steps .steps-wrap .steps-item .fa-caravan {
   position: absolute;
@@ -663,8 +664,9 @@ summary::-webkit-details-marker {
   color: #e95110;
 }
 .steps .steps-wrap .steps-item img {
-  max-width: max-content;
   width: 100%;
+  position: absolute;
+  transform: translate(14px, 23px);
 }
 .steps .step1-h2 {
   padding-top: 27px;
@@ -1090,6 +1092,11 @@ summary::-webkit-details-marker {
   max-height: 160px;
   font-size: 50px;
   color: #e95110;
+  position: relative;
+}
+.our-advantage .our-advantage-item img {
+  position: absolute;
+  width: 160%;
 }
 .our-advantage .our-advantage-item-p {
   font-size: 10px;
@@ -1330,7 +1337,7 @@ summary::-webkit-details-marker {
 }
 .footer .faq-form-wrap {
   display: flex;
-  flex: 2;
+  flex: 5;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
@@ -1500,6 +1507,9 @@ summary::-webkit-details-marker {
     flex: 50%;
     max-width: 50%;
   }
+  .whoweare .whoweare-wrap .whoweare-picture {
+    font-size: 0px;
+  }
 }
 @media screen and (max-width: 600px) {
   .pictures .column {
@@ -1627,7 +1637,7 @@ summary::-webkit-details-marker {
     font-size: 28px;
   }
   .whoweare .whoweare-wrap .whoweare-picture {
-    font-size: 80px;
+    font-size: 0px;
   }
   .whoweare .whoweare-h2 {
     text-align: center;
@@ -1713,7 +1723,6 @@ summary::-webkit-details-marker {
   .whoweare .whoweare-wrap .whoweare-picture {
     grid-column: 1/1;
     grid-row: 1/4;
-    font-size: 100px;
   }
   .whoweare .whoweare-h2 {
     grid-column: 2;
@@ -1781,6 +1790,9 @@ summary::-webkit-details-marker {
   .our-advantage .our-advantage-item {
     width: 13vw;
     height: 13vw;
+  }
+  .our-advantage .our-advantage-item img {
+    width: 115%;
   }
   .our-advantage .our-advantage-item-p {
     width: min-content;

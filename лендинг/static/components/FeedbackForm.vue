@@ -108,7 +108,7 @@ methods: {
 
 
             };
-            if (/^([a-z0-9_\.-]+)@([a-z0-9_\.-]+)\.([a-z\.]{2,6})$/.test(this.email)) {
+            if (/^([A-z0-9_\.-]+)@([A-z0-9_\.-]+)\.([A-z\.]{2,6})$/.test(this.email)) {
                 productReview.push({
                     email: this.email
                 });
