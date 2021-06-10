@@ -93,7 +93,7 @@ methods: {
 
 
             let productReview = [];
-            if (/^[A-zА-яЁё]+$/.test(this.name)) {
+            if (/^[A-zА-яЁё\s]+$/.test(this.name)) {
                 productReview.push({
                     name: this.name
                 });
