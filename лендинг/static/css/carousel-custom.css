@@ -40,6 +40,9 @@
   height: 100%;
   border-radius: 5px;
 }
+.carousel-cell .feedback-img {
+  object-fit: contain;
+}
 .carousel-cell-image {
   display: block;
   max-height: 100%;

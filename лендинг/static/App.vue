@@ -33,7 +33,7 @@
                     <img src="static/img/кемпер с прозрачным небом 3.png" alt="4Kamping">
                 </picture> -->
                 <h2 class="whoweare-h2">Мы – сервис по аренде кемперов</h2>
-                <p class="whoweare-p">С нами удобно Вам, вашим клиентам и курьерским службам. Для вас наши услуги бесплатны, так как мы получаем бонусы от служб доставок за предоставленный объем заказов, а вы получаете надежный сервис в подарок!</p>
+                <p class="whoweare-p">С&nbsp;нами&nbsp;Вы сможете отправиться в&nbsp;самые незабываемые приключения. Для Вас будут открыты самые красивые места нашей страны! Не&nbsp;упускайте возможность отправиться в&nbsp;дикую природу и&nbsp;провести с&nbsp;семьей! А&nbsp;мы&nbsp;будем рады видеть Ваши счастливые лица!</p>
                 <button class="sendit-btn header-sendit-btn" v-on:click="formVisibilityChange">арендовать</button>
             </div>
         </section>
@@ -168,7 +168,7 @@
                             </picture> -->
                             <i class="fas fa-bed"></i>
                         </div>
-                        <p class="our-advantage-item-p">Полноразмерное спальное место 200Х140 см</p>
+                        <p class="our-advantage-item-p">Полноразмерное спальное место 200Х140&nbsp;см</p>
                     </div>
                 </div>
             </div>
@@ -204,7 +204,7 @@
       <article class="feedback-slider-content-column content-column-item">
                     <picture class="feedback-picture">
                         <source media="(min-width:1200px)" srcset="static/img/image-1440.png">
-                        <img src="static/img/image.png" alt="customer_photo">
+                        <img class ="feedback-img" src="static/img/no_foto.png" alt="customer_photo">
                     </picture>
                     <div class="customer-info">
                         <h2 class="customer-info-h2">Николай</h2>
@@ -220,7 +220,7 @@
       <article class="feedback-slider-content-column content-column-item">
                     <picture class="feedback-picture">
                         <source media="(min-width:1200px)" srcset="static/img/image-1-1440.png">
-                        <img src="static/img/image-2.png" alt="customer_photo">
+                        <img class ="feedback-img" src="static/img/no_foto.png" alt="customer_photo">
                     </picture>
 
                     <div class="customer-info">
@@ -233,40 +233,40 @@
                     <p class="feedback-text">Давно хотели поехать на Волчихинское, взяли кемпер и не прогадали. понравилось, что все под рукой. управлять сначала не привычно, но потом ок</p>
                 </article>
   </div>
-  <div class="carousel-cell">
+   <div class="carousel-cell">
       <article class="feedback-slider-content-column content-column-item">
                     <picture class="feedback-picture">
-                        <source media="(min-width:1200px)" srcset="static/img/image-1440.png">
-                        <img src="static/img/image.png" alt="customer_photo">
+                        <source media="(min-width:1200px)" srcset="static/img/image-1-1440.png">
+                        <img class ="feedback-img" src="static/img/no_foto.png" alt="customer_photo">
                     </picture>
+
                     <div class="customer-info">
-                        <h2 class="customer-info-h2">Дарья</h2>
-                        <p class="customer-info-p">La Intuicion</p>
-                        <span class="service">Посылка: товары</span>
-                        <span class="from">Откуда: Москва</span>
-                        <span class="where">Куда: Нижневартовск</span>
+                        <h2 class="customer-info-h2">Константин</h2>
+                        <p class="customer-info-p">от 3 до 14 суток</p>
+                        <span class="service">Дата отзыва: 19.06.2021</span>
+                        <!-- <span class="from">Откуда: Москва</span>
+                        <span class="where">Куда: Калининград</span> -->
                     </div>
-                    <p class="feedback-text">Отличный и&nbsp;качественный сервис.
-                        Долго искали курьерскую службу для доставки наших товаров. Решили попробовать и&nbsp;были приятно удивлены, что помимо удобного сайта, компания предоставляет доступ в&nbsp;личный кабинет, где реализованы многие наши потребности (ведение адресной базы, выбор и&nbsp;вызов курьера в&nbsp;пару кликов).</p>
+                    <p class="feedback-text">Прекрасный бюджетный отдых особенно в текущий период. Хорошо отдохнули семьей на берегу озера в дали от городского шума и от большого количества людей</p>
                 </article>
   </div>
   <div class="carousel-cell">
       <article class="feedback-slider-content-column content-column-item">
                     <picture class="feedback-picture">
                         <source media="(min-width:1200px)" srcset="static/img/image-1-1440.png">
-                        <img src="static/img/image-2.png" alt="customer_photo">
+                        <img class ="feedback-img" src="static/img/no_foto.png" alt="customer_photo">
                     </picture>
 
                     <div class="customer-info">
-                        <h2 class="customer-info-h2">Елена</h2>
-                        <p class="customer-info-p">Global Logic</p>
-                        <span class="service">Посылка: товары</span>
-                        <span class="from">Откуда: Москва</span>
-                        <span class="where">Куда: Калининград</span>
+                        <h2 class="customer-info-h2">Дмитрий</h2>
+                        <p class="customer-info-p">от 3 до 14 суток</p>
+                        <span class="service">Дата отзыва: 15.06.2021</span>
+                        <!-- <span class="from">Откуда: Москва</span>
+                        <span class="where">Куда: Калининград</span> -->
                     </div>
-                    <p class="feedback-text">Мне нравится работать с&nbsp;SendIt, потому что это удобно: моментальный расчет стоимости доставки, удобный сайт, выборка среди основных надёжных логистических компаний и&nbsp;самый значимый фактор&nbsp;&mdash; всё это можно оперативно организовать и&nbsp;не&nbsp;волноваться. И&nbsp;ещё хочу сказать отдельное спасибо менеджеру за&nbsp;отзывчивость.</p>
+                    <p class="feedback-text">Отличный сервис. Кемпер оборудован всем необходимым. Спать было удобно. Планирую воспользоваться данными услугами еще не один раз</p>
                 </article>
-    </div>
+  </div>
         </div>
 
         <input class="feedback-form-preview" type="checkbox" name="feedbackMenu" id="feedbackMenu"><label class="feedback-form-open" for="feedbackMenu"><span class="open">Оставить отзыв</span></label>

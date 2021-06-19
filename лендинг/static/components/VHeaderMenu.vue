@@ -26,9 +26,9 @@
 
             </div>
             <div class="social-media">
-            <a href="#"><i class="fab fa-vk"></i></a>
+            <a href="https://vk.com/4kamping"><i class="fab fa-vk"></i></a>
             <a href="https://instagram.com/4kamping"><i class="fab fa-instagram"></i></a>
-            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="mailto:info@4kamping.ru"><i class="fas fa-at"></i></a>
 
             </div>
 
