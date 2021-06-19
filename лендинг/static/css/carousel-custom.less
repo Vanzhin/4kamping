@@ -17,6 +17,14 @@
 //common
 .flickity-button {
     color: @orange;
+
+}
+@media (min-width: 768px) and (min-width: 1024px){
+    .flickity-fullscreen-button {
+        right: 20%;
+        top: 35px;    
+    }  
+
 }
 
 .flickity-viewport {
@@ -43,7 +51,7 @@
         width: 66%;
     }
 
-    @media (min-width: 320px) and (max-width: 635px) {
+    @media (min-width: 320px) and (max-width: 768px) {
         .carousel-cell {
             background: none;
             width: 100%;
@@ -90,8 +98,7 @@
     height: 108%;
 }
 
-
-@media (min-width: 320px) and (max-width: 635px) {
+@media (min-width: 320px) and (max-width: 768px) {
     .carousel-cell {
         background: none;
         width: 100%;

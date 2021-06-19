@@ -1066,7 +1066,7 @@ summary::-webkit-details-marker {
 
     .feedback-form-preview:checked~.feedback-write-form {
         height: 740px;
-        overflow: revert;
+        // overflow: revert;
         opacity: 1;
 
     }
@@ -1103,7 +1103,8 @@ summary::-webkit-details-marker {
         margin: 0 auto;
         color: gray;
         height: 0px;
-        overflow: hidden;
+        overflow-x: visible;
+        overflow-y: clip;
         opacity: 0;
 
 

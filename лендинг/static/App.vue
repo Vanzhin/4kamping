@@ -207,14 +207,13 @@
                         <img src="static/img/image.png" alt="customer_photo">
                     </picture>
                     <div class="customer-info">
-                        <h2 class="customer-info-h2">Дарья</h2>
-                        <p class="customer-info-p">La Intuicion</p>
-                        <span class="service">Посылка: товары</span>
-                        <span class="from">Откуда: Москва</span>
-                        <span class="where">Куда: Нижневартовск</span>
+                        <h2 class="customer-info-h2">Николай</h2>
+                        <p class="customer-info-p">менее 3-х суток</p>
+                        <span class="service">Дата отзыва: 17.05.2021</span>
+                        <!-- <span class="from">Откуда: Москва</span>
+                        <span class="where">Куда: Нижневартовск</span> -->
                     </div>
-                    <p class="feedback-text">Отличный и&nbsp;качественный сервис.
-                        Долго искали курьерскую службу для доставки наших товаров. Решили попробовать и&nbsp;были приятно удивлены, что помимо удобного сайта, компания предоставляет доступ в&nbsp;личный кабинет, где реализованы многие наши потребности (ведение адресной базы, выбор и&nbsp;вызов курьера в&nbsp;пару кликов).</p>
+                    <p class="feedback-text">Брали кемпер на майские. Понравилось отношение сервиса. ездили на увилды. было приятно, что на озере такого не было ни у кого.</p>
                 </article>
   </div>
   <div class="carousel-cell">
@@ -225,13 +224,13 @@
                     </picture>
 
                     <div class="customer-info">
-                        <h2 class="customer-info-h2">Елена</h2>
-                        <p class="customer-info-p">Global Logic</p>
-                        <span class="service">Посылка: товары</span>
-                        <span class="from">Откуда: Москва</span>
-                        <span class="where">Куда: Калининград</span>
+                        <h2 class="customer-info-h2">Павел</h2>
+                        <p class="customer-info-p">от 3 до 14 суток</p>
+                        <span class="service">Дата отзыва: 01.06.2021</span>
+                        <!-- <span class="from">Откуда: Москва</span>
+                        <span class="where">Куда: Калининград</span> -->
                     </div>
-                    <p class="feedback-text">Мне нравится работать с&nbsp;SendIt, потому что это удобно: моментальный расчет стоимости доставки, удобный сайт, выборка среди основных надёжных логистических компаний и&nbsp;самый значимый фактор&nbsp;&mdash; всё это можно оперативно организовать и&nbsp;не&nbsp;волноваться. И&nbsp;ещё хочу сказать отдельное спасибо менеджеру за&nbsp;отзывчивость.</p>
+                    <p class="feedback-text">Давно хотели поехать на Волчихинское, взяли кемпер и не прогадали. понравилось, что все под рукой. управлять сначала не привычно, но потом ок</p>
                 </article>
   </div>
   <div class="carousel-cell">
@@ -348,7 +347,7 @@
                         <div class="contacts-column">
                              
         <div class="contacts-social">
-                <a href="https://t.me/79028773061" title="telegram"><i class="fab fa-telegram-plane"></i></a>
+                <a href="https://t.me/Arenda_Campera_Ekb" title="telegram"><i class="fab fa-telegram-plane"></i></a>
                 <a href="https://wa.me/79028773061" title="whats up"><i class="fab fa-whatsapp"></i></a>
                 <!-- <a href="viber://add?number=+79028773061" title="viber"><i class="fab fa-viber"></i></a> -->
         </div>
@@ -360,7 +359,7 @@
                     <div class="contacts-column">
                         <h3 class="contacts-h3">4Kamping в социальных сетях</h3> 
     <div class="contacts-social">
-            <a href="#" title="vkontakte"><i class="fab fa-vk"></i></a>
+            <a href="https://vk.com/4kamping" title="vkontakte"><i class="fab fa-vk"></i></a>
             <a href="https://instagram.com/4kamping" title="instagram"><i class="fab fa-instagram"></i></a>
             <!-- <a href="#"><i class="fab fa-facebook-f" title="facebook"></i></a> -->
     </div>
@@ -464,13 +463,7 @@ export default {
             }],
             mainPictures: [],
 
-            pictures: [{
-                    main: true,
-                    title: '4Kamping',
-                    src: './static/img/IMG_1140.jpeg',
-                    srcMobile: './static/img/IMG_1140_tel.jpeg',
-                    srcTablet: './static/img/IMG_1140_tablet.jpeg'
-                },
+            pictures: [
                 {
                     main: true,
                     title: '4Kamping',
@@ -491,6 +484,29 @@ export default {
                     src: './static/img/IMG_0619.jpeg',
                     srcMobile: './static/img/IMG_0619_tel.jpeg',
                     srcTablet: './static/img/IMG_0619_tablet.jpeg'
+                },
+                {
+                    main: true,
+                    title: '4Kamping',
+                    src: './static/img/IMG_1343.jpeg',
+                    srcMobile: './static/img/IMG_1343_tel.jpeg',
+                    srcTablet: './static/img/IMG_1343_tablet.jpeg'
+                },
+                {
+                    main: true,
+                    title: '4Kamping',
+                    src: './static/img/IMG_1339.jpeg',
+                    srcMobile: './static/img/IMG_1339_tel.jpeg',
+                    srcTablet: './static/img/IMG_1339_tablet.jpeg'
+                },
+
+
+                {
+                    main: true,
+                    title: '4Kamping',
+                    src: './static/img/IMG_1140.jpeg',
+                    srcMobile: './static/img/IMG_1140_tel.jpeg',
+                    srcTablet: './static/img/IMG_1140_tablet.jpeg'
                 },
                 {
                     main: true,
@@ -516,6 +532,20 @@ export default {
                 {
                     main: true,
                     title: '4Kamping',
+                    src: './static/img/IMG_1647.jpeg',
+                    srcMobile: './static/img/IMG_1647_tel.jpeg',
+                    srcTablet: './static/img/IMG_1647_tablet.jpeg'
+                },
+                {
+                    main: true,
+                    title: '4Kamping',
+                    src: './static/img/IMG_1648.jpeg',
+                    srcMobile: './static/img/IMG_1648_tel.jpeg',
+                    srcTablet: './static/img/IMG_1648_tablet.jpeg'
+                },
+                {
+                    main: true,
+                    title: '4Kamping',
                     src: './static/img/IMG_1150.jpeg',
                     srcMobile: './static/img/IMG_1150_tel.jpeg',
                     srcTablet: './static/img/IMG_1150_tablet.jpeg'
@@ -533,20 +563,6 @@ export default {
                     src: './static/img/IMG_1167.jpeg',
                     srcMobile: './static/img/IMG_1167_tel.jpeg',
                     srcTablet: './static/img/IMG_1167_tablet.jpeg'
-                },
-                {
-                    main: true,
-                    title: '4Kamping',
-                    src: './static/img/IMG_1339.jpeg',
-                    srcMobile: './static/img/IMG_1339_tel.jpeg',
-                    srcTablet: './static/img/IMG_1339_tablet.jpeg'
-                },
-                {
-                    main: true,
-                    title: '4Kamping',
-                    src: './static/img/IMG_1343.jpeg',
-                    srcMobile: './static/img/IMG_1343_tel.jpeg',
-                    srcTablet: './static/img/IMG_1343_tablet.jpeg'
                 },
                 {
                     main: true,
@@ -569,6 +585,20 @@ export default {
                     srcMobile: './static/img/IMG_1476_tel.jpeg',
                     srcTablet: './static/img/IMG_1476_tablet.jpeg'
                 },
+                 {
+                    main: true,
+                    title: '4Kamping',
+                    src: './static/img/IMG_1742.jpeg',
+                    srcMobile: './static/img/IMG_1742_tel.jpeg',
+                    srcTablet: './static/img/IMG_1742_tablet.jpeg'
+                },
+                {
+                    main: true,
+                    title: '4Kamping',
+                    src: './static/img/IMG_2046.jpeg',
+                    srcMobile: './static/img/IMG_2046_tel.jpeg',
+                    srcTablet: './static/img/IMG_2046_tablet.jpeg'
+                },
                 {
                     main: true,
                     title: '4Kamping',
@@ -579,16 +609,9 @@ export default {
                 {
                     main: true,
                     title: '4Kamping',
-                    src: './static/img/IMG_2270.jpeg',
-                    srcMobile: './static/img/IMG_2270_tel.jpeg',
-                    srcTablet: './static/img/IMG_2270_tablet.jpeg'
-                },
-                {
-                    main: true,
-                    title: '4Kamping',
-                    src: './static/img/IMG_2271.jpeg',
-                    srcMobile: './static/img/IMG_2271_tel.jpeg',
-                    srcTablet: './static/img/IMG_2271_tablet.jpeg'
+                    src: './static/img/IMG_2313.jpeg',
+                    srcMobile: './static/img/IMG_2313_tel.jpeg',
+                    srcTablet: './static/img/IMG_2313_tablet.jpeg'
                 },
                 {
                     main: true,
@@ -596,6 +619,20 @@ export default {
                     src: './static/img/IMG_2358.jpeg',
                     srcMobile: './static/img/IMG_2358_tel.jpeg',
                     srcTablet: './static/img/IMG_2358_tablet.jpeg'
+                },
+                {
+                    main: true,
+                    title: '4Kamping',
+                    src: './static/img/IMG_5633.jpeg',
+                    srcMobile: './static/img/IMG_5633_tel.jpeg',
+                    srcTablet: './static/img/IMG_5633_tablet.jpeg'
+                },
+                {
+                    main: true,
+                    title: '4Kamping',
+                    src: './static/img/IMG_5635.jpeg',
+                    srcMobile: './static/img/IMG_5635_tel.jpeg',
+                    srcTablet: './static/img/IMG_5635_tablet.jpeg'
                 },
                 {
                     main: true,

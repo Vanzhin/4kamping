@@ -4,7 +4,7 @@
                 <h2 class="prices-h1">ЦЕНЫ</h2>
                 <div class="prices-table-header">
                 <h3 class="prices-h2">Период аренды (сутки)</h3>
-                <h3 class="prices-h2">Стоимость (₽ в сутки)</h3>
+                <h3 class="prices-h2">Стоимость (₽&nbsp;в&nbsp;сутки)</h3>
                 </div>
                 <div class="prices-item" v-for="item in pricelist" :key="item.category">
                     <div class="price-category"><p>{{item.category}}</p></div>

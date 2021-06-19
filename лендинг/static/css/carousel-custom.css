@@ -2,6 +2,12 @@
 .flickity-button {
   color: #e95110;
 }
+@media (min-width: 768px) and (min-width: 1024px) {
+  .flickity-fullscreen-button {
+    right: 20%;
+    top: 35px;
+  }
+}
 .flickity-viewport {
   min-height: 260px;
 }
@@ -17,7 +23,7 @@
 .feedback .carousel-cell {
   width: 66%;
 }
-@media (min-width: 320px) and (max-width: 635px) {
+@media (min-width: 320px) and (max-width: 768px) {
   .feedback .carousel-cell {
     background: none;
     width: 100%;
@@ -55,7 +61,7 @@
 .flickity-enabled.is-fullscreen {
   height: 108%;
 }
-@media (min-width: 320px) and (max-width: 635px) {
+@media (min-width: 320px) and (max-width: 768px) {
   .carousel-cell {
     background: none;
     width: 100%;

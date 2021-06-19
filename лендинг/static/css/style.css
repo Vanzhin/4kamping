@@ -801,7 +801,6 @@ summary::-webkit-details-marker {
 }
 .feedback .feedback-form-preview:checked ~ .feedback-write-form {
   height: 740px;
-  overflow: revert;
   opacity: 1;
 }
 .feedback .feedback-form-preview:checked + .feedback-form-open::after {
@@ -835,7 +834,8 @@ summary::-webkit-details-marker {
   margin: 0 auto;
   color: gray;
   height: 0px;
-  overflow: hidden;
+  overflow-x: visible;
+  overflow-y: clip;
   opacity: 0;
 }
 .feedback .feedback-write-form::after {
