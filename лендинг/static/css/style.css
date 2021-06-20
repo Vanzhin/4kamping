@@ -799,7 +799,7 @@ summary::-webkit-details-marker {
   display: none;
 }
 .feedback .feedback-form-preview:checked ~ .feedback-write-form {
-  height: 740px;
+  height: 760px;
   opacity: 1;
 }
 .feedback .feedback-form-preview:checked + .feedback-form-open::after {
@@ -847,7 +847,7 @@ summary::-webkit-details-marker {
   top: 0;
   left: 0;
   width: 100%;
-  height: 100%;
+  height: 101%;
   background: rgba(255, 255, 255, 0.5) url(../img/5.gif) center / 50px no-repeat;
   opacity: 0;
   visibility: hidden;

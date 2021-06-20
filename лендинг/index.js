@@ -74,16 +74,16 @@ app.post('/order', (request, response) => {
 				port: 25,
 				secure: false,
 				auth: {
-					user: `info@vanzhin.ru`,
-					pass: `Qwebublzxc1`,
+					user: `order@4kamping.ru`,
+					pass: `redro1234`,
 				},
 			})
 
 			// 			console.log(order);
 
 			let result = await transporter.sendMail({
-				from: '<info@vanzhin.ru>',
-				to: 'nikolay.vanzhin@yandex.ru',
+				from: '"4Kamping" <order@4kamping.ru>',
+				to: 'info@4Kamping.ru',
 				subject: 'Новая заявка 4Kamping.ru',
 				html: `<p>Заявка с сайта. <br>телефон: +${item.tel}, <br>время: ${item.date}</p>`,
 			})
@@ -144,14 +144,14 @@ app.post('/feedback', (request, response) => {
 				port: 25,
 				secure: false,
 				auth: {
-					user: `info@vanzhin.ru`,
-					pass: `Qwebublzxc1`,
+					user: `order@4kamping.ru`,
+					pass: `redro1234`,
 				},
 			})
 			// console.log(feedbackUser);
 			let result = await transporter.sendMail({
-				from: '"4kamping" <info@vanzhin.ru>',
-				to: 'nikolay.vanzhin@yandex.ru',
+				from: '"4kamping" <order@4kamping.ru>',
+				to: 'info@4kamping.ru',
 				subject: 'Новый отзыв с 4Kamping.ru',
 				html: `<p>Новый отзыв. <br>Имя пользователя: ${feedbackUser.userName},
 				 <br>Почта пользователя: ${feedbackUser.userEmail},
