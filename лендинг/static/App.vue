@@ -203,7 +203,7 @@
   <div class="carousel-cell">
       <article class="feedback-slider-content-column content-column-item">
                     <picture class="feedback-picture">
-                        <source media="(min-width:1200px)" srcset="static/img/image-1440.png">
+                        <source media="(min-width:1200px)" srcset="static/img/no_foto.png">
                         <img class ="feedback-img" src="static/img/no_foto.png" alt="customer_photo">
                     </picture>
                     <div class="customer-info">
@@ -219,7 +219,7 @@
   <div class="carousel-cell">
       <article class="feedback-slider-content-column content-column-item">
                     <picture class="feedback-picture">
-                        <source media="(min-width:1200px)" srcset="static/img/image-1-1440.png">
+                        <source media="(min-width:1200px)" srcset="static/img/no_foto.png">
                         <img class ="feedback-img" src="static/img/no_foto.png" alt="customer_photo">
                     </picture>
 
@@ -236,7 +236,7 @@
    <div class="carousel-cell">
       <article class="feedback-slider-content-column content-column-item">
                     <picture class="feedback-picture">
-                        <source media="(min-width:1200px)" srcset="static/img/image-1-1440.png">
+                        <source media="(min-width:1200px)" srcset="static/img/no_foto.png">
                         <img class ="feedback-img" src="static/img/no_foto.png" alt="customer_photo">
                     </picture>
 
@@ -253,7 +253,7 @@
   <div class="carousel-cell">
       <article class="feedback-slider-content-column content-column-item">
                     <picture class="feedback-picture">
-                        <source media="(min-width:1200px)" srcset="static/img/image-1-1440.png">
+                        <source media="(min-width:1200px)" srcset="static/img/no_foto.png">
                         <img class ="feedback-img" src="static/img/no_foto.png" alt="customer_photo">
                     </picture>
 
