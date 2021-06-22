@@ -108,6 +108,9 @@
   }
 }
 @media (max-width: 640px) {
+  .desktop-view {
+    display: none;
+  }
   #burger:checked ~ .burger-label {
     width: 30px;
     height: 30px;

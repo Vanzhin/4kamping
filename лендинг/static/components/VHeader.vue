@@ -9,7 +9,9 @@
                 <div class="header-h1-wrap">
                     <h1 class="header-h1">Отдых как искусство</h1>
                     <h2 class="header-h2">Аренда стильных и комфортных кемперов</h2>
-                    <button class="sendit-btn header-sendit-btn" v-on:click="formVisibilityChange">арендовать</button>
+                    <!-- <button class="sendit-btn header-sendit-btn" v-on:click="formVisibilityChange">арендовать</button> -->
+                    <a class="sendit-btn header-sendit-btn" href="tel:+79028773061"><span >позвонить</span><span class="desktop-view">+7 (902) 877-30-61</span></a>
+
                 </div>
             </div>
         </header>

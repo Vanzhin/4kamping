@@ -184,6 +184,9 @@ summary::-webkit-details-marker {
   flex-direction: column;
   align-items: center;
 }
+.header .header-wrap .header-h1-wrap .desktop-view {
+  padding-left: 10px;
+}
 .header .header-wrap .header-h1 {
   padding-top: 21px;
   padding-bottom: 8px;
@@ -1554,6 +1557,9 @@ summary::-webkit-details-marker {
   }
 }
 @media (max-width: 640px) {
+  .desktop-view {
+    display: none;
+  }
   #burger:checked ~ .burger-label {
     width: 30px;
     height: 30px;
