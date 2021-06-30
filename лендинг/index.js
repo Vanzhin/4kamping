@@ -75,7 +75,7 @@ app.post('/order', (request, response) => {
 				secure: false,
 				auth: {
 					user: `order@4kamping.ru`,
-					pass: `redro1234`,
+					pass: `Redro1605!`,
 				},
 			})
 
@@ -145,7 +145,7 @@ app.post('/feedback', (request, response) => {
 				secure: false,
 				auth: {
 					user: `order@4kamping.ru`,
-					pass: `redro1234`,
+					pass: `Redro1605!`,
 				},
 			})
 			// console.log(feedbackUser);

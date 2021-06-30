@@ -112,7 +112,7 @@
                             <i class="fas fa-map-marked-alt"></i>
 
                         </div>
-                        <p class="our-advantage-item-p">Возможноть доставки кемпера</p>
+                        <p class="our-advantage-item-p">Возможность доставки кемпера</p>
                     </div>
                     <div class="our-advantage-item-wrap">
                         <div class="our-advantage-item">
