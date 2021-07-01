@@ -190,6 +190,7 @@ summary::-webkit-details-marker {
 .header .header-wrap .header-h1 {
   padding-top: 21px;
   padding-bottom: 8px;
+  text-align: center;
 }
 .header .header-wrap .header-h2 {
   padding-bottom: 17px;
@@ -257,7 +258,7 @@ summary::-webkit-details-marker {
   text-align: center;
 }
 .nav-menu-drop .nav-menu-form {
-  margin: 0 auto;
+  margin: 15px 0 auto;
 }
 .nav-menu-drop-footer {
   padding: 13px 21px 10px;
@@ -589,6 +590,7 @@ summary::-webkit-details-marker {
 .steps .steps-wrap .steps-item {
   display: flex;
   flex-direction: column;
+  margin-bottom: 20px;
 }
 .steps .steps-wrap .steps-item p {
   font-size: 18px;
@@ -1031,6 +1033,7 @@ summary::-webkit-details-marker {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  margin-left: 5px;
 }
 .feedback .feedback-slider-content-column .customer-info span {
   display: block;
@@ -1117,6 +1120,7 @@ summary::-webkit-details-marker {
 }
 .gallery .gallery-wrap .gallery-title .gallery-h1 {
   color: gray;
+  width: 100%;
 }
 .gallery .gallery-wrap .gallery-title a {
   font-family: MyriadPro-Semibold;
@@ -1500,12 +1504,6 @@ summary::-webkit-details-marker {
     margin-top: 10px;
   }
 }
-@media (max-width: 380px) {
-  .nav-menu #burger-footer:checked ~ .burger-label-footer {
-    top: 23px;
-    right: 23px;
-  }
-}
 @media screen and (max-width: 800px) {
   .pictures .column {
     -ms-flex: 50%;
@@ -1560,6 +1558,9 @@ summary::-webkit-details-marker {
   .desktop-view {
     display: none;
   }
+  h2 {
+    text-align: center;
+  }
   #burger:checked ~ .burger-label {
     width: 30px;
     height: 30px;
@@ -1592,7 +1593,7 @@ summary::-webkit-details-marker {
     height: 30px;
     z-index: 10;
     position: fixed;
-    top: 23px;
+    bottom: 60px;
     right: 23px;
   }
   #burger-footer:checked ~ .burger-label-footer span {
@@ -1620,6 +1621,9 @@ summary::-webkit-details-marker {
     position: fixed;
     text-align: center;
     justify-content: flex-start;
+  }
+  #burger:checked ~ .nav-menu-drop .column-menu {
+    margin-bottom: 20px;
   }
   #burger:checked ~ .nav-menu-drop .column-menu .social-media {
     width: 280px;
@@ -1730,23 +1734,25 @@ summary::-webkit-details-marker {
     grid-template-columns: 1fr 45%;
     grid-template-rows: 1fr 1fr 1fr;
     grid-column-gap: 7%;
+    padding-top: 0px;
   }
   .whoweare .whoweare-wrap .whoweare-picture {
     grid-column: 1/1;
     grid-row: 1/4;
   }
   .whoweare .whoweare-h2 {
-    grid-column: 2;
+    grid-column: 1/3;
     grid-row: 1;
     margin-bottom: 0;
     font-size: 36px;
+    text-align: center;
   }
   .whoweare .whoweare-p {
     grid-column: 2;
     grid-row: 2;
     margin-bottom: 0;
-    padding-right: 20px;
     font-size: 16px;
+    line-height: 15px;
   }
   .whoweare.whoweare-sendit-btn {
     grid-column: 1;

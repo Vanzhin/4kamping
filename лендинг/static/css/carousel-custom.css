@@ -42,6 +42,8 @@
 }
 .carousel-cell .feedback-img {
   object-fit: contain;
+  background: lightgray;
+  margin-right: 20px;
 }
 .carousel-cell-image {
   display: block;
