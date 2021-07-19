@@ -3,7 +3,7 @@
             <div class="faq-wrap wrap">
                 <div class="faq-h2-wrap">
                     <h2 class="faq-h2">ОСТАЛИСЬ ВОПРОСЫ?</h2>
-                    <div class="faq-form-wrap"><p>Закажите звонок, и менеджер Вам всё расскажет и объяснит</p>
+                    <div class="faq-form-wrap"><p>Закажите звонок, и&nbsp;менеджер Вам всё расскажет и&nbsp;объяснит</p>
 
                     <div class="nav-menu-form">
                     <button class="sendit-btn header-sendit-btn" v-on:click="formVisibilityChange">заказать звонок</button>

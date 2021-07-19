@@ -98,7 +98,7 @@
 
 
 
-@media screen and (max-width: 800px) {
+@media screen and (max-width: 1000px) {
     .pictures {
         .column {
             -ms-flex: 50%;
@@ -416,9 +416,9 @@ text-align: center;
         .whoweare-wrap {
             display: grid;
             grid-template-columns: 1fr 45%;
-            grid-template-rows: 1fr 1fr 1fr;
+            grid-template-rows: 20% 1fr 20%;
             grid-column-gap: 7%;
-            padding-top: 0px;
+            // padding-top: 0px;
 
             .whoweare-picture {
                 grid-column: 1/1;
@@ -434,6 +434,7 @@ text-align: center;
             margin-bottom: 0;
             font-size: 36px;
             text-align: center;
+            margin-bottom: 35px;
 
 
         }
@@ -443,8 +444,8 @@ text-align: center;
             grid-row: 2;
             margin-bottom: 0;
             // padding-right: 20px;
-            font-size: 16px;
-            line-height: 15px;
+            font-size: 18px;
+            line-height: 120%;
         }
 
         &.whoweare-sendit-btn {
@@ -620,7 +621,7 @@ text-align: center;
         .faq-form-wrap{
             flex-direction: row;
             p{
-                padding-right: 20px;
+                padding: 0 10px;
             }
         }
 
@@ -682,7 +683,13 @@ text-align: center;
         }
     }
 }
-
+@media (min-width:920px) and (max-width:1200px){
+    .faq-form-wrap{
+        p{
+            font-size: 20px;
+        }
+    }
+}
 @media (min-width:1200px) {
     .wrap {
         padding: 0 140px;
@@ -732,9 +739,9 @@ text-align: center;
 
     .whoweare {
         .whoweare-wrap {
-            grid-template-columns: 1fr 45%;
-            grid-template-rows: 1fr 1fr 1fr;
-            grid-column-gap: 7%;
+            // grid-template-columns: 1fr 45%;
+            // grid-template-rows: 20% 1fr 20%;
+            // grid-column-gap: 7%;
             padding-top: 60px;
             padding-bottom: 60px;
         }
@@ -753,6 +760,7 @@ text-align: center;
         .whoweare-h2 {
             grid-column: ~"2";
             grid-row: ~"1/2";
+            text-align: inherit;
         }
 
         .whoweare-p {
