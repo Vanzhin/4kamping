@@ -3,20 +3,6 @@
         <div class="callback-tel" v-bind:class="[{invisible: !isFormActive}]" v-on:click="formVisibilityChange">
             
         </div>
-        <agreement
-  
-        ></agreement>
-        <new-order 
-        v-bind:class="[{invisible: !isFormActive}]"
-        v-on:close-form="formVisibilityChange"
-            v-bind:regexp-tel="regexpTel"
-            v-bind:order-ok-message="orderOkMessage"
-            v-bind:order-err-message="orderErrMessage"
-            v-on:phone-number="userPhoneNum" 
-            v-bind:order-form-close="orderFormClose"  
-            v-bind:loading="loading" 
-            ></new-order>
-
         <v-header
         v-bind:checked-change='checkedChange'
                 v-bind:form-visibility-change="formVisibilityChange"
@@ -37,6 +23,19 @@
                 <button class="sendit-btn header-sendit-btn" v-on:click="formVisibilityChange">арендовать</button>
             </div>
         </section>
+                <agreement
+  
+        ></agreement>
+        <new-order 
+        v-bind:class="[{invisible: !isFormActive}]"
+        v-on:close-form="formVisibilityChange"
+            v-bind:regexp-tel="regexpTel"
+            v-bind:order-ok-message="orderOkMessage"
+            v-bind:order-err-message="orderErrMessage"
+            v-on:phone-number="userPhoneNum" 
+            v-bind:order-form-close="orderFormClose"  
+            v-bind:loading="loading" 
+        ></new-order>
         <section class="steps">
             <div class="steps-wrap wrap">
                 <div class="steps-item step1">
