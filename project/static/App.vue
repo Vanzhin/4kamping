@@ -23,9 +23,9 @@
                 <button class="sendit-btn header-sendit-btn" v-on:click="formVisibilityChange">арендовать</button>
             </div>
         </section>
-                <agreement
+                <!-- <agreement
   
-        ></agreement>
+        ></agreement> -->
         <new-order 
         v-bind:class="[{invisible: !isFormActive}]"
         v-on:close-form="formVisibilityChange"
@@ -191,14 +191,14 @@
                 <button class="sendit-btn header-sendit-btn" v-on:click="formVisibilityChange">арендовать</button>
             </div>
         </section> 
-<section name="feedback" class="feedback">
+<!-- <section name="feedback" class="feedback">
     <div class="feedback-wrap wrap">
-        <h2 class="feedback-h1">ОТЗЫВЫ</h2>
+        <h2 class="feedback-h1">ОТЗЫВЫ</h2> -->
 
 
 
                 <!-- Flickity HTML init -->
-        <div class="carousel" data-flickity='{ "wrapAround": false }'>
+        <!-- <div class="carousel" data-flickity='{ "wrapAround": false }'>
   <div class="carousel-cell">
       <article class="feedback-slider-content-column content-column-item">
                     <picture class="feedback-picture">
@@ -208,10 +208,10 @@
                     <div class="customer-info">
                         <h2 class="customer-info-h2">Николай</h2>
                         <p class="customer-info-p">менее 3-х суток</p>
-                        <span class="service">Дата отзыва: 17.05.2021</span>
+                        <span class="service">Дата отзыва: 17.05.2021</span> -->
                         <!-- <span class="from">Откуда: Москва</span>
                         <span class="where">Куда: Нижневартовск</span> -->
-                    </div>
+                    <!-- </div>
                     <p class="feedback-text">Брали кемпер на майские. Понравилось отношение сервиса. ездили на увилды. было приятно, что на озере такого не было ни у кого.</p>
                 </article>
   </div>
@@ -225,10 +225,10 @@
                     <div class="customer-info">
                         <h2 class="customer-info-h2">Павел</h2>
                         <p class="customer-info-p">от 3 до 14 суток</p>
-                        <span class="service">Дата отзыва: 01.06.2021</span>
+                        <span class="service">Дата отзыва: 01.06.2021</span> -->
                         <!-- <span class="from">Откуда: Москва</span>
                         <span class="where">Куда: Калининград</span> -->
-                    </div>
+                    <!-- </div>
                     <p class="feedback-text">Давно хотели поехать на Волчихинское, взяли кемпер и не прогадали. понравилось, что все под рукой. управлять сначала не привычно, но потом ок</p>
                 </article>
   </div>
@@ -242,10 +242,10 @@
                     <div class="customer-info">
                         <h2 class="customer-info-h2">Константин</h2>
                         <p class="customer-info-p">от 3 до 14 суток</p>
-                        <span class="service">Дата отзыва: 19.06.2021</span>
+                        <span class="service">Дата отзыва: 19.06.2021</span> -->
                         <!-- <span class="from">Откуда: Москва</span>
                         <span class="where">Куда: Калининград</span> -->
-                    </div>
+                    <!-- </div>
                     <p class="feedback-text">Прекрасный бюджетный отдых особенно в текущий период. Хорошо отдохнули семьей на берегу озера в дали от городского шума и от большого количества людей</p>
                 </article>
   </div>
@@ -259,10 +259,10 @@
                     <div class="customer-info">
                         <h2 class="customer-info-h2">Дмитрий</h2>
                         <p class="customer-info-p">от 3 до 14 суток</p>
-                        <span class="service">Дата отзыва: 15.06.2021</span>
+                        <span class="service">Дата отзыва: 15.06.2021</span> -->
                         <!-- <span class="from">Откуда: Москва</span>
                         <span class="where">Куда: Калининград</span> -->
-                    </div>
+                    <!-- </div>
                     <p class="feedback-text">Отличный сервис. Кемпер оборудован всем необходимым. Спать было удобно. Планирую воспользоваться данными услугами еще не один раз</p>
                 </article>
   </div>
@@ -279,7 +279,7 @@
         
     </div>
   
-     </section>   
+     </section>    -->
         <section name="doubt" class="doubt">
             <div class="doubt-wrap wrap">
                 <h2 class="doubt-h1">ОСТАЛИСЬ СОМНЕНИЯ?</h2>
@@ -391,7 +391,7 @@ import VHeader from './components/VHeader.vue'
 import VFooter from './components/VFooter.vue'
 import PictureList from './components/PictureList.vue'
 import NewOrder from './components/NewOrder.vue'
-import Agreement from './components/Agreement.vue';
+// import Agreement from './components/Agreement.vue';
 
 
 
@@ -406,7 +406,7 @@ export default {
         VFooter,
         PictureList,
         NewOrder,
-        Agreement
+        // Agreement
 	},
 	data(){
 		return{
@@ -450,10 +450,12 @@ export default {
             }, {
                 name: "Цены",
                 link: "#prices"
-            }, {
-                name: "Отзывы",
-                link: "#feedback"
-            }, {
+            }, 
+            // {
+            //     name: "Отзывы",
+            //     link: "#feedback"
+            // }, 
+            {
                 name: "Вопросы",
                 link: "#doubt"
             }, {

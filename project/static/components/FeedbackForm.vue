@@ -39,8 +39,8 @@
         <div class="checkbox">
         <p :class="['errors', { invisible: !popUpErrors.agree}]">{{errors.agree}}</p>
 
-            <input value="agree"  v-model="agree" type="checkbox" name="agreement" id="userAgreement" class="checkbox-input">
-            <label for="userAgreement" class="form-label"><span>Я соглашаюсь на обработку персональных данных</span></label><span @click="showAgreement" class="agr-link">Политика конфиденциальности</span>
+            <input value="agree"  v-model="agree" type="checkbox" name="agreement" id="userAgreement" class="checkbox-input" checked>
+            <!-- <label for="userAgreement" class="form-label"><span>Я соглашаюсь на обработку персональных данных</span></label><span @click="showAgreement" class="agr-link">Политика конфиденциальности</span> -->
 
         </div>
     </div>
